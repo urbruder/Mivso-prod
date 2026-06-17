@@ -1,0 +1,2667 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Products — MIVSO</title>
+    <meta name="description" content="Browse and purchase MIVSO's portable Claude skills." />
+    <meta property="og:title" content="MIVSO Products — Portable AI Skills" />
+    <meta property="og:description" content="Browse and purchase MIVSO's portable Claude skills." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/mark-black.png" />
+    <style>
+        :root {
+            --ink: #111111;
+            --ink-2: #3a3a3a;
+            --muted: #666666;
+            --line: #E5E5E5;
+            --bg: #FFFFFF;
+            --bg-soft: #f6f6f4;
+            --radius: 12px;
+            --maxw: 1100px;
+            --ease: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: "Space Grotesk", "Inter", sans-serif;
+            letter-spacing: -.02em;
+            line-height: 1.05;
+            font-weight: 600
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 24px
+        }
+
+        .wordmark {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: .34em;
+            text-transform: uppercase
+        }
+
+        /* ---------- header ---------- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            backdrop-filter: saturate(180%) blur(14px);
+            background: rgba(255, 255, 255, .72);
+            border-bottom: 1px solid transparent;
+            transition: border-color .4s var(--ease), background .4s var(--ease)
+        }
+
+        header.scrolled {
+            border-color: var(--line)
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 74px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand img.logo {
+            height: 30px;
+            width: auto;
+            display: block
+        }
+
+        nav.links {
+            display: flex;
+            align-items: center;
+            gap: 34px
+        }
+
+        nav.links a {
+            font-size: 14.5px;
+            color: var(--ink-2);
+            font-weight: 500;
+            transition: color .2s
+        }
+
+        nav.links a:hover {
+            color: var(--ink)
+        }
+
+        nav.links a.active {
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav.links a.btn {
+            color: #fff
+        }
+
+        nav.links a.btn:hover {
+            color: #fff
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 12px 22px;
+            border-radius: 100px;
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            cursor: pointer;
+            transition: transform .25s var(--ease), background .25s, color .25s, box-shadow .25s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .5)
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--ink)
+        }
+
+        .btn.ghost:hover {
+            background: var(--ink);
+            color: #fff
+        }
+
+        .btn:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            width: 40px;
+            height: 40px
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--ink);
+            margin: 5px auto;
+            transition: .3s
+        }
+
+        /* ---------- hero ---------- */
+        .page-hero {
+            padding: 130px 0 60px;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            overflow: hidden
+        }
+
+        .hero-mark {
+            position: absolute;
+            right: -60px;
+            top: 20px;
+            width: min(48vw, 580px);
+            opacity: .06;
+            pointer-events: none
+        }
+
+        .page-hero .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 20px
+        }
+
+        .eyebrow .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--ink);
+            display: inline-block;
+            animation: pulse 2.4s infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1
+            }
+
+            50% {
+                transform: scale(1.7);
+                opacity: .4
+            }
+        }
+
+        .page-hero h1 {
+            font-size: clamp(2.2rem, 5vw, 3.8rem);
+            font-weight: 700;
+            max-width: 20ch
+        }
+
+        .page-hero h1 em {
+            font-style: normal;
+            color: var(--muted)
+        }
+
+        .page-hero p.lead {
+            font-size: clamp(1rem, 1.8vw, 1.2rem);
+            color: var(--ink-2);
+            max-width: 52ch;
+            margin-top: 20px
+        }
+
+        /* ---------- access strip ---------- */
+        .access-strip {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 0;
+            margin-bottom: 36px;
+            flex-wrap: wrap;
+            gap: 12px
+        }
+
+        .access-strip .left {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase
+        }
+
+        .pill.preview {
+            background: var(--bg-soft);
+            color: var(--muted);
+            border: 1px solid var(--line)
+        }
+
+        .pill.pro {
+            background: var(--ink);
+            color: #fff
+        }
+
+        .access-link {
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--ink-2);
+            cursor: pointer;
+            transition: color .2s;
+            background: none;
+            border: none;
+            padding: 0;
+            font-family: inherit
+        }
+
+        .access-link:hover {
+            color: var(--ink)
+        }
+
+        .access-link .arrow {
+            display: inline-block;
+            transition: transform .2s var(--ease);
+            margin-left: 2px
+        }
+
+        .access-link:hover .arrow {
+            transform: translateX(3px)
+        }
+
+        .access-strip .right {
+            display: flex;
+            align-items: center;
+            gap: 10px
+        }
+
+        .user-email {
+            font-size: 13px;
+            color: var(--muted)
+        }
+
+        .btn-sm {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink-2);
+            transition: all .2s var(--ease);
+            font-family: inherit
+        }
+
+        .btn-sm:hover {
+            border-color: var(--ink);
+            color: var(--ink)
+        }
+
+        /* ---------- SECTION 1: PRICING SECTION ---------- */
+        .pricing-section {
+            padding: 80px 0 60px;
+        }
+
+        .sec-head .kicker {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 12px;
+            display: block;
+        }
+
+        .sec-head h2 {
+            font-size: clamp(2rem, 4.5vw, 3rem);
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .sec-head p {
+            font-size: 16px;
+            color: var(--muted);
+        }
+
+        .pricing-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 24px;
+            align-items: stretch;
+            margin-bottom: 48px;
+            margin-top: 24px;
+        }
+
+        .pricing-card {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 32px;
+            background: var(--bg);
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            transition: transform 0.4s var(--ease), border-color 0.4s, box-shadow 0.4s;
+        }
+
+        .pricing-card:hover {
+            transform: translateY(-4px);
+            border-color: #cfcfcf;
+            box-shadow: 0 24px 50px -30px rgba(0, 0, 0, 0.15);
+        }
+
+        .pricing-card.featured {
+            background: #111111;
+            color: #ffffff;
+            border-color: #111111;
+            transform: scale(1.03);
+            box-shadow: 0 16px 40px -20px rgba(0, 0, 0, 0.4);
+            z-index: 5;
+        }
+
+        .pricing-card.featured:hover {
+            transform: scale(1.03) translateY(-4px);
+            box-shadow: 0 24px 50px -20px rgba(0, 0, 0, 0.5);
+        }
+
+        .pricing-badge {
+            align-self: flex-start;
+            padding: 4px 12px;
+            border-radius: 999px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.08em;
+            text-transform: uppercase;
+            margin-bottom: 20px;
+        }
+
+        .pricing-badge.badge-grey {
+            background: var(--bg-soft);
+            color: var(--muted);
+            border: 1px solid var(--line);
+        }
+
+        .pricing-badge.badge-black {
+            background: #ffffff;
+            color: #111111;
+            border: 1px solid #ffffff;
+        }
+
+        .card-title {
+            font-size: 24px;
+            font-weight: 700;
+            margin-bottom: 12px;
+        }
+
+        .card-price-row {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 4px;
+        }
+
+        .card-price-row .price {
+            font-size: 48px;
+            font-weight: 700;
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .sub-price {
+            font-size: 13px;
+            color: var(--muted);
+            margin-bottom: 20px;
+        }
+
+        .pricing-card.featured .sub-price {
+            color: #bdbdbd;
+        }
+
+        .card-divider {
+            border: 0;
+            border-top: 1px solid var(--line);
+            margin: 0 0 20px 0;
+        }
+
+        .pricing-card.featured .card-divider {
+            border-top-color: #333333;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin-bottom: 24px;
+            flex-grow: 1;
+        }
+
+        .feature-list li {
+            font-size: 14px;
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-list li .check {
+            color: #10B981;
+            font-weight: bold;
+        }
+
+        .who-block {
+            font-size: 13.5px;
+            font-style: italic;
+            color: var(--muted);
+            margin-bottom: 24px;
+            line-height: 1.5;
+            min-height: 40px;
+        }
+
+        .pricing-card.featured .who-block {
+            color: #bdbdbd;
+        }
+
+        .pricing-card .card-cta-btn {
+            width: 100%;
+            justify-content: center;
+            padding: 14px 22px;
+        }
+
+        .pricing-card.featured .card-cta-btn {
+            background: #ffffff;
+            color: #111111;
+            border-color: #ffffff;
+        }
+
+        .pricing-card.featured .card-cta-btn:hover {
+            background: #e5e5e5;
+            color: #111111;
+        }
+
+        /* --- Value Prop Strip --- */
+        .value-prop-strip {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            padding: 20px 24px;
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+            flex-wrap: wrap;
+        }
+
+        .value-prop-strip .stat-col {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .value-prop-strip .stat-val {
+            font-size: 20px;
+            font-weight: 700;
+            color: var(--ink);
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .value-prop-strip .stat-val .unit {
+            font-size: 12px;
+            font-weight: 500;
+            color: var(--muted);
+        }
+
+        .value-prop-strip .stat-lbl {
+            font-size: 11px;
+            color: var(--muted);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            margin-top: 2px;
+        }
+
+        .value-prop-strip .stat-arrow {
+            font-size: 18px;
+            color: var(--muted);
+        }
+
+        .value-prop-strip .caption {
+            width: 100%;
+            text-align: center;
+            font-size: 13px;
+            color: var(--muted);
+            font-style: italic;
+            margin-top: 8px;
+            border-top: 1px solid var(--line);
+            padding-top: 10px;
+        }
+
+        /* ---------- SECTION 2: SKILLS CATALOG ---------- */
+        .catalog-section {
+            border-top: 1px solid var(--line);
+            padding: 80px 0;
+            margin-top: 20px;
+        }
+
+        /* --- Filter Bar --- */
+        .filter-bar {
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            padding: 24px;
+            margin-bottom: 40px;
+        }
+
+        .filter-group-title {
+            font-size: 11px;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--muted);
+            margin-bottom: 10px;
+        }
+
+        .filter-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .filter-row.scrollable {
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            padding-bottom: 6px;
+            scrollbar-width: thin;
+        }
+
+        .filter-row.scrollable::-webkit-scrollbar {
+            height: 4px;
+        }
+
+        .filter-row.scrollable::-webkit-scrollbar-thumb {
+            background: var(--line);
+            border-radius: 10px;
+        }
+
+        .filter-btn {
+            background: transparent;
+            border: 1.5px solid var(--line);
+            color: var(--muted);
+            font-size: 13px;
+            font-weight: 600;
+            padding: 8px 16px;
+            border-radius: 999px;
+            cursor: pointer;
+            transition: all 0.2s var(--ease);
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .filter-btn:hover {
+            border-color: var(--ink-2);
+            color: var(--ink);
+        }
+
+        .filter-btn.active {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: #ffffff;
+        }
+
+        /* --- Accordions --- */
+        .accordion-block {
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            margin-bottom: 16px;
+            background: var(--bg);
+            overflow: hidden;
+            transition: border-color 0.3s var(--ease), box-shadow 0.3s var(--ease);
+        }
+
+        .accordion-block:hover {
+            border-color: #c0c0c0;
+        }
+
+        .accordion-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 20px 24px;
+            cursor: pointer;
+            user-select: none;
+            background: var(--bg);
+            transition: background 0.2s;
+        }
+
+        .accordion-header:hover {
+            background: var(--bg-soft);
+        }
+
+        .accordion-title-wrap {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+        }
+
+        .accordion-arrow {
+            font-size: 12px;
+            color: var(--muted);
+            transition: transform 0.3s var(--ease);
+        }
+
+        .accordion-block.open .accordion-arrow {
+            transform: rotate(90deg);
+        }
+
+        .accordion-title {
+            font-size: 18px;
+            font-weight: 700;
+            color: var(--ink);
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .accordion-count-badge {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            text-transform: uppercase;
+            padding: 4px 12px;
+            border-radius: 100px;
+            background: var(--bg-soft);
+            color: var(--muted);
+            border: 1px solid var(--line);
+        }
+
+        .accordion-content {
+            display: none;
+            border-top: 1px solid var(--line);
+            background: var(--bg);
+        }
+
+        .accordion-block.open .accordion-content {
+            display: block;
+        }
+
+        /* --- Skill Table & Rows --- */
+        .skills-table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .skill-row {
+            border-bottom: 1px solid var(--line);
+            transition: background 0.2s;
+            position: relative;
+        }
+
+        .skill-row:last-child {
+            border-bottom: 0;
+        }
+
+        .skill-row:hover {
+            background: #fafafa;
+        }
+
+        .skill-cell {
+            padding: 16px 24px;
+            vertical-align: middle;
+        }
+
+        .skill-cell.cell-icon {
+            width: 64px;
+            padding-right: 0;
+        }
+
+        .skill-cell-icon-box {
+            width: 38px;
+            height: 38px;
+            border: 1px solid var(--line);
+            border-radius: 8px;
+            background: var(--bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 16px;
+        }
+
+        .skill-cell-icon-box svg {
+            width: 17px;
+            height: 17px;
+            color: var(--ink-2);
+        }
+
+        .skill-cell.cell-info {
+            padding-left: 16px;
+        }
+
+        .skill-row-title-line {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 4px;
+            flex-wrap: wrap;
+        }
+
+        .skill-row-name {
+            font-size: 15px;
+            font-weight: 600;
+            color: var(--ink);
+        }
+
+        .skill-row-desc {
+            font-size: 13px;
+            color: var(--muted);
+            line-height: 1.4;
+        }
+
+        .skill-cell.cell-action {
+            text-align: right;
+            width: 160px;
+        }
+
+        .view-skill-link {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--muted);
+            display: inline-flex;
+            align-items: center;
+            gap: 4px;
+            transition: color 0.2s;
+        }
+
+        .view-skill-link:hover {
+            color: var(--ink);
+        }
+
+        .view-skill-link svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        /* --- Skill Row Badges --- */
+        .badge {
+            display: inline-flex;
+            align-items: center;
+            padding: 3px 10px;
+            border-radius: 999px;
+            font-size: 10px;
+            font-weight: 600;
+            letter-spacing: 0.03em;
+            text-transform: uppercase;
+        }
+
+        /* Tier badges */
+        .badge-tier-19 {
+            background: #D1FAE5;
+            color: #065F46;
+        }
+
+        .badge-tier-29 {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .badge-tier-39 {
+            background: #EDE9FE;
+            color: #5B21B6;
+        }
+
+        /* Persona badges */
+        .badge-persona-seller {
+            background: #FEF3C7;
+            color: #92400E;
+        }
+
+        .badge-persona-buyer {
+            background: #DBEAFE;
+            color: #1E40AF;
+        }
+
+        .badge-persona-buyer_and_seller {
+            background: #F3F4F6;
+            color: #374151;
+        }
+
+        .badge-persona-broker-team {
+            background: #1F2937;
+            color: #F9FAFB;
+        }
+
+        .badge-persona-cre {
+            background: #FDF4FF;
+            color: #7E22CE;
+        }
+
+        .badge-persona-pm {
+            background: #F0FDF4;
+            color: #14532D;
+        }
+
+        .badge-persona-title {
+            background: #FFF7ED;
+            color: #9A3412;
+        }
+
+        .badge-persona-mortgage {
+            background: #EFF6FF;
+            color: #1E3A8A;
+        }
+
+        /* Business Lever badges */
+        .badge-lever-revenue {
+            color: #065F46;
+            font-weight: 700;
+        }
+
+        .badge-lever-cost {
+            color: #0d9488;
+            font-weight: 700;
+        }
+
+        .badge-lever-risk {
+            color: #c2410c;
+            font-weight: 700;
+        }
+
+        /* --- Paywall Blur & Lock Overlay --- */
+        .skill-row.blurred {
+            position: relative;
+        }
+
+        .skill-row.blurred .skill-cell:not(.cell-action) {
+            filter: blur(5px);
+            opacity: 0.45;
+            pointer-events: none;
+            user-select: none;
+        }
+
+        .skill-locked {
+            filter: blur(4px);
+            pointer-events: none;
+            user-select: none;
+            position: relative;
+        }
+
+        .skill-row-lock-overlay {
+            position: absolute;
+            inset: 0;
+            z-index: 10;
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 24px;
+            background: rgba(255, 255, 255, 0.05);
+        }
+
+        .lock-cta-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: var(--ink);
+            color: #ffffff;
+            border: 1px solid var(--ink);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 600;
+            padding: 8px 16px;
+            cursor: pointer;
+            transition: all 0.2s var(--ease);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        }
+
+        .lock-cta-btn:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+            background: #333333;
+        }
+
+        .lock-cta-btn svg {
+            width: 12px;
+            height: 12px;
+            fill: currentColor;
+        }
+
+
+
+        /* ---------- toast ---------- */
+        .toast {
+            position: fixed;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity .4s var(--ease), transform .4s var(--ease);
+            pointer-events: none
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto
+        }
+
+        .toast.ok {
+            background: #f0f7f0;
+            color: #1c5b1c;
+            border: 1px solid #cfe6cf
+        }
+
+        .toast.err {
+            background: #fbeeee;
+            color: #7a2020;
+            border: 1px solid #f0cccc
+        }
+
+        .toast.info {
+            background: #eef3fb;
+            color: #1e3a6e;
+            border: 1px solid #ccdcf0
+        }
+
+        /* ---------- profile menu ---------- */
+        .profile-menu {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: 8px;
+        }
+
+        .profile-menu.hidden {
+            display: none !important;
+        }
+
+        .profile-icon {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink);
+            transition: background .2s, transform .2s;
+        }
+
+        .profile-icon:hover {
+            background: #f5f5f5;
+        }
+
+        .profile-icon svg {
+            width: 20px;
+            height: 20px;
+        }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 12px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px -10px rgba(0, 0, 0, 0.15);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            min-width: 240px;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity .2s, transform .2s;
+        }
+
+        .dropdown.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .dropdown .user-email {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+
+        .dropdown .pill {
+            align-self: flex-start;
+            margin-bottom: 16px;
+        }
+
+        .dropdown hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 0 -16px 16px -16px;
+        }
+
+        .dropdown button {
+            width: 100%;
+            justify-content: center;
+        }
+
+        /* ---------- modal ---------- */
+        .modal-backdrop {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(10, 10, 10, .45);
+            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .3s var(--ease)
+        }
+
+        .modal-backdrop.open {
+            opacity: 1;
+            pointer-events: auto
+        }
+
+        .modal {
+            background: #fff;
+            border-radius: 20px;
+            width: min(420px, calc(100vw - 40px));
+            padding: 40px 36px 36px;
+            box-shadow: 0 32px 80px -20px rgba(0, 0, 0, .45);
+            transform: translateY(16px) scale(.97);
+            transition: transform .3s var(--ease);
+            position: relative
+        }
+
+        .modal-backdrop.open .modal {
+            transform: none
+        }
+
+        .modal h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+            margin-bottom: 10px
+        }
+
+        .modal .subline {
+            font-size: 14px;
+            color: var(--ink-2);
+            line-height: 1.55;
+            margin-bottom: 24px
+        }
+
+        .modal-input {
+            width: 100%;
+            font-family: inherit;
+            font-size: 15px;
+            padding: 13px 16px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--bg-soft);
+            color: var(--ink);
+            transition: border-color .2s, background .2s;
+            outline: none
+        }
+
+        .modal-input:focus {
+            border-color: var(--ink);
+            background: #fff
+        }
+
+        .modal-input.err {
+            border-color: #d44;
+            background: #fdf5f5
+        }
+
+        .modal-error {
+            font-size: 13px;
+            color: #7a2020;
+            margin-top: 8px;
+            min-height: 18px;
+            transition: opacity .2s
+        }
+
+        .modal-cta {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            width: 100%;
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 14px 22px;
+            border-radius: 100px;
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            cursor: pointer;
+            margin-top: 18px;
+            font-family: inherit;
+            transition: transform .25s var(--ease), box-shadow .25s
+        }
+
+        .modal-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .5)
+        }
+
+        .modal-cta:disabled {
+            opacity: .55;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none
+        }
+
+        .modal-dismiss {
+            display: block;
+            width: 100%;
+            text-align: center;
+            margin-top: 14px;
+            font-size: 13px;
+            color: var(--muted);
+            cursor: pointer;
+            background: none;
+            border: none;
+            font-family: inherit;
+            transition: color .2s
+        }
+
+        .modal-dismiss:hover {
+            color: var(--ink)
+        }
+
+        /* ---------- loading ---------- */
+        .page-loading {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 120px 0;
+            flex-direction: column;
+            gap: 16px
+        }
+
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--line);
+            border-top-color: var(--ink);
+            border-radius: 50%;
+            animation: spin .7s linear infinite
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .page-loading span {
+            font-size: 14px;
+            color: var(--muted)
+        }
+
+        /* ---------- footer ---------- */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 56px 0 40px
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px
+        }
+
+        .foot .tag {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 34ch
+        }
+
+        .foot-links {
+            display: flex;
+            gap: 26px;
+            font-size: 14px;
+            color: var(--ink-2)
+        }
+
+        .copy {
+            margin-top: 34px;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+            padding-top: 22px
+        }
+
+        /* reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .8s var(--ease), transform .8s var(--ease)
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none
+        }
+
+        /* ---------- responsive ---------- */
+        @media(max-width:900px) {
+            nav.links {
+                display: none
+            }
+
+            .menu-toggle {
+                display: block
+            }
+
+            nav.links.show {
+                display: flex;
+                position: absolute;
+                top: 74px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                padding: 22px 28px;
+                gap: 18px;
+                align-items: flex-start
+            }
+
+            .pricing-grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .pricing-card.featured {
+                transform: none;
+            }
+
+            .pricing-card.featured:hover {
+                transform: translateY(-4px);
+            }
+        }
+
+        @media(max-width:768px) {
+            .pricing-grid {
+                grid-template-columns: 1fr
+            }
+
+            .skill-cell.cell-action {
+                width: auto;
+                padding-top: 4px;
+            }
+
+            .skills-table,
+            .skills-table tbody,
+            .skills-table tr,
+            .skills-table td {
+                display: block;
+                width: 100%;
+            }
+
+            .skill-row {
+                padding: 16px;
+                border-bottom: 1px solid var(--line);
+            }
+
+            .skill-cell {
+                padding: 0;
+            }
+
+            .skill-cell.cell-icon {
+                display: none;
+            }
+
+            .skill-cell.cell-info {
+                padding-left: 0;
+                margin-bottom: 12px;
+            }
+
+            .skill-cell.cell-action {
+                text-align: left;
+            }
+
+            .skill-row-title-line {
+                gap: 8px;
+            }
+
+            .skill-row-lock-overlay {
+                justify-content: flex-start;
+                padding-left: 16px;
+                background: rgba(255, 255, 255, 0.08);
+            }
+        }
+
+        /* ---------- chat widget ---------- */
+        .chat-fab {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 60;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--ink);
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 14px 36px -10px rgba(0, 0, 0, .55);
+            transition: transform .3s var(--ease)
+        }
+
+        .chat-fab:hover {
+            transform: scale(1.07)
+        }
+
+        .chat-fab img {
+            width: 34px;
+            height: auto;
+            filter: invert(1)
+        }
+
+        .chat-panel {
+            position: fixed;
+            right: 24px;
+            bottom: 98px;
+            z-index: 60;
+            width: min(380px, calc(100vw - 32px));
+            height: 520px;
+            max-height: calc(100vh - 130px);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            box-shadow: 0 30px 70px -28px rgba(0, 0, 0, .5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(16px) scale(.98);
+            pointer-events: none;
+            transition: .3s var(--ease)
+        }
+
+        .chat-panel.open {
+            opacity: 1;
+            transform: none;
+            pointer-events: auto
+        }
+
+        .chat-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .chat-head img.chat-mark {
+            width: 34px;
+            height: auto
+        }
+
+        .chat-head .t {
+            font-weight: 600;
+            font-size: 15px
+        }
+
+        .chat-head .s {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .chat-head .x {
+            margin-left: auto;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--muted);
+            line-height: 1
+        }
+
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--bg-soft)
+        }
+
+        .msg {
+            max-width: 84%;
+            padding: 11px 14px;
+            border-radius: 14px;
+            font-size: 14.5px;
+            line-height: 1.5;
+            white-space: pre-wrap
+        }
+
+        .msg.bot {
+            background: #fff;
+            border: 1px solid var(--line);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px
+        }
+
+        .msg.user {
+            background: var(--ink);
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px
+        }
+
+        .typing {
+            display: flex;
+            gap: 4px;
+            align-self: flex-start;
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 13px 14px;
+            border-radius: 14px
+        }
+
+        .typing span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--muted);
+            animation: blink 1.2s infinite
+        }
+
+        .typing span:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .typing span:nth-child(3) {
+            animation-delay: .4s
+        }
+
+        @keyframes blink {
+
+            0%,
+            60%,
+            100% {
+                opacity: .25
+            }
+
+            30% {
+                opacity: 1
+            }
+        }
+
+        .chat-foot {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid var(--line);
+            background: #fff
+        }
+
+        .chat-foot input {
+            flex: 1;
+            border-radius: 100px
+        }
+
+        .chat-foot button {
+            border: 0;
+            background: var(--ink);
+            color: #fff;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .chat-foot button svg {
+            width: 18px;
+            height: 18px
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="wrap nav">
+            <a class="brand" href="/" aria-label="MIVSO home">
+                <img class="logo" src="/logo-horizontal.png" alt="MIVSO" />
+            </a>
+            <nav class="links" id="navlinks">
+                <a href="/">Home</a>
+                <a href="/products" class="active">Products</a>
+                <a href="/#services">Services</a>
+                <a href="/#how">How it works</a>
+                <a href="/#about">About</a>
+                <a href="/#contact" class="btn">Get in touch</a>
+                <div class="profile-menu hidden" id="profileMenu">
+                    <button class="profile-icon" id="profileIcon" aria-label="Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="8" r="4" />
+                            <path d="M4 22c0-4 4-8 8-8s8 4 8 8" />
+                        </svg>
+                    </button>
+                    <div class="dropdown" id="profileDropdown">
+                        <span class="user-email" id="profileEmail"></span>
+                        <span class="pill" id="profilePill"></span>
+                        <hr />
+                        <button class="btn-sm ghost" id="logoutBtn" style="color:#d32f2f; border:1px solid #d32f2f">Sign out</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <!-- Toast notification -->
+    <div class="toast" id="toast"></div>
+
+    <main>
+
+        <!-- Page Hero -->
+        <section class="page-hero">
+            <img class="hero-mark" src="/mark-black.png" alt="" aria-hidden="true" />
+            <div class="wrap">
+                <span class="eyebrow reveal"><span class="dot"></span>AI Skills &amp; Products</span>
+                <h1 class="reveal">Portable AI skills. <em>Ready to deploy.</em></h1>
+                <p class="lead reveal">Pre-built and custom Claude skills that plug directly into your workflows.</p>
+            </div>
+        </section>
+
+        <!-- Access strip -->
+        <div class="wrap">
+            <div class="access-strip" id="authBar">
+                <div class="left" id="authStatus">
+                    <div class="spinner" style="width:16px;height:16px;border-width:2px"></div>
+                    <span style="font-size:13px;color:var(--muted)">Checking access…</span>
+                </div>
+                <div class="right" id="authActions"></div>
+            </div>
+        </div>
+
+        <!-- Loading state -->
+        <div class="wrap" id="loadingState">
+            <div class="page-loading">
+                <div class="spinner"></div>
+                <span>Loading products…</span>
+            </div>
+        </div>
+
+        <!-- Main Products Container (hidden initially) -->
+        <div id="productsSection" style="display:none">
+
+            <!-- SECTION 1: PRICING TIERS -->
+            <section class="pricing-section">
+                <div class="wrap">
+                    <div class="sec-head" style="text-align: center; margin-bottom: 40px;">
+                        <span class="kicker">PRICING</span>
+                        <h2>Real Estate AI Skills. One payment.</h2>
+                        <p>200 skills for U.S. residential agents — pick your tier.</p>
+                    </div>
+
+                    <div class="pricing-grid">
+                        <!-- Card 1: Top 50 -->
+                        <div class="pricing-card" id="card-starter">
+                            <span class="pricing-badge badge-grey">STARTER</span>
+                            <h3 class="card-title">Top 50</h3>
+                            <div class="card-price-row">
+                                <span class="price">$19</span>
+                            </div>
+                            <span class="sub-price">one-time · $0.38/skill</span>
+                            <hr class="card-divider" />
+                            <ul class="feature-list">
+                                <li><span class="check">✓</span> 50 highest-consensus skills</li>
+                                <li><span class="check">✓</span> Every skill an agent uses weekly</li>
+                                <li><span class="check">✓</span> Lead Gen, Listings, Buyer Rep</li>
+                                <li><span class="check">✓</span> Negotiation & Transaction Mgmt</li>
+                                <li><span class="check">✓</span> Client Retention & Compliance</li>
+                            </ul>
+                            <p class="who-block">"The starter kit — the 50 highest-consensus skills every agent uses
+                                weekly."</p>
+                            <button class="btn ghost card-cta-btn" data-tier="19">Get Top 50 →</button>
+                        </div>
+
+                        <!-- Card 2: Top 100 (Most Popular) -->
+                        <div class="pricing-card featured" id="card-popular">
+                            <span class="pricing-badge badge-black">MOST POPULAR</span>
+                            <h3 class="card-title">Top 100</h3>
+                            <div class="card-price-row">
+                                <span class="price">$29</span>
+                            </div>
+                            <span class="sub-price">one-time · $0.29/skill</span>
+                            <hr class="card-divider" />
+                            <ul class="feature-list">
+                                <li><span class="check">✓</span> Everything in Top 50</li>
+                                <li><span class="check">✓</span> +50 additional skills</li>
+                                <li><span class="check">✓</span> Full long-tail & niche segments</li>
+                                <li><span class="check">✓</span> Solo-agent business operations</li>
+                                <li><span class="check">✓</span> Cold outreach & drip campaigns</li>
+                                <li><span class="check">✓</span> CRM, admin & compliance ops</li>
+                            </ul>
+                            <p class="who-block">"The complete residential-agent system: full long-tail, niche segments,
+                                and solo-agent business ops."</p>
+                            <button class="btn card-cta-btn" data-tier="29">Get Top 100 →</button>
+                        </div>
+
+                        <!-- Card 3: Top 200 -->
+                        <div class="pricing-card" id="card-complete">
+                            <span class="pricing-badge badge-grey">COMPLETE</span>
+                            <h3 class="card-title">Top 200</h3>
+                            <div class="card-price-row">
+                                <span class="price">$39</span>
+                            </div>
+                            <span class="sub-price">one-time · $0.20/skill</span>
+                            <hr class="card-divider" />
+                            <ul class="feature-list">
+                                <li><span class="check">✓</span> Everything in Top 100</li>
+                                <li><span class="check">✓</span> +100 additional skills</li>
+                                <li><span class="check">✓</span> Commercial & property mgmt</li>
+                                <li><span class="check">✓</span> Mortgage & title ops</li>
+                                <li><span class="check">✓</span> Brokerage & team ops</li>
+                                <li><span class="check">✓</span> Compliance, 1031, AML/KYC</li>
+                            </ul>
+                            <p class="who-block">"The whole real-estate-professional suite: adds commercial, property
+                                management, mortgage, title, and brokerage ops."</p>
+                            <button class="btn ghost card-cta-btn" data-tier="39">Get Top 200 →</button>
+                        </div>
+
+                        <!-- Upgrade Card 1: Top 100 ($29) -->
+                        <div class="pricing-card featured" id="upgrade-card-29" style="display: none;">
+                            <span class="pricing-badge badge-black">UPGRADE</span>
+                            <h3 class="card-title">Top 100</h3>
+                            <div class="card-price-row">
+                                <span class="price">$29</span>
+                            </div>
+                            <span class="sub-price">one-time upgrade</span>
+                            <hr class="card-divider" />
+                            <ul class="feature-list">
+                                <li><span class="check">✓</span> Everything in your Top 50</li>
+                                <li><span class="check">✓</span> +50 additional skills</li>
+                                <li><span class="check">✓</span> Full long-tail & niche segments</li>
+                                <li><span class="check">✓</span> Solo-agent business operations</li>
+                                <li><span class="check">✓</span> Cold outreach & drip campaigns</li>
+                            </ul>
+                            <p class="who-block">"Unlock 50 more skills — the complete residential agent system."</p>
+                            <button class="btn card-cta-btn upgrade-cta-btn" data-tier="29">Upgrade to Top 100
+                                →</button>
+                        </div>
+
+                        <!-- Upgrade Card 2: Top 200 ($39) -->
+                        <div class="pricing-card" id="upgrade-card-39" style="display: none;">
+                            <span class="pricing-badge badge-grey">UPGRADE</span>
+                            <h3 class="card-title">Top 200</h3>
+                            <div class="card-price-row">
+                                <span class="price">$39</span>
+                            </div>
+                            <span class="sub-price">one-time upgrade</span>
+                            <hr class="card-divider" />
+                            <ul class="feature-list">
+                                <li><span class="check">✓</span> Everything in your current plan</li>
+                                <li><span class="check">✓</span> +100 additional skills</li>
+                                <li><span class="check">✓</span> Commercial & property mgmt</li>
+                                <li><span class="check">✓</span> Brokerage & team ops</li>
+                                <li><span class="check">✓</span> Compliance, 1031, AML/KYC</li>
+                            </ul>
+                            <p class="who-block">"The full real-estate-professional suite."</p>
+                            <button class="btn ghost card-cta-btn upgrade-cta-btn" data-tier="39">Upgrade to Top 200
+                                →</button>
+                        </div>
+                    </div>
+
+                    <!-- Value Prop Strip -->
+                    <div class="value-prop-strip">
+                        <div class="stat-col">
+                            <span class="stat-val">$0.38<span class="unit">/skill</span></span>
+                            <span class="stat-lbl">Top 50</span>
+                        </div>
+                        <div class="stat-arrow">→</div>
+                        <div class="stat-col">
+                            <span class="stat-val">$0.29<span class="unit">/skill</span></span>
+                            <span class="stat-lbl">Top 100</span>
+                        </div>
+                        <div class="stat-arrow">→</div>
+                        <div class="stat-col">
+                            <span class="stat-val">$0.20<span class="unit">/skill</span></span>
+                            <span class="stat-lbl">Top 200</span>
+                        </div>
+                        <div class="caption">"Per-skill price drops as your bundle grows."</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- SECTION 2: SKILLS CATALOG -->
+            <section class="catalog-section" id="catalog-section">
+                <div class="wrap">
+                    <div class="sec-head" style="margin-bottom: 40px;">
+                        <span class="kicker">WHAT'S INSIDE</span>
+                        <h2>200 skills. 8 categories.</h2>
+                        <p>Browse the full catalog — filter by tier or category.</p>
+                    </div>
+
+                    <div id="tier-access-banner" style="display:none; background:#f0fdf4;
+                    border:1px solid #bbf7d0; color:#166534; padding:12px 20px;
+                    border-radius:8px; margin-bottom:24px; font-size:14px;
+                    font-weight:500;"></div>
+
+                    <!-- Filter Bar -->
+                    <div class="filter-bar">
+                        <div class="filter-group-title">Tier Filter</div>
+                        <div class="filter-row" id="tierFilters">
+                            <button class="filter-btn active" data-tier="all">All</button>
+                            <button class="filter-btn" data-tier="19">Top 50 — $19</button>
+                            <button class="filter-btn" data-tier="29">Top 100 — $29</button>
+                            <button class="filter-btn" data-tier="39">Top 200 — $39</button>
+                        </div>
+                        <div class="filter-group-title" style="margin-top: 18px;">Category Filter</div>
+                        <div class="filter-row scrollable" id="categoryFilters">
+                            <button class="filter-btn active" data-category="all">All Categories</button>
+                            <button class="filter-btn" data-category="lead-generation">Lead Generation</button>
+                            <button class="filter-btn" data-category="listing-and-seller">Listing & Seller</button>
+                            <button class="filter-btn" data-category="buyer-representation">Buyer Representation</button>
+                            <button class="filter-btn" data-category="marketing-and-content">Marketing & Content</button>
+                            <button class="filter-btn" data-category="negotiation">Negotiation</button>
+                            <button class="filter-btn" data-category="transaction-mgmt">Transaction Mgmt</button>
+                            <button class="filter-btn" data-category="client-retention">Client Retention</button>
+                            <button class="filter-btn" data-category="business-ops">Business Ops</button>
+                            <button class="filter-btn" data-category="compliance-and-admin">Compliance & Admin</button>
+                            <button class="filter-btn" data-category="brokerage-ops">Brokerage Ops</button>
+                            <button class="filter-btn" data-category="commercial-re">Commercial RE</button>
+                            <button class="filter-btn" data-category="property-mgmt">Property Mgmt</button>
+                            <button class="filter-btn" data-category="title-and-escrow">Title & Escrow</button>
+                            <button class="filter-btn" data-category="mortgage">Mortgage</button>
+                        </div>
+                    </div>
+
+                    <!-- Accordions Container -->
+                    <div class="accordions-container" id="productsGrid">
+                        <!-- Category accordions injected by JS -->
+                    </div>
+
+                </div>
+            </section>
+        </div>
+
+        <!-- Email Modal -->
+        <div class="modal-backdrop" id="emailModal">
+            <div class="modal">
+                <h2 id="modalTitle">Get full access</h2>
+                <div class="subline" id="modalSubline">Enter your email — you'll be redirected to checkout and receive a
+                    login link after payment.</div>
+                <input type="email" id="modalEmail" class="modal-input" placeholder="you@company.com"
+                    autocomplete="email" />
+                <div class="modal-error" id="modalError"></div>
+                <button class="modal-cta" id="modalSubmitBtn">Continue to checkout →</button>
+                <button class="modal-dismiss" id="modalCancelBtn">Cancel</button>
+            </div>
+        </div>
+
+
+
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <div class="brand" style="margin-bottom:12px">
+                        <img class="logo" src="/logo-horizontal.png" alt="MIVSO" style="height:26px" />
+                    </div>
+                    <div class="tag">Movable Intelligent Virtual Skills &amp; Operations. Portable AI, deployable
+                        anywhere.</div>
+                </div>
+                <div class="foot-links">
+                    <a href="/">Home</a>
+                    <a href="/products">Products</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="copy">© <span id="yr"></span> MIVSO. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- CHAT WIDGET -->
+    <button class="chat-fab" id="chatFab" aria-label="Open chat"><img src="/mark-black.png" alt="MIVSO" /></button>
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="MIVSO assistant">
+        <div class="chat-head">
+            <img class="chat-mark" src="/mark-black.png" alt="MIVSO" />
+            <div>
+                <div class="t">MIVSO Assistant</div>
+                <div class="s">Ask about our AI services</div>
+            </div>
+            <button class="x" id="chatClose" aria-label="Close">×</button>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-foot">
+            <input id="chatInput" placeholder="Type a message…" autocomplete="off" />
+            <button id="chatSend" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M4 12l16-8-6 16-2.5-6L4 12z" />
+                </svg></button>
+        </div>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+    <!-- Skills Database Mapping -->
+    <script src="/skills-data.js"></script>
+
+    <script>
+        // ---- Config ----
+        const SUPABASE_URL = 'https://pewinzitxgtnadmsyhxy.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBld2lueml0eGd0bmFkbXN5aHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwODk3OTUsImV4cCI6MjA5NjY2NTc5NX0.yzqoc1amNtHEA9U3vexfowonHak7Ak2BUfNWZvEBs0w';
+
+        const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // ---- DOM ----
+        const $ = (id) => document.getElementById(id);
+        const authBar = $('authBar');
+        const authStatus = $('authStatus');
+        const authActions = $('authActions');
+        const loadingState = $('loadingState');
+        const productsSection = $('productsSection');
+        const productsGrid = $('productsGrid');
+        const toast = $('toast');
+
+        // Profile Menu DOM
+        const profileMenu = $('profileMenu');
+        const profileIcon = $('profileIcon');
+        const profileDropdown = $('profileDropdown');
+        const profileEmail = $('profileEmail');
+        const profilePill = $('profilePill');
+        const logoutBtn = $('logoutBtn');
+
+        if (profileIcon) {
+            profileIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                profileDropdown.classList.toggle('open');
+            });
+            document.addEventListener('click', (e) => {
+                if (!profileMenu.contains(e.target)) {
+                    profileDropdown.classList.remove('open');
+                }
+            });
+        }
+
+        // Modal DOM
+        const emailModal = $('emailModal');
+        const modalTitle = $('modalTitle');
+        const modalSubline = $('modalSubline');
+        const modalEmail = $('modalEmail');
+        const modalError = $('modalError');
+        const modalSubmitBtn = $('modalSubmitBtn');
+        const modalCancelBtn = $('modalCancelBtn');
+
+        $('yr').textContent = new Date().getFullYear();
+
+        // ---- State ----
+        let currentUserSession = null;
+        let currentUserPaidStatus = false;
+        let currentUserTier = 0; // 0: Guest, 19: Starter, 29: Top 100, 39: Complete (Top 200)
+
+        let selectedCheckoutTier = 39; // Default selected tier
+
+        // Active Filter States
+        let selectedTierFilter = 'all'; // 'all', '19', '29', '39'
+        let selectedCategoryFilters = new Set(['all']); // Set of active category filter slugs
+
+
+
+        // ---- Toast ----
+        let toastTimeout;
+        function showToast(msg, type = 'info') {
+            toast.textContent = msg;
+            toast.className = 'toast ' + type + ' show';
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // ---- Manifest cache ----
+        let _manifestCache = null;
+        async function fetchManifest() {
+            if (_manifestCache) return _manifestCache;
+            try {
+                const res = await fetch('/api/skills-manifest');
+                if (!res.ok) throw new Error('Manifest fetch failed: ' + res.status);
+                _manifestCache = await res.json();
+                return _manifestCache;
+            } catch (err) {
+                console.error('[products] Manifest fetch error:', err);
+                showToast('Could not load skills. Please refresh the page.', 'err');
+                return null;
+            }
+        }
+
+        // ---- Monoline Icons Mapping ----
+        const MONOLINE_ICONS = {
+            "01. Lead Generation": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path><circle cx="9" cy="7" r="4"></circle><path d="M23 21v-2a4 4 0 0 0-3-3.87"></path><path d="M16 3.13a4 4 0 0 1 0 7.75"></path></svg>`,
+            "02. Listing & Seller": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>`,
+            "03. Buyer Representation": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="11" r="8"></circle><line x1="21" y1="21" x2="16.65" y2="16.65"></line></svg>`,
+            "04. Marketing & Content": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M11 5L6 9H2v6h4l5 4V5z"></path><path d="M23 9v6"></path><path d="M20 6v12"></path></svg>`,
+            "05. Negotiation": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path><path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path></svg>`,
+            "06. Transaction Mgmt": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h2a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V6a2 2 0 0 1 2-2h2"></path><rect x="8" y="2" width="8" height="4" rx="1" ry="1"></rect><line x1="9" y1="9" x2="15" y2="9"></line><line x1="9" y1="13" x2="15" y2="13"></line><line x1="9" y1="17" x2="15" y2="17"></line></svg>`,
+            "07. Client Retention & Business Ops": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"></path></svg>`,
+            "08. Compliance, Admin & Brokerage Ops": `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>`
+        };
+
+        const EXTERNAL_LINK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"></polyline><line x1="10" y1="14" x2="21" y2="3"></line></svg>`;
+        const LOCK_ICON = `<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect><path d="M7 11V7a5 5 0 0 1 10 0v4"></path></svg>`;
+
+        // ---- Render Products UI ----
+        async function renderProductsUI(hasPaid, userTier) {
+            productsGrid.innerHTML = '';
+
+            const manifest = await fetchManifest();
+            if (!manifest) return;
+
+            // Loop categories and render accordions
+            manifest.categories.forEach((category, index) => {
+                const categoryCleanName = category.name.replace(/^\d+[\s._-]*/, '');
+
+                // Create accordion block
+                const accBlock = document.createElement('div');
+                accBlock.className = 'accordion-block reveal accordion-category';
+                accBlock.dataset.categorySlug = category.slug;
+
+                // Open first accordion by default on desktop, closed on mobile
+                const isDesktop = window.innerWidth >= 768;
+                if (index === 0 && isDesktop) {
+                    accBlock.classList.add('open');
+                }
+
+                const catIcon = MONOLINE_ICONS[category.name] || '';
+
+                accBlock.innerHTML = `
+                    <div class="accordion-header">
+                        <div class="accordion-title-wrap">
+                            <span class="accordion-arrow">▶</span>
+                            <span class="accordion-title">${categoryCleanName}</span>
+                        </div>
+                        <span class="accordion-count-badge skill-count" id="count-badge-${category.slug}">${category.skills.length} SKILLS</span>
+                    </div>
+                    <div class="accordion-content">
+                        <table class="skills-table">
+                            <tbody id="table-body-${category.slug}">
+                                <!-- Skill rows will be dynamically populated -->
+                            </tbody>
+                        </table>
+                    </div>
+                `;
+
+                // Bind accordion toggle
+                const header = accBlock.querySelector('.accordion-header');
+                header.addEventListener('click', () => {
+                    accBlock.classList.toggle('open');
+                });
+
+                productsGrid.appendChild(accBlock);
+
+                // Populate skills inside table
+                const tbody = accBlock.querySelector(`#table-body-${category.slug}`);
+                let visibleCount = 0;
+
+                category.skills.forEach(skill => {
+                    const meta = REAL_ESTATE_SKILLS_METADATA[skill.slug] || {};
+                    const skillTier = meta.tier || 19;
+                    const skillPersona = meta.persona || 'BUYER & SELLER';
+                    const skillLever = meta.lever || 'Revenue ↑';
+                    const skillDesc = meta.desc || 'AI skill to optimize agent operations.';
+
+                    // Filter matching for Category and Tier
+                    const matchesTier = (selectedTierFilter === 'all' || selectedTierFilter === String(skillTier));
+
+                    // Determine category filter mapping
+                    // category.slug is generated by the manifest from the folder name:
+                    // e.g. "Lead Generation" → "lead-generation", "listing-and-seller" → "listing-and-seller"
+                    let mapsToCategory = false;
+                    if (selectedCategoryFilters.has('all')) {
+                        mapsToCategory = true;
+                    } else {
+                        // Direct 1-to-1 folder slug mappings
+                        if (selectedCategoryFilters.has('lead-generation') && category.slug === 'lead-generation') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('listing-and-seller') && category.slug === 'listing-and-seller') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('buyer-representation') && category.slug === 'buyer-representation') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('marketing-and-content') && category.slug === 'marketing-and-content') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('negotiation') && category.slug === 'negotiation') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('transaction-mgmt') && category.slug === 'transaction-mgmt') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('client-retention') && category.slug === 'client-retention') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('business-ops') && category.slug === 'business-ops') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('compliance-and-admin') && category.slug === 'compliance-and-admin') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('brokerage-ops') && category.slug === 'brokerage-ops') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('commercial-re') && category.slug === 'commercial-re') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('property-mgmt') && category.slug === 'property-mgmt') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('title-and-escrow') && category.slug === 'title-and-escrow') mapsToCategory = true;
+                        if (selectedCategoryFilters.has('mortgage') && category.slug === 'mortgage') mapsToCategory = true;
+                    }
+
+                    const isVisible = matchesTier && mapsToCategory;
+
+                    // Paywall logic
+                    // If hasPaid = true and userTier >= skillTier: UNLOCKED
+                    // Else if skillTier = 19 (Top 50): UNLOCKED (free preview)
+                    // Else: BLURRED
+                    const isUnlocked = (hasPaid && userTier >= skillTier) || (skillTier === 19);
+
+                    const tr = document.createElement('tr');
+                    tr.className = `skill-row ${isUnlocked ? '' : 'blurred'}`;
+                    tr.setAttribute('data-skill-tier', skillTier);
+                    tr.setAttribute('data-skill-category', categoryCleanName);
+                    tr.dataset.skillSlug = skill.slug;
+                    tr.style.display = isVisible ? '' : 'none';
+
+                    if (isVisible) visibleCount++;
+
+                    // Persona badge color class — normalise to a safe CSS class suffix
+                    const personaClass = `badge-persona-${skillPersona.toLowerCase().replace(/\s*&\s*/g, '_and_').replace(/\//g, '-').replace(/\s+/g, '_')}`;
+
+                    // Business lever class
+                    let leverClass = 'badge-lever-revenue';
+                    if (skillLever.includes('Cost')) leverClass = 'badge-lever-cost';
+                    if (skillLever.includes('Risk') || skillLever.includes('Opportunity')) leverClass = 'badge-lever-risk';
+
+                    // Lock button CTA text
+                    const lockCtaText = skillTier === 29 ? 'Unlock with Top 100 →' : 'Unlock with Top 200 →';
+
+                    tr.innerHTML = `
+                        <td class="skill-cell cell-icon">
+                            <div class="skill-cell-icon-box">
+                                ${catIcon}
+                            </div>
+                        </td>
+                        <td class="skill-cell cell-info">
+                            <div class="skill-row-title-line">
+                                <span class="skill-row-name">${meta.name || skill.name}</span>
+                                <span class="badge ${personaClass}">${skillPersona}</span>
+                                <span class="badge badge-tier-${skillTier}">$${skillTier}</span>
+                                <span class="badge ${leverClass}">${skillLever}</span>
+                            </div>
+                            <div class="skill-row-desc">${skillDesc}</div>
+                        </td>
+                        <td class="skill-cell cell-action">
+                            ${isUnlocked
+                            ? `<a href="/skill-detail.html?skill=${encodeURIComponent(skill.slug)}" class="view-skill-link">
+                                    View skill ${EXTERNAL_LINK_ICON}
+                                   </a>`
+                            : `<button class="lock-cta-btn" data-tier="${skillTier}">
+                                    ${LOCK_ICON} ${lockCtaText}
+                                   </button>`
+                        }
+                        </td>
+                    `;
+
+                    // Bind checkout action on lock buttons
+                    const lockBtn = tr.querySelector('.lock-cta-btn');
+                    if (lockBtn) {
+                        lockBtn.addEventListener('click', (e) => {
+                            e.stopPropagation();
+                            initiateCheckoutFlow(skillTier);
+                        });
+                    }
+
+                    tbody.appendChild(tr);
+                });
+
+                // Update count badge & hide accordion if no visible skills
+                const countBadge = accBlock.querySelector(`#count-badge-${category.slug}`);
+                countBadge.textContent = `${visibleCount} of ${category.skills.length} SKILLS`;
+
+                if (visibleCount === 0) {
+                    accBlock.style.display = 'none';
+                } else {
+                    accBlock.style.display = '';
+                }
+            });
+
+            animateReveal();
+        }
+
+        function animateReveal() {
+            setTimeout(() => {
+                document.querySelectorAll('.reveal').forEach((el, i) => {
+                    el.style.transitionDelay = (i % 9) * 40 + 'ms';
+                    el.classList.add('in');
+                });
+            }, 50);
+        }
+
+        // ---- Filter Handlers ----
+        function setupFilters() {
+            // Tier Filters
+            const tierFilters = $('tierFilters');
+            tierFilters.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    tierFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                    btn.classList.add('active');
+                    selectedTierFilter = btn.dataset.tier;
+                    renderProductsUI(currentUserPaidStatus, currentUserTier);
+                });
+            });
+
+            // Category Filters
+            const catFilters = $('categoryFilters');
+            catFilters.querySelectorAll('.filter-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    const clickedCat = btn.dataset.category;
+
+                    if (clickedCat === 'all') {
+                        // Deactivate all others, activate All
+                        catFilters.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                        btn.classList.add('active');
+                        selectedCategoryFilters.clear();
+                        selectedCategoryFilters.add('all');
+                    } else {
+                        // Remove "All"
+                        $('categoryFilters').querySelector('[data-category="all"]').classList.remove('active');
+                        selectedCategoryFilters.delete('all');
+
+                        if (btn.classList.contains('active')) {
+                            btn.classList.remove('active');
+                            selectedCategoryFilters.delete(clickedCat);
+                        } else {
+                            btn.classList.add('active');
+                            selectedCategoryFilters.add(clickedCat);
+                        }
+
+                        // If nothing is selected, select "All"
+                        if (selectedCategoryFilters.size === 0) {
+                            $('categoryFilters').querySelector('[data-category="all"]').classList.add('active');
+                            selectedCategoryFilters.add('all');
+                        }
+                    }
+                    renderProductsUI(currentUserPaidStatus, currentUserTier);
+                });
+            });
+        }
+
+        // ---- Auth flow ----
+        async function init() {
+            // Check URL params for payment status
+            const params = new URLSearchParams(window.location.search);
+            if (params.get('paid') === 'true') {
+                showToast('✓ Payment received! Check your email for your access link.', 'ok');
+                sessionStorage.removeItem('checkout_email');
+                sessionStorage.removeItem('checkout_tier');
+                window.history.replaceState({}, '', '/products');
+            }
+            if (params.get('cancelled') === 'true') {
+                showToast('Payment was cancelled.', 'err');
+                window.history.replaceState({}, '', '/products');
+            }
+
+            // Setup filters
+            setupFilters();
+
+            // Check session
+            const { data: { session }, error } = await sb.auth.getSession();
+            currentUserSession = session;
+
+            if (!session) {
+                // No session — guest view
+                updateAuthDisplay(false, 0);
+                currentUserPaidStatus = false;
+                currentUserTier = 0;
+                await renderProductsUI(false, 0);
+
+                loadingState.style.display = 'none';
+                productsSection.style.display = '';
+                profileMenu.classList.add('hidden');
+
+                filterSkillsByTier(null);
+                showTierBanner(null);
+                updatePricingVisibility(null);
+                return;
+            }
+
+            // Session exists — check has_paid & tier
+            const { data: userData, error: userError } = await supabaseCheckUser(session.user.id);
+
+            const hasPaid = userData?.has_paid === true;
+            const userTier = userData?.tier || null;
+            const userEmail = session.user.email;
+
+            currentUserPaidStatus = hasPaid;
+            currentUserTier = userTier || (hasPaid ? 39 : 0);
+
+            updateAuthDisplay(hasPaid, currentUserTier);
+            await renderProductsUI(hasPaid, currentUserTier);
+
+            if (hasPaid) {
+                profileMenu.classList.remove('hidden');
+                profileEmail.textContent = userEmail;
+                profilePill.textContent = `PRO (T${currentUserTier})`;
+                profilePill.className = `pill pro badge-tier-${currentUserTier}`;
+            } else {
+                profileMenu.classList.remove('hidden');
+                profileEmail.textContent = userEmail;
+                profilePill.textContent = 'PREVIEW';
+                profilePill.className = 'pill preview';
+            }
+
+
+
+            loadingState.style.display = 'none';
+            productsSection.style.display = '';
+
+            // Logout handler
+            if (logoutBtn) {
+                logoutBtn.addEventListener('click', async () => {
+                    await sb.auth.signOut();
+                    window.location.reload();
+                });
+            }
+
+            filterSkillsByTier(userTier);
+            showTierBanner(userTier);
+            updatePricingVisibility(userTier);
+        }
+
+        async function supabaseCheckUser(userId) {
+            try {
+                return await sb
+                    .from('users')
+                    .select('has_paid, tier')
+                    .eq('id', userId)
+                    .single();
+            } catch (e) {
+                console.error("Supabase user fetch error:", e);
+                return { data: null };
+            }
+        }
+
+        function updateAuthDisplay(hasPaid, tierVal) {
+            if (hasPaid) {
+                authStatus.innerHTML = `<span class="pill pro badge-tier-${tierVal}">PRO Tier $${tierVal}</span>`;
+                authActions.innerHTML = '';
+            } else {
+                authStatus.innerHTML = '<span class="pill preview">PREVIEW</span><button class="access-link" id="topCheckoutBtn">Unlock premium real estate skills <span class="arrow">→</span></button>';
+                authActions.innerHTML = '';
+
+                const topCheckoutBtn = $('topCheckoutBtn');
+                if (topCheckoutBtn) {
+                    topCheckoutBtn.addEventListener('click', () => {
+                        initiateCheckoutFlow(29); // Default to Top 100 on top banner click
+                    });
+                }
+            }
+        }
+
+        // ---- Checkout Flow triggers ----
+        function initiateCheckoutFlow(tier) {
+            selectedCheckoutTier = tier;
+
+            // Check session first
+            if (currentUserSession?.user?.email) {
+                // Signed in - go direct
+                runCheckout(currentUserSession.user.email, selectedCheckoutTier);
+            } else {
+                // Show modal
+                modalEmail.value = '';
+                modalError.textContent = '';
+                modalInputErr(false);
+
+                // Customize modal title based on selected tier
+                const tierName = tier === 19 ? 'Top 50 ($19)' : (tier === 29 ? 'Top 100 ($29)' : 'Top 200 ($39)');
+                modalTitle.textContent = `Unlock ${tierName}`;
+                modalSubline.textContent = `Enter your email — you'll be redirected to checkout for ${tierName} and receive a login link.`;
+                modalSubmitBtn.textContent = `Continue to checkout ($${tier}) →`;
+
+                emailModal.classList.add('open');
+                setTimeout(() => modalEmail.focus(), 100);
+            }
+        }
+
+        // Bind CTA buttons in Section 1 Pricing Cards
+        document.querySelectorAll('.card-cta-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                if (btn.classList.contains('upgrade-cta-btn')) return;
+                const tier = parseInt(btn.dataset.tier);
+                initiateCheckoutFlow(tier);
+            });
+        });
+
+        // Bind upgrade card buttons
+        document.querySelectorAll('.upgrade-cta-btn').forEach(btn => {
+            btn.addEventListener('click', async (e) => {
+                const tier = parseInt(btn.dataset.tier);
+                const email = currentUserSession?.user?.email;
+                if (!email) {
+                    showToast('Please sign in to upgrade.', 'err');
+                    return;
+                }
+
+                btn.disabled = true;
+                const originalText = btn.textContent;
+                btn.textContent = 'Redirecting…';
+
+                try {
+                    sessionStorage.setItem('checkout_email', email);
+                    sessionStorage.setItem('checkout_tier', String(tier));
+
+                    const res = await fetch('/api/create-checkout', {
+                        method: 'POST',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify({ email, tier }),
+                    });
+                    const data = await res.json();
+                    if (data.url) {
+                        window.location.href = data.url;
+                    } else {
+                        showToast(data.error || 'Failed to start upgrade checkout', 'err');
+                        btn.disabled = false;
+                        btn.textContent = originalText;
+                    }
+                } catch (err) {
+                    showToast('Network error. Please try again.', 'err');
+                    btn.disabled = false;
+                    btn.textContent = originalText;
+                }
+            });
+        });
+
+        // ---- Pricing visibility controller ----
+        function updatePricingVisibility(userTier) {
+            const pricingSection = document.querySelector('.pricing-section');
+            const cardStarter = $('card-starter');
+            const cardPopular = $('card-popular');
+            const cardComplete = $('card-complete');
+            const upgradeCard29 = $('upgrade-card-29');
+            const upgradeCard39 = $('upgrade-card-39');
+
+            if (!pricingSection) return;
+
+            // Reset defaults
+            pricingSection.style.display = '';
+            if (cardStarter) cardStarter.style.display = '';
+            if (cardPopular) cardPopular.style.display = '';
+            if (cardComplete) cardComplete.style.display = '';
+            if (upgradeCard29) upgradeCard29.style.display = 'none';
+            if (upgradeCard39) upgradeCard39.style.display = 'none';
+
+            // Apply logic
+            if (userTier === null || userTier === 0) {
+                // Show all 3 original cards, hide upgrades
+                if (cardStarter) cardStarter.style.display = '';
+                if (cardPopular) cardPopular.style.display = '';
+                if (cardComplete) cardComplete.style.display = '';
+                if (upgradeCard29) upgradeCard29.style.display = 'none';
+                if (upgradeCard39) upgradeCard39.style.display = 'none';
+            } else if (userTier === 19) {
+                // Hide the entire pricing section completely
+                pricingSection.style.display = 'none';
+            } else if (userTier === 29) {
+                // Hide original 3 cards, show only $39 upgrade card
+                if (cardStarter) cardStarter.style.display = 'none';
+                if (cardPopular) cardPopular.style.display = 'none';
+                if (cardComplete) cardComplete.style.display = 'none';
+                if (upgradeCard29) upgradeCard29.style.display = 'none';
+                if (upgradeCard39) upgradeCard39.style.display = '';
+            } else if (userTier === 39) {
+                // Hide entire pricing section completely
+                pricingSection.style.display = 'none';
+            }
+        }
+
+        // ---- Skills visibility controller ----
+        function filterSkillsByTier(userTier) {
+            const allSkillRows = document.querySelectorAll('[data-skill-tier]');
+
+            allSkillRows.forEach(row => {
+                const skillTier = parseInt(row.getAttribute('data-skill-tier'));
+
+                if (userTier === null) {
+                    // Guest: show all, blur $29 and $39
+                    row.style.display = '';
+                    if (skillTier === 29 || skillTier === 39) {
+                        row.classList.add('skill-locked');
+                    } else {
+                        row.classList.remove('skill-locked');
+                    }
+                } else if (userTier === 19) {
+                    // Only show $19 skills
+                    row.style.display = skillTier === 19 ? '' : 'none';
+                    row.classList.remove('skill-locked');
+                } else if (userTier === 29) {
+                    // Show $19 and $29 skills
+                    row.style.display = (skillTier === 19 || skillTier === 29) ? '' : 'none';
+                    row.classList.remove('skill-locked');
+                } else if (userTier === 39) {
+                    // Show all skills
+                    row.style.display = '';
+                    row.classList.remove('skill-locked');
+                }
+            });
+
+            // Update accordion skill counts to only count visible skills
+            document.querySelectorAll('.accordion-category').forEach(accordion => {
+                const visibleSkills = accordion.querySelectorAll(
+                    '[data-skill-tier]:not([style*="display: none"])'
+                ).length;
+                const countBadge = accordion.querySelector('.skill-count');
+                if (countBadge) countBadge.textContent = visibleSkills + ' SKILLS';
+
+                // Hide entire accordion if it has no visible skills
+                accordion.style.display = visibleSkills === 0 ? 'none' : '';
+            });
+        }
+
+        // ---- Tier access banner ----
+        function showTierBanner(userTier) {
+            const banner = document.getElementById('tier-access-banner');
+            if (!banner) return;
+
+            const messages = {
+                19: 'You have access to 50 skills in your Top 50 plan.',
+                29: 'You have access to 100 skills in your Top 100 plan.',
+                39: 'You have access to all 200 skills in your Top 200 plan.'
+            };
+
+            if (userTier && messages[userTier]) {
+                banner.textContent = messages[userTier];
+                banner.style.display = 'block';
+            } else {
+                banner.style.display = 'none';
+            }
+        }
+
+        // ---- Run Checkout ----
+        async function runCheckout(email, tier) {
+            // Find appropriate button to disable (either card, lock overlay or modal submit)
+            let btnEl = modalSubmitBtn;
+            const originalText = modalSubmitBtn.textContent;
+
+            btnEl.disabled = true;
+            btnEl.textContent = 'Redirecting…';
+
+            try {
+                sessionStorage.setItem('checkout_email', email);
+                sessionStorage.setItem('checkout_tier', String(tier));
+
+                const res = await fetch('/api/create-checkout', {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({ email, tier }),
+                });
+                const data = await res.json();
+                if (data.url) {
+                    window.location.href = data.url;
+                } else {
+                    modalError.textContent = data.error || 'Failed to start checkout';
+                    modalInputErr(true);
+                    btnEl.disabled = false;
+                    btnEl.textContent = originalText;
+                }
+            } catch (err) {
+                modalError.textContent = 'Network error. Please try again.';
+                modalInputErr(true);
+                btnEl.disabled = false;
+                btnEl.textContent = originalText;
+            }
+        }
+
+        // ---- Modal Handlers ----
+        function modalInputErr(isErr) {
+            if (isErr) {
+                modalEmail.classList.add('err');
+            } else {
+                modalEmail.classList.remove('err');
+                modalError.textContent = '';
+            }
+        }
+
+        modalEmail.addEventListener('input', () => modalInputErr(false));
+
+        modalCancelBtn.addEventListener('click', () => {
+            emailModal.classList.remove('open');
+        });
+
+        modalSubmitBtn.addEventListener('click', async () => {
+            const email = modalEmail.value.trim();
+            if (!email || !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(email)) {
+                modalError.textContent = 'Please enter a valid email address.';
+                modalInputErr(true);
+                return;
+            }
+
+            runCheckout(email, selectedCheckoutTier);
+        });
+
+        modalEmail.addEventListener('keydown', e => {
+            if (e.key === 'Enter') modalSubmitBtn.click();
+            if (e.key === 'Escape') modalCancelBtn.click();
+        });
+
+        // ---- Header scroll ----
+        const header = document.getElementById('header');
+        addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8));
+
+        // ---- Mobile menu ----
+        const mt = document.getElementById('menuToggle'), nl = document.getElementById('navlinks');
+        mt.addEventListener('click', () => nl.classList.toggle('show'));
+        nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('show')));
+
+        // ---- Chat widget ----
+        const chatFab = $('chatFab'), chatPanel = $('chatPanel'),
+            chatBody = $('chatBody'), chatInput = $('chatInput'),
+            chatSend = $('chatSend'), chatClose = $('chatClose');
+        let chatHistory = [];
+
+        function openChat() {
+            chatPanel.classList.add('open');
+            if (!chatHistory.length) chatBotSay("Hi! I'm the MIVSO assistant. I can tell you about our Real Estate AI skills catalog, agent templates, pricing plans ($19/$29/$39) or help you choose the right tier. What can I do for you today?");
+            chatInput.focus();
+        }
+        function closeChat() { chatPanel.classList.remove('open'); }
+
+        chatFab.addEventListener('click', () => chatPanel.classList.contains('open') ? closeChat() : openChat());
+        chatClose.addEventListener('click', closeChat);
+
+        function chatBubble(text, who) { const d = document.createElement('div'); d.className = 'msg ' + who; d.textContent = text; chatBody.appendChild(d); chatBody.scrollTop = chatBody.scrollHeight; return d; }
+        function chatBotSay(t) { chatBubble(t, 'bot'); chatHistory.push({ role: 'assistant', content: t }); }
+        function chatTyping() { const d = document.createElement('div'); d.className = 'typing'; d.innerHTML = '<span></span><span></span><span></span>'; chatBody.appendChild(d); chatBody.scrollTop = chatBody.scrollHeight; return d; }
+
+        async function chatSendMsg() {
+            const text = chatInput.value.trim(); if (!text) return;
+            chatBubble(text, 'user'); chatHistory.push({ role: 'user', content: text }); chatInput.value = '';
+            const t = chatTyping();
+            try {
+                const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: chatHistory }) });
+                const j = await r.json();
+                t.remove();
+                chatBotSay(j.reply || "I'm having trouble right now — please use the contact form and we'll reply fast.");
+            } catch (err) { t.remove(); chatBotSay("Connection hiccup. Please try again, or use the contact form."); }
+        }
+        chatSend.addEventListener('click', chatSendMsg);
+        chatInput.addEventListener('keydown', e => { if (e.key === 'Enter') chatSendMsg(); });
+
+        // ---- Init ----
+        (async () => {
+            await init();
+            // After dynamic content is rendered, honour the #catalog-section hash
+            if (window.location.hash === '#catalog-section') {
+                const target = document.getElementById('catalog-section');
+                if (target) {
+                    setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
+                }
+            }
+        })();
+    </script>
+</body>
+
+</html>

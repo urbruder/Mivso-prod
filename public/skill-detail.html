@@ -1,0 +1,1519 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Skill Detail — MIVSO</title>
+    <meta name="description" content="View and download MIVSO AI skill files with integration guides for every major AI platform." />
+    <meta property="og:title" content="MIVSO Skill Detail" />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/mark-black.png" />
+    <style>
+        :root {
+            --ink: #0a0a0a;
+            --ink-2: #3a3a3a;
+            --muted: #6b6b6b;
+            --line: #e7e7e7;
+            --bg: #ffffff;
+            --bg-soft: #f6f6f4;
+            --radius: 16px;
+            --maxw: 1140px;
+            --ease: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html { scroll-behavior: smooth; }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, .display {
+            font-family: "Space Grotesk", "Inter", sans-serif;
+            letter-spacing: -.02em;
+            line-height: 1.05;
+            font-weight: 600;
+        }
+
+        a { color: inherit; text-decoration: none; }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 28px;
+        }
+
+        .wordmark {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: .34em;
+            text-transform: uppercase;
+        }
+
+        /* ---------- header ---------- */
+        header {
+            position: fixed;
+            top: 0; left: 0; right: 0;
+            z-index: 50;
+            backdrop-filter: saturate(180%) blur(14px);
+            background: rgba(255, 255, 255, .72);
+            border-bottom: 1px solid transparent;
+            transition: border-color .4s var(--ease), background .4s var(--ease);
+        }
+
+        header.scrolled { border-color: var(--line); }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 74px;
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+
+        .brand img.logo {
+            height: 30px;
+            width: auto;
+            display: block;
+        }
+
+        nav.links {
+            display: flex;
+            align-items: center;
+            gap: 34px;
+        }
+
+        nav.links a {
+            font-size: 14.5px;
+            color: var(--ink-2);
+            font-weight: 500;
+            transition: color .2s;
+        }
+
+        nav.links a:hover { color: var(--ink); }
+
+        nav.links a.active {
+            color: var(--ink);
+            font-weight: 600;
+        }
+
+        nav.links a.btn { color: #fff; }
+        nav.links a.btn:hover { color: #fff; }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 12px 22px;
+            border-radius: 100px;
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            cursor: pointer;
+            transition: transform .25s var(--ease), background .25s, color .25s, box-shadow .25s;
+            font-family: inherit;
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .5);
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--ink);
+        }
+
+        .btn.ghost:hover {
+            background: var(--ink);
+            color: #fff;
+        }
+
+        .btn.outline {
+            background: transparent;
+            color: var(--ink);
+            border: 1.5px solid var(--line);
+        }
+
+        .btn.outline:hover {
+            border-color: var(--ink);
+            background: var(--ink);
+            color: #fff;
+        }
+
+        .btn:disabled {
+            opacity: .5;
+            cursor: not-allowed;
+            transform: none;
+            box-shadow: none;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--ink);
+            margin: 5px auto;
+            transition: .3s;
+        }
+
+        /* ---------- pill ---------- */
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            padding: 4px 12px;
+            border-radius: 100px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+        }
+
+        .pill.preview {
+            background: var(--bg-soft);
+            color: var(--muted);
+            border: 1px solid var(--line);
+        }
+
+        .pill.pro {
+            background: var(--ink);
+            color: #fff;
+        }
+
+        /* ---------- profile menu ---------- */
+        .profile-menu {
+            position: relative;
+            display: flex;
+            align-items: center;
+            margin-left: 8px;
+        }
+
+        .profile-menu.hidden { display: none !important; }
+
+        .profile-icon {
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--ink);
+            transition: background .2s, transform .2s;
+        }
+
+        .profile-icon:hover { background: #f5f5f5; }
+        .profile-icon svg { width: 20px; height: 20px; }
+
+        .dropdown {
+            position: absolute;
+            top: 100%;
+            right: 0;
+            margin-top: 12px;
+            background: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 12px;
+            box-shadow: 0 10px 40px -10px rgba(0,0,0,0.15);
+            padding: 16px;
+            display: flex;
+            flex-direction: column;
+            min-width: 240px;
+            z-index: 100;
+            opacity: 0;
+            pointer-events: none;
+            transform: translateY(10px);
+            transition: opacity .2s, transform .2s;
+        }
+
+        .dropdown.open {
+            opacity: 1;
+            pointer-events: auto;
+            transform: translateY(0);
+        }
+
+        .dropdown .user-email {
+            font-size: 14px;
+            font-weight: 500;
+            color: var(--ink);
+            margin-bottom: 8px;
+            word-break: break-all;
+        }
+
+        .dropdown .pill { align-self: flex-start; margin-bottom: 16px; }
+
+        .dropdown hr {
+            border: none;
+            border-top: 1px solid #eee;
+            margin: 0 -16px 16px -16px;
+        }
+
+        .dropdown button { width: 100%; justify-content: center; }
+
+        .btn-sm {
+            font-size: 12px;
+            padding: 6px 14px;
+            border-radius: 100px;
+            font-weight: 600;
+            cursor: pointer;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--ink-2);
+            transition: all .2s var(--ease);
+            font-family: inherit;
+        }
+
+        .btn-sm:hover {
+            border-color: var(--ink);
+            color: var(--ink);
+        }
+
+        /* ---------- loading / gate ---------- */
+        #pageLoading {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            padding: 160px 0;
+            gap: 16px;
+        }
+
+        .spinner {
+            width: 32px;
+            height: 32px;
+            border: 3px solid var(--line);
+            border-top-color: var(--ink);
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        #pageLoading span {
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        #pageContent { display: none; }
+
+        /* ---------- back link ---------- */
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 500;
+            color: var(--muted);
+            transition: color .2s var(--ease);
+            padding: 8px 0;
+        }
+
+        .back-link:hover { color: var(--ink); }
+
+        .back-link svg {
+            width: 16px;
+            height: 16px;
+            transition: transform .2s var(--ease);
+        }
+
+        .back-link:hover svg { transform: translateX(-3px); }
+
+        /* ---------- hero section ---------- */
+        .skill-hero {
+            padding: 110px 0 56px;
+            border-bottom: 1px solid var(--line);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-mark {
+            position: absolute;
+            right: -60px;
+            top: 20px;
+            width: min(48vw, 580px);
+            opacity: .045;
+            pointer-events: none;
+        }
+
+        .skill-hero .back-wrap {
+            margin-bottom: 32px;
+        }
+
+        .tag-row {
+            display: flex;
+            gap: 6px;
+            flex-wrap: wrap;
+            margin-bottom: 18px;
+        }
+
+        .tag-row span {
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: .05em;
+            text-transform: uppercase;
+            padding: 4px 10px;
+            border-radius: 100px;
+            background: var(--bg-soft);
+            color: var(--muted);
+            border: 1px solid var(--line);
+        }
+
+        .skill-hero h1 {
+            font-size: clamp(2rem, 4.5vw, 3.4rem);
+            font-weight: 700;
+            max-width: 22ch;
+            margin-bottom: 16px;
+        }
+
+        .skill-hero .tagline {
+            font-size: clamp(1rem, 1.7vw, 1.15rem);
+            color: var(--ink-2);
+            max-width: 56ch;
+            margin-bottom: 22px;
+        }
+
+        .skill-hero .description {
+            font-size: .97rem;
+            color: var(--ink-2);
+            max-width: 68ch;
+            line-height: 1.75;
+        }
+
+        /* ---------- sections ---------- */
+        .content-section {
+            padding: 64px 0;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .section-header {
+            margin-bottom: 36px;
+        }
+
+        .section-header h2 {
+            font-size: 1.55rem;
+            font-weight: 700;
+        }
+
+        .section-header p {
+            font-size: .95rem;
+            color: var(--muted);
+            margin-top: 6px;
+        }
+
+        /* ---------- files ---------- */
+        .file-list {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            margin-bottom: 28px;
+        }
+
+        .file-row {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 18px 20px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--bg);
+            transition: border-color .25s var(--ease), box-shadow .25s var(--ease);
+        }
+
+        .file-row:hover {
+            border-color: #c0c0c0;
+            box-shadow: 0 4px 20px -8px rgba(0,0,0,.12);
+        }
+
+        .file-icon {
+            width: 40px;
+            height: 40px;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+            background: var(--bg-soft);
+        }
+
+        .file-icon svg {
+            width: 18px;
+            height: 18px;
+            color: var(--ink-2);
+        }
+
+        .file-info {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .file-info .fname {
+            font-weight: 600;
+            font-size: .95rem;
+            font-family: "Space Grotesk", monospace;
+        }
+
+        .file-badge {
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: .08em;
+            text-transform: uppercase;
+            padding: 3px 8px;
+            border-radius: 100px;
+            margin-left: 8px;
+        }
+
+        .file-badge.required {
+            background: #fff3e0;
+            color: #9e6200;
+            border: 1px solid #ffe0a3;
+        }
+
+        .file-badge.optional {
+            background: var(--bg-soft);
+            color: var(--muted);
+            border: 1px solid var(--line);
+        }
+
+        .file-download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 7px;
+            font-size: 13px;
+            font-weight: 600;
+            padding: 9px 16px;
+            border-radius: 100px;
+            border: 1.5px solid var(--line);
+            background: transparent;
+            color: var(--ink);
+            cursor: pointer;
+            transition: border-color .2s, background .2s, color .2s, transform .2s var(--ease);
+            font-family: inherit;
+            flex-shrink: 0;
+        }
+
+        .file-download-btn:hover {
+            border-color: var(--ink);
+            background: var(--ink);
+            color: #fff;
+            transform: translateY(-1px);
+        }
+
+        .file-download-btn svg {
+            width: 14px;
+            height: 14px;
+        }
+
+        .download-all-wrap {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            flex-wrap: wrap;
+        }
+
+        .download-all-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 14px;
+            font-weight: 600;
+            padding: 13px 22px;
+            border-radius: 100px;
+            border: 1.5px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            cursor: pointer;
+            transition: transform .25s var(--ease), box-shadow .25s;
+            font-family: inherit;
+        }
+
+        .download-all-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -12px rgba(0,0,0,.5);
+        }
+
+        .download-all-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        #downloadNote {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ---------- platform tabs ---------- */
+        .tab-strip {
+            display: flex;
+            gap: 0;
+            border-bottom: 2px solid var(--line);
+            margin-bottom: 36px;
+            overflow-x: auto;
+            scrollbar-width: none;
+        }
+
+        .tab-strip::-webkit-scrollbar { display: none; }
+
+        .tab-btn {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 13.5px;
+            font-weight: 600;
+            padding: 12px 20px;
+            border: none;
+            background: transparent;
+            color: var(--muted);
+            cursor: pointer;
+            border-bottom: 2px solid transparent;
+            margin-bottom: -2px;
+            transition: color .2s, border-color .2s;
+            white-space: nowrap;
+            font-family: inherit;
+        }
+
+        .tab-btn:hover { color: var(--ink-2); }
+
+        .tab-btn.active {
+            color: var(--ink);
+            border-bottom-color: var(--ink);
+        }
+
+        .tab-btn .platform-icon {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .tab-panel { display: none; }
+        .tab-panel.active { display: block; }
+
+        /* ---------- guide content ---------- */
+        .guide-steps {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .guide-step {
+            display: flex;
+            gap: 18px;
+            align-items: flex-start;
+        }
+
+        .step-num {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            border: 1.5px solid var(--line);
+            background: var(--bg-soft);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 12px;
+            font-weight: 700;
+            font-family: "Space Grotesk", sans-serif;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .step-body {
+            flex: 1;
+            padding-top: 4px;
+        }
+
+        .step-body p {
+            font-size: .95rem;
+            color: var(--ink-2);
+            line-height: 1.65;
+        }
+
+        /* ---------- code blocks ---------- */
+        .code-block-wrap {
+            position: relative;
+            margin-top: 12px;
+        }
+
+        pre.code-block {
+            background: #f6f6f4;
+            border: 1px solid var(--line);
+            border-radius: 10px;
+            padding: 16px 20px;
+            overflow-x: auto;
+            font-family: "SF Mono", "Fira Code", "Fira Mono", "Roboto Mono", Consolas, monospace;
+            font-size: 13px;
+            line-height: 1.65;
+            color: #1a1a2e;
+            scrollbar-width: thin;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 11px;
+            font-weight: 600;
+            padding: 5px 12px;
+            border-radius: 100px;
+            border: 1px solid var(--line);
+            background: var(--bg);
+            color: var(--muted);
+            cursor: pointer;
+            transition: border-color .2s, color .2s, background .2s;
+            font-family: inherit;
+        }
+
+        .copy-btn:hover {
+            border-color: var(--ink);
+            color: var(--ink);
+        }
+
+        .copy-btn.copied {
+            background: #f0f7f0;
+            color: #1c5b1c;
+            border-color: #cfe6cf;
+        }
+
+        /* ---------- platform label strip ---------- */
+        .platform-label {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-bottom: 24px;
+            padding-bottom: 18px;
+            border-bottom: 1px solid var(--line);
+        }
+
+        .platform-label-icon {
+            width: 36px;
+            height: 36px;
+            border-radius: 8px;
+            border: 1px solid var(--line);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+
+        .platform-label h3 {
+            font-size: 1.05rem;
+            font-weight: 700;
+        }
+
+        .platform-label span {
+            font-size: 13px;
+            color: var(--muted);
+        }
+
+        /* ---------- toast ---------- */
+        .toast {
+            position: fixed;
+            top: 90px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-20px);
+            padding: 14px 24px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            z-index: 100;
+            opacity: 0;
+            transition: opacity .4s var(--ease), transform .4s var(--ease);
+            pointer-events: none;
+        }
+
+        .toast.show {
+            opacity: 1;
+            transform: translateX(-50%) translateY(0);
+            pointer-events: auto;
+        }
+
+        .toast.ok {
+            background: #f0f7f0;
+            color: #1c5b1c;
+            border: 1px solid #cfe6cf;
+        }
+
+        .toast.err {
+            background: #fbeeee;
+            color: #7a2020;
+            border: 1px solid #f0cccc;
+        }
+
+        .toast.info {
+            background: #eef3fb;
+            color: #1e3a6e;
+            border: 1px solid #ccdcf0;
+        }
+
+        /* ---------- reveal ---------- */
+        .reveal {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity .7s var(--ease), transform .7s var(--ease);
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none;
+        }
+
+        /* ---------- footer ---------- */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 56px 0 40px;
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px;
+        }
+
+        .foot .tag {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 34ch;
+        }
+
+        .foot-links {
+            display: flex;
+            gap: 26px;
+            font-size: 14px;
+            color: var(--ink-2);
+        }
+
+        .copy {
+            margin-top: 34px;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+            padding-top: 22px;
+        }
+
+        /* ---------- responsive ---------- */
+        @media(max-width: 900px) {
+            nav.links { display: none; }
+            .menu-toggle { display: block; }
+
+            nav.links.show {
+                display: flex;
+                position: absolute;
+                top: 74px;
+                left: 0; right: 0;
+                flex-direction: column;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                padding: 22px 28px;
+                gap: 18px;
+                align-items: flex-start;
+            }
+
+            .file-row { flex-wrap: wrap; }
+        }
+
+        @media(max-width: 560px) {
+            .tab-btn { padding: 12px 14px; font-size: 12.5px; }
+            .file-download-btn { width: 100%; justify-content: center; }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="wrap nav">
+            <a class="brand" href="/" aria-label="MIVSO home">
+                <img class="logo" src="/logo-horizontal.png" alt="MIVSO" />
+            </a>
+            <nav class="links" id="navlinks">
+                <a href="/">Home</a>
+                <a href="/products" class="active">Products</a>
+                <a href="/#services">Services</a>
+                <a href="/#how">How it works</a>
+                <a href="/#about">About</a>
+                <a href="/#contact" class="btn">Get in touch</a>
+                <div class="profile-menu hidden" id="profileMenu">
+                    <button class="profile-icon" id="profileIcon" aria-label="Profile">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 22c0-4 4-8 8-8s8 4 8 8"/></svg>
+                    </button>
+                    <div class="dropdown" id="profileDropdown">
+                        <span class="user-email" id="profileEmail"></span>
+                        <span class="pill" id="profilePill"></span>
+                        <hr/>
+                        <button class="btn-sm ghost" id="logoutBtn" style="color:#d32f2f; border:1px solid #d32f2f">Sign out</button>
+                    </div>
+                </div>
+            </nav>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <div class="toast" id="toast"></div>
+
+    <main>
+        <!-- Loading / auth gate -->
+        <div id="pageLoading">
+            <div class="wrap" style="text-align:center">
+                <div class="spinner"></div>
+                <span>Checking access…</span>
+            </div>
+        </div>
+
+        <!-- Page content (rendered after auth check) -->
+        <div id="pageContent">
+
+            <!-- Hero -->
+            <section class="skill-hero">
+                <img class="hero-mark" src="/mark-black.png" alt="" aria-hidden="true" />
+                <div class="wrap">
+                    <div class="back-wrap reveal">
+                        <a class="back-link" href="/products">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                            Back to products
+                        </a>
+                    </div>
+                    <div class="tag-row reveal" id="heroTags"></div>
+                    <h1 class="reveal" id="heroName">Skill Name</h1>
+                    <p class="tagline reveal" id="heroTagline"></p>
+                    <p class="description reveal" id="heroDesc"></p>
+                </div>
+            </section>
+
+            <!-- Download section -->
+            <section class="content-section">
+                <div class="wrap">
+                    <div class="section-header reveal">
+                        <h2>Download skill files</h2>
+                        <p>Download the files below and follow the integration guide for your platform.</p>
+                    </div>
+                    <div class="file-list reveal" id="fileList"></div>
+                    <div class="download-all-wrap reveal">
+                        <button class="download-all-btn" id="downloadAllBtn">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
+                            Download all files
+                        </button>
+                        <span id="downloadNote"></span>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Platform guides -->
+            <section class="content-section" style="border-bottom: none; padding-bottom: 80px;">
+                <div class="wrap">
+                    <div class="section-header reveal">
+                        <h2>How to connect this skill</h2>
+                        <p>Step-by-step guides for every major AI platform and coding agent.</p>
+                    </div>
+
+                    <!-- Tab strip -->
+                    <div class="tab-strip reveal" id="tabStrip">
+                        <button class="tab-btn active" data-tab="claude" id="tab-claude">
+                            <span class="platform-icon">🤖</span> Claude
+                        </button>
+                        <button class="tab-btn" data-tab="claude-code" id="tab-claude-code">
+                            <span class="platform-icon">💻</span> Claude Code
+                        </button>
+                        <button class="tab-btn" data-tab="codex" id="tab-codex">
+                            <span class="platform-icon">⚡</span> OpenAI Codex
+                        </button>
+                        <button class="tab-btn" data-tab="openrouter" id="tab-openrouter">
+                            <span class="platform-icon">🔀</span> OpenRouter
+                        </button>
+                        <button class="tab-btn" data-tab="cursor" id="tab-cursor">
+                            <span class="platform-icon">🖱️</span> Cursor
+                        </button>
+                        <button class="tab-btn" data-tab="windsurf" id="tab-windsurf">
+                            <span class="platform-icon">🌊</span> Windsurf
+                        </button>
+                    </div>
+
+                    <!-- Tab panels -->
+                    <div class="tab-panels reveal">
+
+                        <!-- Claude -->
+                        <div class="tab-panel active" id="panel-claude">
+                            <div class="platform-label">
+                                <div class="platform-label-icon">🤖</div>
+                                <div>
+                                    <h3>Claude (claude.ai)</h3>
+                                    <span>Attach and use skills in any Claude conversation</span>
+                                </div>
+                            </div>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-body"><p>Go to <strong>claude.ai</strong> and open any conversation.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-body"><p>Click the <strong>"+"</strong> attachment icon or drag and drop files into the chat.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-body"><p>Upload <code>SKILL.md</code> as a file attachment.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-body">
+                                        <p>In your message, write:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">Use the attached skill file to guide your behavior for this task.</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">5</div>
+                                    <div class="step-body"><p>Optionally add reference files (e.g. <code>examples.json</code>, <code>prompts.md</code>) as additional attachments for richer context.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">6</div>
+                                    <div class="step-body"><p>Start your task — Claude will follow the skill instructions throughout the conversation.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Claude Code -->
+                        <div class="tab-panel" id="panel-claude-code">
+                            <div class="platform-label">
+                                <div class="platform-label-icon">💻</div>
+                                <div>
+                                    <h3>Claude Code</h3>
+                                    <span>Use skills in your terminal-based Claude sessions</span>
+                                </div>
+                            </div>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-body"><p>Open your project in the terminal.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-body"><p>Place <code>SKILL.md</code> in your project root or a <code>/skills</code> subfolder.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-body">
+                                        <p>Run <code>claude</code> to start a session, then reference the skill explicitly:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">Follow the instructions in SKILL.md for this task</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-body">
+                                        <p>Or add it to your <code>CLAUDE.md</code> file so it's always loaded automatically:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block"># Persistent Skills
+Always follow the instructions in /skills/SKILL.md</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">5</div>
+                                    <div class="step-body"><p>Claude Code will use the skill automatically for every task in that project.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OpenAI Codex -->
+                        <div class="tab-panel" id="panel-codex">
+                            <div class="platform-label">
+                                <div class="platform-label-icon">⚡</div>
+                                <div>
+                                    <h3>OpenAI Codex</h3>
+                                    <span>Inject the skill into your system prompt via Playground or API</span>
+                                </div>
+                            </div>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-body"><p>Open Codex at <strong>platform.openai.com</strong> or prepare your API call.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-body"><p>Copy the full contents of <code>SKILL.md</code>.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-body">
+                                        <p>Paste it at the top of your system prompt in the Playground or API call:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">{ "role": "system", "content": "&lt;paste SKILL.md contents here&gt;" }</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-body"><p>Add your task as the user message.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">5</div>
+                                    <div class="step-body"><p>Codex will follow the skill's instructions for that session.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- OpenRouter -->
+                        <div class="tab-panel" id="panel-openrouter">
+                            <div class="platform-label">
+                                <div class="platform-label-icon">🔀</div>
+                                <div>
+                                    <h3>OpenRouter</h3>
+                                    <span>Use skills across any model via Playground or API</span>
+                                </div>
+                            </div>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-body"><p>Go to <strong>openrouter.ai</strong> and open the Playground (or prepare your API call).</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-body"><p>In the <strong>System Prompt</strong> field, paste the full text of <code>SKILL.md</code>.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-body"><p>Select your preferred model — the skill works with Claude, GPT-4, Mistral and more.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-body"><p>Start your conversation — the skill instructions are active from the first message.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">5</div>
+                                    <div class="step-body">
+                                        <p>For API use:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">{
+  "model": "anthropic/claude-sonnet-4",
+  "messages": [
+    { "role": "system", "content": "&lt;paste SKILL.md contents here&gt;" },
+    { "role": "user", "content": "Your task here" }
+  ]
+}</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Cursor -->
+                        <div class="tab-panel" id="panel-cursor">
+                            <div class="platform-label">
+                                <div class="platform-label-icon">🖱️</div>
+                                <div>
+                                    <h3>Cursor</h3>
+                                    <span>Load skills via project rules or inline chat references</span>
+                                </div>
+                            </div>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-body"><p>Open your project in <strong>Cursor</strong>.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-body"><p>Place <code>SKILL.md</code> in your project root.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-body">
+                                        <p>Open <strong>Cursor Settings → Rules for AI</strong> and add:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">Always read and follow /SKILL.md before starting any task.</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-body">
+                                        <p>Or reference it inline in chat:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">Follow SKILL.md and then refactor this function</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">5</div>
+                                    <div class="step-body"><p>Cursor will include the skill in its context automatically via <code>.cursorrules</code>.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Windsurf -->
+                        <div class="tab-panel" id="panel-windsurf">
+                            <div class="platform-label">
+                                <div class="platform-label-icon">🌊</div>
+                                <div>
+                                    <h3>Windsurf (by Codeium)</h3>
+                                    <span>Apply skills to the Cascade agent for persistent context</span>
+                                </div>
+                            </div>
+                            <div class="guide-steps">
+                                <div class="guide-step">
+                                    <div class="step-num">1</div>
+                                    <div class="step-body"><p>Open your project in <strong>Windsurf</strong>.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">2</div>
+                                    <div class="step-body"><p>Place <code>SKILL.md</code> in your project root.</p></div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">3</div>
+                                    <div class="step-body">
+                                        <p>In the <strong>Cascade</strong> chat panel, type:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">Read SKILL.md and use it as your guide for this session</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">4</div>
+                                    <div class="step-body">
+                                        <p>Or create a <code>.windsurfrules</code> file in your root for persistent application:</p>
+                                        <div class="code-block-wrap">
+                                            <pre class="code-block">Always follow the instructions in SKILL.md for this project.</pre>
+                                            <button class="copy-btn" onclick="copyCode(this)">Copy</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="guide-step">
+                                    <div class="step-num">5</div>
+                                    <div class="step-body"><p>Cascade will apply the skill's instructions to all tasks in the session.</p></div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div><!-- /.tab-panels -->
+
+                    <!-- Bottom back link -->
+                    <div style="margin-top: 56px; padding-top: 36px; border-top: 1px solid var(--line);">
+                        <a class="back-link" href="/products">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 5l-7 7 7 7"/></svg>
+                            Back to products
+                        </a>
+                    </div>
+
+                </div>
+            </section>
+
+        </div><!-- /#pageContent -->
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <div class="brand" style="margin-bottom:12px">
+                        <img class="logo" src="/logo-horizontal.png" alt="MIVSO" style="height:26px" />
+                    </div>
+                    <div class="tag">Movable Intelligent Virtual Skills &amp; Operations. Portable AI, deployable anywhere.</div>
+                </div>
+                <div class="foot-links">
+                    <a href="/">Home</a>
+                    <a href="/products">Products</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="copy">© <span id="yr"></span> MIVSO. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+    <!-- Skills data -->
+    <script src="/skills-data.js"></script>
+
+    <script>
+        // ---- Config ----
+        const SUPABASE_URL = 'https://pewinzitxgtnadmsyhxy.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBld2lueml0eGd0bmFkbXN5aHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwODk3OTUsImV4cCI6MjA5NjY2NTc5NX0.yzqoc1amNtHEA9U3vexfowonHak7Ak2BUfNWZvEBs0w';
+        const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        // ---- Helpers ----
+        const $ = (id) => document.getElementById(id);
+        $('yr').textContent = new Date().getFullYear();
+
+        // Toast
+        let toastTimeout;
+        function showToast(msg, type = 'info') {
+            const toast = $('toast');
+            toast.textContent = msg;
+            toast.className = 'toast ' + type + ' show';
+            clearTimeout(toastTimeout);
+            toastTimeout = setTimeout(() => toast.classList.remove('show'), 4000);
+        }
+
+        // ---- Auth guard ----
+        async function init() {
+            const params = new URLSearchParams(window.location.search);
+            const skillSlug = params.get('skill');
+
+            if (!skillSlug) {
+                window.location.href = '/products';
+                return;
+            }
+
+            // Fetch skill from manifest
+            const skill = await loadSkillData(skillSlug);
+
+            if (!skill) {
+                // Slug not found in manifest or manifest failed
+                window.location.href = '/products';
+                return;
+            }
+
+            if (skill.free) {
+                // Free skill — no paywall check needed, render immediately
+                // Still try to show profile menu if the user happens to be logged in
+                sb.auth.getSession().then(({ data: { session } }) => {
+                    if (session) setupProfileMenu(session);
+                });
+                renderSkill(skill);
+                return;
+            }
+
+            // Premium skill — require session + has_paid
+            const { data: { session } } = await sb.auth.getSession();
+
+            if (!session) {
+                window.location.href = '/products';
+                return;
+            }
+
+            const { data: userData } = await sb
+                .from('users')
+                .select('has_paid')
+                .eq('id', session.user.id)
+                .single();
+
+            if (!userData?.has_paid) {
+                window.location.href = '/products';
+                return;
+            }
+
+            setupProfileMenu(session);
+            renderSkill(skill);
+        }
+
+        function setupProfileMenu(session) {
+            const profileMenu = $('profileMenu');
+            const profileEmail = $('profileEmail');
+            const profilePill = $('profilePill');
+            const logoutBtn = $('logoutBtn');
+            const profileIcon = $('profileIcon');
+            const profileDropdown = $('profileDropdown');
+
+            profileMenu.classList.remove('hidden');
+            profileEmail.textContent = session.user.email;
+            profilePill.textContent = 'PRO';
+            profilePill.className = 'pill pro';
+
+            profileIcon.addEventListener('click', (e) => {
+                e.stopPropagation();
+                profileDropdown.classList.toggle('open');
+            });
+            document.addEventListener('click', (e) => {
+                if (!profileMenu.contains(e.target)) profileDropdown.classList.remove('open');
+            });
+
+            logoutBtn.addEventListener('click', async () => {
+                await sb.auth.signOut();
+                window.location.href = '/products';
+            });
+        }
+
+        // ---- Skill rendering ----
+        function renderSkill(skill) {
+            if (!skill) {
+                window.location.href = '/products';
+                return;
+            }
+
+            // Update document title
+            document.title = `${skill.name} — MIVSO`;
+            $('heroName').textContent = skill.name;
+            $('heroTagline').textContent = skill.tagline || '';
+            $('heroDesc').textContent = skill.description || '';
+
+            // Tags
+            $('heroTags').innerHTML = skill.tags
+                .map(t => `<span>${t}</span>`)
+                .join('');
+
+            // Files
+            renderFiles(skill);
+
+            // Show content
+            $('pageLoading').style.display = 'none';
+            $('pageContent').style.display = 'block';
+
+            // Animate reveals
+            setTimeout(() => {
+                document.querySelectorAll('.reveal').forEach((el, i) => {
+                    el.style.transitionDelay = (i * 55) + 'ms';
+                    el.classList.add('in');
+                });
+            }, 60);
+        }
+
+        function renderFiles(skill) {
+            const list = $('fileList');
+            list.innerHTML = '';
+
+            skill.files.forEach(f => {
+                const row = document.createElement('div');
+                row.className = 'file-row';
+                row.innerHTML = `
+                    <div class="file-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                            <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
+                            <polyline points="14 2 14 8 20 8"/>
+                        </svg>
+                    </div>
+                    <div class="file-info">
+                        <span class="fname">${f.name}</span>
+                        <span class="file-badge ${f.required ? 'required' : 'optional'}">${f.required ? 'Required' : 'Optional'}</span>
+                    </div>
+                    <button class="file-download-btn" data-path="${f.path}" data-name="${f.name}" aria-label="Download ${f.name}">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/>
+                            <polyline points="7 10 12 15 17 10"/>
+                            <line x1="12" y1="15" x2="12" y2="3"/>
+                        </svg>
+                        Download
+                    </button>
+                `;
+                list.appendChild(row);
+            });
+
+            // Bind individual download buttons
+            list.querySelectorAll('.file-download-btn').forEach(btn => {
+                btn.addEventListener('click', () => {
+                    downloadFile(btn.dataset.path, btn.dataset.name);
+                });
+            });
+
+            // Download all
+            $('downloadAllBtn').addEventListener('click', async () => {
+                const note = $('downloadNote');
+                note.textContent = 'Preparing downloads…';
+                for (let i = 0; i < skill.files.length; i++) {
+                    await downloadFile(skill.files[i].path, skill.files[i].name);
+                    if (i < skill.files.length - 1) {
+                        await delay(300);
+                    }
+                }
+                note.textContent = '✓ All files downloaded';
+                setTimeout(() => { note.textContent = ''; }, 3000);
+            });
+        }
+
+        function delay(ms) {
+            return new Promise(resolve => setTimeout(resolve, ms));
+        }
+
+        async function downloadFile(path, name) {
+            try {
+                const res = await fetch(path);
+                if (!res.ok) throw new Error('File not found');
+                const blob = await res.blob();
+                const url = URL.createObjectURL(blob);
+                const a = document.createElement('a');
+                a.href = url;
+                a.download = name;
+                a.click();
+                URL.revokeObjectURL(url);
+            } catch (err) {
+                showToast(`Could not download ${name}. File may not be available yet.`, 'err');
+            }
+        }
+
+        // ---- Copy code button ----
+        function copyCode(btn) {
+            const pre = btn.previousElementSibling;
+            navigator.clipboard.writeText(pre.textContent.trim()).then(() => {
+                btn.textContent = 'Copied ✓';
+                btn.classList.add('copied');
+                setTimeout(() => {
+                    btn.textContent = 'Copy';
+                    btn.classList.remove('copied');
+                }, 2000);
+            });
+        }
+
+        // ---- Tabs ----
+        document.querySelectorAll('.tab-btn').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const tab = btn.dataset.tab;
+                document.querySelectorAll('.tab-btn').forEach(b => b.classList.remove('active'));
+                document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                btn.classList.add('active');
+                $('panel-' + tab).classList.add('active');
+            });
+        });
+
+        // ---- Header scroll ----
+        const header = $('header');
+        addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8));
+
+        // ---- Mobile menu ----
+        const mt = $('menuToggle'), nl = $('navlinks');
+        mt.addEventListener('click', () => nl.classList.toggle('show'));
+        nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('show')));
+
+        // ---- Boot ----
+        init();
+    </script>
+</body>
+
+</html>
