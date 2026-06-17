@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Signing in — MIVSO</title>
+    <meta name="robots" content="noindex" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/mark-black.png" />
+    <style>
+        :root {
+            --ink: #0a0a0a;
+            --ink-2: #3a3a3a;
+            --muted: #6b6b6b;
+            --line: #e7e7e7;
+            --bg: #ffffff;
+            --bg-soft: #f6f6f4;
+            --ease: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        h1 {
+            font-family: "Space Grotesk", "Inter", sans-serif;
+            letter-spacing: -.02em;
+            line-height: 1.1;
+            font-weight: 600
+        }
+
+        .auth-card {
+            text-align: center;
+            max-width: 420px;
+            padding: 48px 36px;
+        }
+
+        .auth-card img {
+            height: 36px;
+            margin-bottom: 32px;
+        }
+
+        .auth-card h1 {
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+        }
+
+        .auth-card p {
+            color: var(--ink-2);
+            font-size: 15px;
+            margin-bottom: 24px;
+        }
+
+        .auth-card .status-msg {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 14px;
+            color: var(--muted);
+        }
+
+        .spinner {
+            width: 22px;
+            height: 22px;
+            border: 2.5px solid var(--line);
+            border-top-color: var(--ink);
+            border-radius: 50%;
+            animation: spin .7s linear infinite;
+        }
+
+        @keyframes spin {
+            to {
+                transform: rotate(360deg)
+            }
+        }
+
+        .err-msg {
+            display: none;
+            background: #fbeeee;
+            color: #7a2020;
+            border: 1px solid #f0cccc;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+
+        .err-msg.show {
+            display: block
+        }
+
+        .ok-msg {
+            display: none;
+            background: #f0f7f0;
+            color: #1c5b1c;
+            border: 1px solid #cfe6cf;
+            padding: 14px 18px;
+            border-radius: 12px;
+            font-size: 14px;
+            font-weight: 500;
+            margin-top: 16px;
+        }
+
+        .ok-msg.show {
+            display: block
+        }
+
+        a.link {
+            display: inline-block;
+            margin-top: 20px;
+            font-size: 14px;
+            color: var(--ink);
+            font-weight: 600;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="auth-card">
+        <a href="/" aria-label="MIVSO home">
+            <img src="/logo-horizontal.png" alt="MIVSO" />
+        </a>
+        <h1 id="heading">Signing you in…</h1>
+        <p id="subtext">Please wait while we verify your magic link.</p>
+        <div class="status-msg" id="statusMsg">
+            <div class="spinner"></div>
+            <span>Authenticating…</span>
+        </div>
+        <div class="ok-msg" id="okMsg"></div>
+        <div class="err-msg" id="errMsg"></div>
+        <a href="/products" class="link" id="backLink" style="display:none">← Back to Products</a>
+    </div>
+
+    <!-- Supabase CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.js"></script>
+
+    <script>
+        const SUPABASE_URL = 'https://pewinzitxgtnadmsyhxy.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InBld2lueml0eGd0bmFkbXN5aHh5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3ODEwODk3OTUsImV4cCI6MjA5NjY2NTc5NX0.yzqoc1amNtHEA9U3vexfowonHak7Ak2BUfNWZvEBs0w';
+
+        const sb = window.supabase.createClient(SUPABASE_URL, SUPABASE_ANON_KEY);
+
+        const heading = document.getElementById('heading');
+        const subtext = document.getElementById('subtext');
+        const statusMsg = document.getElementById('statusMsg');
+        const okMsg = document.getElementById('okMsg');
+        const errMsg = document.getElementById('errMsg');
+        const backLink = document.getElementById('backLink');
+
+        async function handleCallback() {
+            try {
+                // Supabase v2 automatically detects the hash/query params
+                // and exchanges the code for a session via PKCE
+                const { data, error } = await sb.auth.exchangeCodeForSession(
+                    window.location.href
+                );
+
+                if (error) {
+                    // Try getSession as fallback (some flows set session via hash)
+                    const { data: sessionData, error: sessionError } = await sb.auth.getSession();
+                    if (sessionError || !sessionData.session) {
+                        throw error;
+                    }
+                }
+
+                // Success
+                statusMsg.style.display = 'none';
+                heading.textContent = 'You\'re signed in!';
+                subtext.textContent = 'Redirecting to your products…';
+                okMsg.textContent = 'Authentication successful. Welcome to MIVSO.';
+                okMsg.classList.add('show');
+
+                setTimeout(() => {
+                    window.location.href = '/products';
+                }, 1500);
+
+            } catch (err) {
+                console.error('Auth callback error:', err);
+
+                // Check if we already have a session (magic link may have already been consumed)
+                const { data: { session } } = await sb.auth.getSession();
+                if (session) {
+                    statusMsg.style.display = 'none';
+                    heading.textContent = 'Already signed in!';
+                    subtext.textContent = 'Redirecting to products…';
+                    okMsg.textContent = 'You already have an active session.';
+                    okMsg.classList.add('show');
+                    setTimeout(() => { window.location.href = '/products'; }, 1500);
+                    return;
+                }
+
+                statusMsg.style.display = 'none';
+                heading.textContent = 'Sign-in failed';
+                subtext.textContent = 'The magic link may have expired or already been used.';
+                errMsg.textContent = err.message || 'Authentication failed. Please request a new magic link.';
+                errMsg.classList.add('show');
+                backLink.style.display = '';
+            }
+        }
+
+        handleCallback();
+    </script>
+</body>
+
+</html>

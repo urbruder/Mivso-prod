@@ -1,0 +1,1271 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>MIVSO — Movable Intelligent Virtual Skills &amp; Operations</title>
+    <meta name="description"
+        content="MIVSO builds portable, deploy-anywhere AI agents and skills. Claude skills, AI agents, website design, lead management, AI chatbots and AI telephony." />
+    <meta property="og:title" content="MIVSO — Portable AI Agents &amp; Skills, Deployable Anywhere" />
+    <meta property="og:description"
+        content="Movable Intelligent Virtual Skills &amp; Operations. Portable AI agents and skills, deployable anywhere." />
+    <meta property="og:type" content="website" />
+    <meta name="theme-color" content="#0a0a0a" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=Inter:wght@400;500;600&display=swap"
+        rel="stylesheet" />
+    <link rel="icon" type="image/png" href="/mark-black.png" />
+    <style>
+        :root {
+            --ink: #0a0a0a;
+            --ink-2: #3a3a3a;
+            --muted: #6b6b6b;
+            --line: #e7e7e7;
+            --bg: #ffffff;
+            --bg-soft: #f6f6f4;
+            --radius: 16px;
+            --maxw: 1140px;
+            --ease: cubic-bezier(.16, 1, .3, 1);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0
+        }
+
+        html {
+            scroll-behavior: smooth
+        }
+
+        body {
+            font-family: "Inter", system-ui, -apple-system, Segoe UI, Roboto, sans-serif;
+            color: var(--ink);
+            background: var(--bg);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+
+        h1,
+        h2,
+        h3,
+        .display {
+            font-family: "Space Grotesk", "Inter", sans-serif;
+            letter-spacing: -.02em;
+            line-height: 1.05;
+            font-weight: 600
+        }
+
+        a {
+            color: inherit;
+            text-decoration: none
+        }
+
+        .wrap {
+            max-width: var(--maxw);
+            margin: 0 auto;
+            padding: 0 28px
+        }
+
+        .wordmark {
+            font-family: "Space Grotesk", sans-serif;
+            font-weight: 700;
+            letter-spacing: .34em;
+            text-transform: uppercase
+        }
+
+        /* ---------- header ---------- */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 50;
+            backdrop-filter: saturate(180%) blur(14px);
+            background: rgba(255, 255, 255, .72);
+            border-bottom: 1px solid transparent;
+            transition: border-color .4s var(--ease), background .4s var(--ease)
+        }
+
+        header.scrolled {
+            border-color: var(--line)
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 74px
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 12px
+        }
+
+        .brand img.logo {
+            height: 30px;
+            width: auto;
+            display: block
+        }
+
+        nav.links {
+            display: flex;
+            align-items: center;
+            gap: 34px
+        }
+
+        nav.links a {
+            font-size: 14.5px;
+            color: var(--ink-2);
+            font-weight: 500;
+            transition: color .2s
+        }
+
+        nav.links a:hover {
+            color: var(--ink)
+        }
+
+        nav.links a.active {
+            color: var(--ink);
+            font-weight: 600
+        }
+
+        nav.links a.btn {
+            color: #fff
+        }
+
+        nav.links a.btn:hover {
+            color: #fff
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            font-weight: 600;
+            font-size: 14.5px;
+            padding: 12px 22px;
+            border-radius: 100px;
+            border: 1px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            cursor: pointer;
+            transition: transform .25s var(--ease), background .25s, color .25s, box-shadow .25s
+        }
+
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 30px -12px rgba(0, 0, 0, .5)
+        }
+
+        .btn.ghost {
+            background: transparent;
+            color: var(--ink)
+        }
+
+        .btn.ghost:hover {
+            background: var(--ink);
+            color: #fff
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            width: 40px;
+            height: 40px
+        }
+
+        .menu-toggle span {
+            display: block;
+            width: 22px;
+            height: 2px;
+            background: var(--ink);
+            margin: 5px auto;
+            transition: .3s
+        }
+
+        /* ---------- hero ---------- */
+        .hero {
+            position: relative;
+            padding: 112px 0 80px;
+            overflow: hidden
+        }
+
+        .hero .eyebrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 13px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 26px
+        }
+
+        .eyebrow .dot {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--ink);
+            display: inline-block;
+            animation: pulse 2.4s infinite
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 1
+            }
+
+            50% {
+                transform: scale(1.7);
+                opacity: .4
+            }
+        }
+
+        .hero h1 {
+            font-size: clamp(2.6rem, 6.6vw, 5.2rem);
+            font-weight: 700;
+            max-width: 15ch
+        }
+
+        .hero h1 em {
+            font-style: normal;
+            color: var(--muted)
+        }
+
+        .hero p.lead {
+            font-size: clamp(1.05rem, 2vw, 1.35rem);
+            color: var(--ink-2);
+            max-width: 46ch;
+            margin: 28px 0 38px
+        }
+
+        .hero .cta {
+            display: flex;
+            gap: 14px;
+            flex-wrap: wrap
+        }
+
+        .hero-mark {
+            position: absolute;
+            right: -60px;
+            top: 60px;
+            width: min(48vw, 640px);
+            color: #000;
+            opacity: .05;
+            pointer-events: none
+        }
+
+        .hero-mark path {
+            stroke-width: 6
+        }
+
+        /* animated draw */
+        .draw {
+            stroke-dasharray: 1400;
+            stroke-dashoffset: 1400;
+            animation: draw 3.4s var(--ease) forwards
+        }
+
+        @keyframes draw {
+            to {
+                stroke-dashoffset: 0
+            }
+        }
+
+        /* ---------- generic section ---------- */
+        section.block {
+            padding: 96px 0;
+            border-top: 1px solid var(--line)
+        }
+
+        .sec-head {
+            max-width: 62ch;
+            margin-bottom: 54px
+        }
+
+        .sec-head .kicker {
+            font-size: 13px;
+            letter-spacing: .16em;
+            text-transform: uppercase;
+            color: var(--muted);
+            font-weight: 600;
+            margin-bottom: 16px
+        }
+
+        .sec-head h2 {
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            font-weight: 600
+        }
+
+        .sec-head p {
+            color: var(--ink-2);
+            font-size: 1.08rem;
+            margin-top: 18px
+        }
+
+        /* ---------- acronym ---------- */
+        .acro {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 0;
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            overflow: hidden
+        }
+
+        .acro div {
+            padding: 30px 22px;
+            border-right: 1px solid var(--line)
+        }
+
+        .acro div:last-child {
+            border-right: 0
+        }
+
+        .acro .l {
+            font-family: "Space Grotesk";
+            font-weight: 700;
+            font-size: 2.4rem;
+            line-height: 1
+        }
+
+        .acro .w {
+            display: block;
+            margin-top: 10px;
+            font-weight: 600;
+            font-size: .96rem
+        }
+
+        .acro .d {
+            display: block;
+            margin-top: 4px;
+            color: var(--muted);
+            font-size: .82rem;
+            line-height: 1.4
+        }
+
+        /* ---------- services ---------- */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 18px
+        }
+
+        .card {
+            border: 1px solid var(--line);
+            border-radius: var(--radius);
+            padding: 30px 28px;
+            background: var(--bg);
+            transition: transform .4s var(--ease), border-color .4s, box-shadow .4s;
+            position: relative;
+            overflow: hidden
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: #cfcfcf;
+            box-shadow: 0 24px 50px -30px rgba(0, 0, 0, .35)
+        }
+
+        .card .ico {
+            width: 46px;
+            height: 46px;
+            border: 1px solid var(--ink);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px
+        }
+
+        .card .ico svg {
+            width: 22px;
+            height: 22px;
+            color: var(--ink)
+        }
+
+        .card h3 {
+            font-size: 1.18rem;
+            font-weight: 600;
+            margin-bottom: 8px
+        }
+
+        .card p {
+            color: var(--ink-2);
+            font-size: .96rem
+        }
+
+        /* ---------- steps ---------- */
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 18px;
+            counter-reset: step
+        }
+
+        .step {
+            position: relative;
+            padding-top: 30px;
+            border-top: 2px solid var(--ink)
+        }
+
+        .step .n {
+            font-family: "Space Grotesk";
+            font-weight: 700;
+            font-size: .9rem;
+            letter-spacing: .1em;
+            color: var(--muted)
+        }
+
+        .step h3 {
+            font-size: 1.15rem;
+            margin: 12px 0 8px;
+            font-weight: 600
+        }
+
+        .step p {
+            color: var(--ink-2);
+            font-size: .95rem
+        }
+
+        /* ---------- about / cta band ---------- */
+        .band {
+            background: var(--ink);
+            color: #fff;
+            border-radius: 24px;
+            padding: 64px 48px;
+            position: relative;
+            overflow: hidden
+        }
+
+        .band h2 {
+            color: #fff;
+            font-size: clamp(1.8rem, 4vw, 2.8rem);
+            max-width: 18ch
+        }
+
+        .band p {
+            color: #bdbdbd;
+            margin-top: 18px;
+            max-width: 52ch;
+            font-size: 1.05rem
+        }
+
+        .band .btn {
+            background: #fff;
+            color: var(--ink);
+            border-color: #fff;
+            margin-top: 32px
+        }
+
+        .band .btn:hover {
+            background: #e9e9e9
+        }
+
+        .band-mark {
+            position: absolute;
+            right: -40px;
+            bottom: -50px;
+            width: 360px;
+            opacity: .1;
+            pointer-events: none;
+            filter: invert(1)
+        }
+
+        /* ---------- contact ---------- */
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1.1fr;
+            gap: 60px;
+            align-items: start
+        }
+
+        .contact-info h2 {
+            font-size: clamp(1.9rem, 4vw, 3rem);
+            font-weight: 600
+        }
+
+        .contact-info p {
+            color: var(--ink-2);
+            margin-top: 18px;
+            font-size: 1.05rem
+        }
+
+        .contact-info .meta {
+            margin-top: 34px;
+            display: flex;
+            flex-direction: column;
+            gap: 14px
+        }
+
+        .contact-info .meta a {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-weight: 500
+        }
+
+        .contact-info .meta svg {
+            width: 18px;
+            height: 18px;
+            color: var(--ink)
+        }
+
+        form {
+            display: grid;
+            gap: 16px
+        }
+
+        .row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 16px
+        }
+
+        .field {
+            display: flex;
+            flex-direction: column;
+            gap: 7px
+        }
+
+        label {
+            font-size: 13px;
+            font-weight: 600;
+            color: var(--ink-2)
+        }
+
+        input,
+        select,
+        textarea {
+            font-family: inherit;
+            font-size: 15px;
+            padding: 13px 15px;
+            border: 1px solid var(--line);
+            border-radius: 12px;
+            background: var(--bg-soft);
+            color: var(--ink);
+            transition: border-color .2s, background .2s
+        }
+
+        input:focus,
+        select:focus,
+        textarea:focus {
+            outline: none;
+            border-color: var(--ink);
+            background: #fff
+        }
+
+        textarea {
+            resize: vertical;
+            min-height: 120px
+        }
+
+        form .btn {
+            justify-content: center;
+            width: 100%;
+            padding: 15px
+        }
+
+        .form-note {
+            font-size: 13px;
+            color: var(--muted);
+            text-align: center
+        }
+
+        .form-msg {
+            display: none;
+            padding: 14px 16px;
+            border-radius: 12px;
+            font-size: 14.5px;
+            font-weight: 500
+        }
+
+        .form-msg.ok {
+            display: block;
+            background: #f0f7f0;
+            color: #1c5b1c;
+            border: 1px solid #cfe6cf
+        }
+
+        .form-msg.err {
+            display: block;
+            background: #fbeeee;
+            color: #7a2020;
+            border: 1px solid #f0cccc
+        }
+
+        /* ---------- footer ---------- */
+        footer {
+            border-top: 1px solid var(--line);
+            padding: 56px 0 40px
+        }
+
+        .foot {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 24px
+        }
+
+        .foot .brand svg {
+            width: 34px;
+            height: 24px
+        }
+
+        .foot .tag {
+            color: var(--muted);
+            font-size: 14px;
+            max-width: 34ch
+        }
+
+        .foot-links {
+            display: flex;
+            gap: 26px;
+            font-size: 14px;
+            color: var(--ink-2)
+        }
+
+        .copy {
+            margin-top: 34px;
+            color: var(--muted);
+            font-size: 13px;
+            border-top: 1px solid var(--line);
+            padding-top: 22px
+        }
+
+        /* ---------- chat widget ---------- */
+        .chat-fab {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 60;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            background: var(--ink);
+            color: #fff;
+            border: 0;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 14px 36px -10px rgba(0, 0, 0, .55);
+            transition: transform .3s var(--ease)
+        }
+
+        .chat-fab:hover {
+            transform: scale(1.07)
+        }
+
+        .chat-fab img {
+            width: 34px;
+            height: auto;
+            filter: invert(1)
+        }
+
+        .chat-panel {
+            position: fixed;
+            right: 24px;
+            bottom: 98px;
+            z-index: 60;
+            width: min(380px, calc(100vw - 32px));
+            height: 520px;
+            max-height: calc(100vh - 130px);
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 20px;
+            box-shadow: 0 30px 70px -28px rgba(0, 0, 0, .5);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            opacity: 0;
+            transform: translateY(16px) scale(.98);
+            pointer-events: none;
+            transition: .3s var(--ease)
+        }
+
+        .chat-panel.open {
+            opacity: 1;
+            transform: none;
+            pointer-events: auto
+        }
+
+        .chat-head {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 16px 18px;
+            border-bottom: 1px solid var(--line)
+        }
+
+        .chat-head img.chat-mark {
+            width: 34px;
+            height: auto
+        }
+
+        .chat-head .t {
+            font-weight: 600;
+            font-size: 15px
+        }
+
+        .chat-head .s {
+            font-size: 12px;
+            color: var(--muted)
+        }
+
+        .chat-head .x {
+            margin-left: auto;
+            background: none;
+            border: 0;
+            cursor: pointer;
+            font-size: 20px;
+            color: var(--muted);
+            line-height: 1
+        }
+
+        .chat-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 18px;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+            background: var(--bg-soft)
+        }
+
+        .msg {
+            max-width: 84%;
+            padding: 11px 14px;
+            border-radius: 14px;
+            font-size: 14.5px;
+            line-height: 1.5;
+            white-space: pre-wrap
+        }
+
+        .msg.bot {
+            background: #fff;
+            border: 1px solid var(--line);
+            align-self: flex-start;
+            border-bottom-left-radius: 4px
+        }
+
+        .msg.user {
+            background: var(--ink);
+            color: #fff;
+            align-self: flex-end;
+            border-bottom-right-radius: 4px
+        }
+
+        .typing {
+            display: flex;
+            gap: 4px;
+            align-self: flex-start;
+            background: #fff;
+            border: 1px solid var(--line);
+            padding: 13px 14px;
+            border-radius: 14px
+        }
+
+        .typing span {
+            width: 7px;
+            height: 7px;
+            border-radius: 50%;
+            background: var(--muted);
+            animation: blink 1.2s infinite
+        }
+
+        .typing span:nth-child(2) {
+            animation-delay: .2s
+        }
+
+        .typing span:nth-child(3) {
+            animation-delay: .4s
+        }
+
+        @keyframes blink {
+
+            0%,
+            60%,
+            100% {
+                opacity: .25
+            }
+
+            30% {
+                opacity: 1
+            }
+        }
+
+        .chat-foot {
+            display: flex;
+            gap: 8px;
+            padding: 12px;
+            border-top: 1px solid var(--line);
+            background: #fff
+        }
+
+        .chat-foot input {
+            flex: 1;
+            border-radius: 100px
+        }
+
+        .chat-foot button {
+            border: 0;
+            background: var(--ink);
+            color: #fff;
+            border-radius: 50%;
+            width: 44px;
+            height: 44px;
+            cursor: pointer;
+            flex: none;
+            display: flex;
+            align-items: center;
+            justify-content: center
+        }
+
+        .chat-foot button svg {
+            width: 18px;
+            height: 18px
+        }
+
+        /* reveal */
+        .reveal {
+            opacity: 0;
+            transform: translateY(24px);
+            transition: opacity .8s var(--ease), transform .8s var(--ease)
+        }
+
+        .reveal.in {
+            opacity: 1;
+            transform: none
+        }
+
+        /* ---------- responsive ---------- */
+        @media(max-width:900px) {
+            nav.links {
+                display: none
+            }
+
+            .menu-toggle {
+                display: block
+            }
+
+            nav.links.show {
+                display: flex;
+                position: absolute;
+                top: 74px;
+                left: 0;
+                right: 0;
+                flex-direction: column;
+                background: #fff;
+                border-bottom: 1px solid var(--line);
+                padding: 22px 28px;
+                gap: 18px;
+                align-items: flex-start
+            }
+
+            .grid {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .steps {
+                grid-template-columns: 1fr 1fr
+            }
+
+            .acro {
+                grid-template-columns: 1fr
+            }
+
+            .acro div {
+                border-right: 0;
+                border-bottom: 1px solid var(--line)
+            }
+
+            .acro div:last-child {
+                border-bottom: 0
+            }
+
+            .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 40px
+            }
+        }
+
+        @media(max-width:560px) {
+            .grid {
+                grid-template-columns: 1fr
+            }
+
+            .steps {
+                grid-template-columns: 1fr
+            }
+
+            .row {
+                grid-template-columns: 1fr
+            }
+
+            .band {
+                padding: 44px 28px
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header id="header">
+        <div class="wrap nav">
+            <a class="brand" href="/" aria-label="MIVSO home">
+                <img class="logo" src="/logo-horizontal.png" alt="MIVSO" />
+            </a>
+            <nav class="links" id="navlinks">
+                <a href="/" class="active">Home</a>
+                <a href="/products">Products</a>
+                <a href="#services">Services</a>
+                <a href="#how">How it works</a>
+                <a href="#about">About</a>
+                <a href="#contact" class="btn">Get in touch</a>
+            </nav>
+            <button class="menu-toggle" id="menuToggle"
+                aria-label="Menu"><span></span><span></span><span></span></button>
+        </div>
+    </header>
+
+    <main id="top">
+
+        <!-- HERO -->
+        <section class="hero">
+            <img class="hero-mark" src="/mark-black.png" alt="" aria-hidden="true" />
+            <div class="wrap">
+                <span class="eyebrow reveal"><span class="dot"></span>Movable Intelligent Virtual Skills &amp;
+                    Operations</span>
+                <h1 class="reveal">Portable AI agents&nbsp;&amp; skills. <em>Deployable anywhere.</em></h1>
+                <p class="lead reveal">MIVSO designs intelligent systems that travel with your business — Claude skills,
+                    autonomous agents, chatbots and telephony that move freely, adapt anywhere, and bring the work back
+                    done.</p>
+                <div class="cta reveal">
+                    <a href="#contact" class="btn">Start a project →</a>
+                    <button class="btn ghost" id="openChatHero">Chat with our AI</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ACRONYM -->
+        <section class="block" id="meaning">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="kicker">What MIVSO stands for</div>
+                    <h2>Intelligence that moves with you.</h2>
+                    <p>Our mark is a single unbroken line — it sets out, travels in different directions, and returns to
+                        where it began. That's how we build: capability that deploys anywhere and always comes back to
+                        deliver.</p>
+                </div>
+                <div class="acro reveal">
+                    <div><span class="l">M</span><span class="w">Movable</span><span class="d">Goes where the work
+                            is</span></div>
+                    <div><span class="l">I</span><span class="w">Intelligent</span><span class="d">Reasoning, not
+                            scripts</span></div>
+                    <div><span class="l">V</span><span class="w">Virtual</span><span class="d">Software-native,
+                            scalable</span></div>
+                    <div><span class="l">S</span><span class="w">Skills</span><span class="d">Composable
+                            capabilities</span></div>
+                    <div><span class="l">O</span><span class="w">Operations</span><span class="d">Run end to end</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- SERVICES -->
+        <section class="block" id="services">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="kicker">What we build</div>
+                    <h2>Six ways we put AI to work for you.</h2>
+                    <p>Each engagement is portable by design — built once, deployable across your stack, your channels,
+                        and your customers.</p>
+                </div>
+                <div class="grid">
+                    <a href="/products#catalog-section" class="card reveal" style="display:block; cursor:pointer; text-decoration:none; color:inherit;">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M12 2l2.5 6L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-1z" />
+                            </svg></div>
+                        <h3>Claude Skills</h3>
+                        <p>Custom, packaged skills that extend Claude with your knowledge, tools and workflows —
+                            installable and reusable.</p>
+                    </a>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="4" y="7" width="16" height="12" rx="3" />
+                                <path d="M12 2v3M9 13h.01M15 13h.01M8 19v2M16 19v2" />
+                            </svg></div>
+                        <h3>AI Agents</h3>
+                        <p>Autonomous agents that research, decide and act across your systems — deployable anywhere
+                            they're needed.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="3" y="4" width="18" height="14" rx="2" />
+                                <path d="M3 9h18M8 21h8" />
+                            </svg></div>
+                        <h3>Website Design</h3>
+                        <p>Fast, modern, conversion-focused sites — designed, built and shipped with AI woven in from
+                            the first pixel.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M3 17l5-5 4 3 7-8" />
+                                <path d="M16 4h4v4" />
+                            </svg></div>
+                        <h3>Lead Management</h3>
+                        <p>Capture, qualify and route leads automatically — every enquiry scored, followed up and never
+                            dropped.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z" />
+                            </svg></div>
+                        <h3>AI Chatbots</h3>
+                        <p>On-brand assistants that answer, sell and support 24/7 — embedded on your site and channels.
+                        </p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path
+                                    d="M4 4h4l2 5-3 2a12 12 0 0 0 6 6l2-3 5 2v4a2 2 0 0 1-2 2A17 17 0 0 1 2 6a2 2 0 0 1 2-2z" />
+                            </svg></div>
+                        <h3>AI Telephony</h3>
+                        <p>Voice agents that make and take calls — booking, qualifying and resolving in natural
+                            conversation.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- HOW IT WORKS -->
+        <section class="block" id="how">
+            <div class="wrap">
+                <div class="sec-head reveal">
+                    <div class="kicker">How it works</div>
+                    <h2>From idea to deployed — and back with results.</h2>
+                </div>
+                <div class="steps">
+                    <div class="step reveal">
+                        <div class="n">01 — START</div>
+                        <h3>Discover</h3>
+                        <p>We map your workflows, data and goals to find where AI moves the needle.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="n">02 — DIVERGE</div>
+                        <h3>Design &amp; Build</h3>
+                        <p>We architect the skill, agent or system and build it to fit your stack.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="n">03 — DEPLOY</div>
+                        <h3>Deploy Anywhere</h3>
+                        <p>Portable by design — it ships to your site, channels, phone lines or cloud.</p>
+                    </div>
+                    <div class="step reveal">
+                        <div class="n">04 — RETURN</div>
+                        <h3>Measure &amp; Refine</h3>
+                        <p>We track outcomes and keep tuning so the system compounds in value.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ABOUT / BAND -->
+        <section class="block" id="about">
+            <div class="wrap reveal">
+                <div class="band">
+                    <img class="band-mark" src="/mark-black.png" alt="" aria-hidden="true" />
+                    <h2>Built for businesses that want AI working, not just talking.</h2>
+                    <p>MIVSO exists to make intelligent automation truly portable — deployable wherever your customers
+                        and operations live. No lock-in, no theatre. Just skills and agents that travel light and
+                        deliver.</p>
+                    <a href="#contact" class="btn">Let's build yours →</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CONTACT -->
+        <section class="block" id="contact">
+            <div class="wrap">
+                <div class="contact-grid">
+                    <div class="contact-info reveal">
+                        <h2>Start a project.</h2>
+                        <p>Tell us what you want to automate or build. We'll come back with a clear plan and a portable
+                            solution.</p>
+                        <div class="meta">
+                            <a href="mailto:hello@mivso.com">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <rect x="3" y="5" width="18" height="14" rx="2" />
+                                    <path d="M3 7l9 6 9-6" />
+                                </svg>
+                                hello@mivso.com
+                            </a>
+                            <a href="#" id="chatLink">
+                                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z" />
+                                </svg>
+                                Ask our AI assistant
+                            </a>
+                        </div>
+                    </div>
+                    <div class="reveal">
+                        <form id="leadForm" novalidate>
+                            <div class="row">
+                                <div class="field"><label for="name">Name</label><input id="name" name="name" required
+                                        placeholder="Your name" /></div>
+                                <div class="field"><label for="email">Email</label><input id="email" name="email"
+                                        type="email" required placeholder="you@company.com" /></div>
+                            </div>
+                            <div class="row">
+                                <div class="field"><label for="company">Company</label><input id="company"
+                                        name="company" placeholder="Company (optional)" /></div>
+                                <div class="field"><label for="service">Interested in</label>
+                                    <select id="service" name="service">
+                                        <option>Claude Skills</option>
+                                        <option>AI Agents</option>
+                                        <option>Website Design</option>
+                                        <option>Lead Management</option>
+                                        <option>AI Chatbots</option>
+                                        <option>AI Telephony</option>
+                                        <option>Not sure yet</option>
+                                    </select>
+                                </div>
+                            </div>
+                            <div class="field"><label for="message">Project details</label><textarea id="message"
+                                    name="message" required
+                                    placeholder="What would you like to build or automate?"></textarea></div>
+                            <button class="btn" type="submit" id="submitBtn">Send enquiry →</button>
+                            <div class="form-msg" id="formMsg"></div>
+                            <p class="form-note">We reply within one business day.</p>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="wrap">
+            <div class="foot">
+                <div>
+                    <div class="brand" style="margin-bottom:12px">
+                        <img class="logo" src="/logo-horizontal.png" alt="MIVSO" style="height:26px" />
+                    </div>
+                    <div class="tag">Movable Intelligent Virtual Skills &amp; Operations. Portable AI, deployable
+                        anywhere.</div>
+                </div>
+                <div class="foot-links">
+                    <a href="/">Home</a>
+                    <a href="/products">Products</a>
+                    <a href="/#contact">Contact</a>
+                </div>
+            </div>
+            <div class="copy">© <span id="yr"></span> MIVSO. All rights reserved.</div>
+        </div>
+    </footer>
+
+    <!-- CHAT WIDGET -->
+    <button class="chat-fab" id="chatFab" aria-label="Open chat"><img src="/mark-black.png" alt="MIVSO" /></button>
+    <div class="chat-panel" id="chatPanel" role="dialog" aria-label="MIVSO assistant">
+        <div class="chat-head">
+            <img class="chat-mark" src="/mark-black.png" alt="MIVSO" />
+            <div>
+                <div class="t">MIVSO Assistant</div>
+                <div class="s">Ask about our AI services</div>
+            </div>
+            <button class="x" id="chatClose" aria-label="Close">×</button>
+        </div>
+        <div class="chat-body" id="chatBody"></div>
+        <div class="chat-foot">
+            <input id="chatInput" placeholder="Type a message…" autocomplete="off" />
+            <button id="chatSend" aria-label="Send"><svg viewBox="0 0 24 24" fill="none" stroke="#fff" stroke-width="2">
+                    <path d="M4 12l16-8-6 16-2.5-6L4 12z" />
+                </svg></button>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('yr').textContent = new Date().getFullYear();
+
+        // header shadow + draw mark
+        const header = document.getElementById('header');
+        addEventListener('scroll', () => header.classList.toggle('scrolled', scrollY > 8));
+        // animate hero mark stroke
+        const hm = document.querySelector('.hero-mark use'); // symbols can't animate dash easily; draw inline instead
+        document.querySelector('.hero-mark path, .hero-mark')?.classList?.add('draw');
+
+        // mobile menu
+        const mt = document.getElementById('menuToggle'), nl = document.getElementById('navlinks');
+        mt.addEventListener('click', () => nl.classList.toggle('show'));
+        nl.querySelectorAll('a').forEach(a => a.addEventListener('click', () => nl.classList.remove('show')));
+
+        // reveal on scroll
+        const io = new IntersectionObserver((es) => es.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } }), { threshold: .14 });
+        document.querySelectorAll('.reveal').forEach((el, i) => { el.style.transitionDelay = (i % 4) * 60 + 'ms'; io.observe(el); });
+
+        // ---- contact form ----
+        const form = document.getElementById('leadForm'), msg = document.getElementById('formMsg'), sBtn = document.getElementById('submitBtn');
+        form.addEventListener('submit', async (e) => {
+            e.preventDefault();
+            msg.className = 'form-msg';
+            const data = Object.fromEntries(new FormData(form).entries());
+            if (!data.name || !data.email || !data.message) { msg.className = 'form-msg err'; msg.textContent = 'Please fill in your name, email and project details.'; return; }
+            sBtn.disabled = true; sBtn.textContent = 'Sending…';
+            try {
+                const r = await fetch('/api/contact', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(data) });
+                const j = await r.json().catch(() => ({}));
+                if (r.ok) { msg.className = 'form-msg ok'; msg.textContent = j.message || 'Thanks — your enquiry is in. We\'ll be in touch within one business day.'; form.reset(); }
+                else { msg.className = 'form-msg err'; msg.textContent = j.error || 'Something went wrong. Please email hello@mivso.com.'; }
+            } catch (err) { msg.className = 'form-msg err'; msg.textContent = 'Network error. Please email hello@mivso.com.'; }
+            sBtn.disabled = false; sBtn.textContent = 'Send enquiry →';
+        });
+
+        // ---- chat widget ----
+        const fab = document.getElementById('chatFab'), panel = document.getElementById('chatPanel'),
+            body = document.getElementById('chatBody'), input = document.getElementById('chatInput'),
+            send = document.getElementById('chatSend'), close = document.getElementById('chatClose');
+        let history = [];
+        function openChat() { panel.classList.add('open'); if (!history.length) botSay("Hi! I'm the MIVSO assistant. I can tell you about our Claude skills, AI agents, chatbots, telephony, websites and lead management — or help you start a project. What are you looking to build?"); input.focus(); }
+        function closeChat() { panel.classList.remove('open'); }
+        fab.addEventListener('click', () => panel.classList.contains('open') ? closeChat() : openChat());
+        close.addEventListener('click', closeChat);
+        document.getElementById('openChatHero').addEventListener('click', openChat);
+        document.getElementById('chatLink').addEventListener('click', (e) => { e.preventDefault(); openChat(); });
+
+        function bubble(text, who) { const d = document.createElement('div'); d.className = 'msg ' + who; d.textContent = text; body.appendChild(d); body.scrollTop = body.scrollHeight; return d; }
+        function botSay(t) { bubble(t, 'bot'); history.push({ role: 'assistant', content: t }); }
+        function typing() { const d = document.createElement('div'); d.className = 'typing'; d.innerHTML = '<span></span><span></span><span></span>'; body.appendChild(d); body.scrollTop = body.scrollHeight; return d; }
+
+        async function sendMsg() {
+            const text = input.value.trim(); if (!text) return;
+            bubble(text, 'user'); history.push({ role: 'user', content: text }); input.value = '';
+            const t = typing();
+            try {
+                const r = await fetch('/api/chat', { method: 'POST', headers: { 'Content-Type': 'application/json' }, body: JSON.stringify({ messages: history }) });
+                const j = await r.json();
+                t.remove();
+                botSay(j.reply || "I'm having trouble right now — please use the contact form and we'll reply fast.");
+            } catch (err) { t.remove(); botSay("Connection hiccup. Please try again, or use the contact form above."); }
+        }
+        send.addEventListener('click', sendMsg);
+        input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
+    </script>
+</body>
+
+</html>
