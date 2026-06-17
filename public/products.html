@@ -1622,7 +1622,8 @@
                         <span class="user-email" id="profileEmail"></span>
                         <span class="pill" id="profilePill"></span>
                         <hr />
-                        <button class="btn-sm ghost" id="logoutBtn" style="color:#d32f2f; border:1px solid #d32f2f">Sign out</button>
+                        <button class="btn-sm ghost" id="logoutBtn" style="color:#d32f2f; border:1px solid #d32f2f">Sign
+                            out</button>
                     </div>
                 </div>
             </nav>
@@ -1667,6 +1668,142 @@
 
         <!-- Main Products Container (hidden initially) -->
         <div id="productsSection" style="display:none">
+
+            <!-- SECTION: THE DIFFERENCE -->
+            <style>
+                .diff-box {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    gap: 24px;
+                    margin-bottom: 60px;
+                }
+
+                @media(min-width: 768px) {
+                    .diff-box {
+                        grid-template-columns: repeat(2, 1fr);
+                    }
+                }
+
+                .diff-col {
+                    padding: 48px 40px;
+                    border-radius: 20px;
+                    border: 1px solid var(--line);
+                    transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+                }
+
+                .diff-col:hover {
+                    transform: translateY(-4px);
+                    box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.08);
+                }
+
+                .diff-col.without {
+                    background: var(--bg-soft);
+                }
+
+                .diff-col.with {
+                    background: #fff;
+                    position: relative;
+                    box-shadow: 0 12px 24px -8px rgba(0, 0, 0, 0.04);
+                }
+
+                .diff-col h3 {
+                    display: inline-block;
+                    font-size: 14px;
+                    font-family: "Space Grotesk", "Inter", sans-serif;
+                    font-weight: 700;
+                    letter-spacing: 0.08em;
+                    text-transform: uppercase;
+                    margin-bottom: 32px;
+                    padding: 8px 16px;
+                    border-radius: 999px;
+                }
+
+                .diff-col.without h3 {
+                    color: var(--muted);
+                    background: var(--line);
+                }
+
+                .diff-col.with h3 {
+                    color: var(--ink);
+                    background: var(--bg-soft);
+                }
+
+                .diff-list {
+                    list-style: none;
+                    padding: 0;
+                    margin: 0;
+                    display: flex;
+                    flex-direction: column;
+                    gap: 20px;
+                }
+
+                .diff-list li {
+                    display: flex;
+                    gap: 16px;
+                    font-size: 15px;
+                    line-height: 1.5;
+                }
+
+                .diff-col.without .diff-list li {
+                    color: var(--muted);
+                }
+
+                .diff-col.without .diff-list li span {
+                    color: #d1d5db;
+                }
+
+                .diff-col.with .diff-list li {
+                    color: var(--ink);
+                    font-weight: 500;
+                }
+
+                .diff-col.with .diff-list li span {
+                    color: var(--ink);
+                }
+            </style>
+            <section class="difference-section" style="padding-top: 40px;">
+                <div class="wrap">
+                    <div class="sec-head" style="margin-bottom: 40px; max-width: 800px;">
+                        <span class="kicker">• THE DIFFERENCE</span>
+                        <h2 style="font-size: clamp(36px, 5vw, 48px); line-height: 1.15; margin-bottom: 24px;">
+                            The admin disappears.<br>
+                            <span style="color: var(--muted); font-weight: 500;">The selling stays.</span>
+                        </h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 650px;">
+                            Agents don't lose deals because they can't sell — they lose them to the listing copy, the
+                            follow-ups, and the paperwork that eat the day. This pack hands all of it to Claude.
+                        </p>
+                    </div>
+
+                    <div class="diff-box">
+                        <div class="diff-col without">
+                            <h3>A TUESDAY WITHOUT IT</h3>
+                            <ul class="diff-list">
+                                <li><span>—</span> Staring at a blank MLS description for the third listing this week
+                                </li>
+                                <li><span>—</span> Forty portal leads sitting cold because the first reply took two
+                                    hours</li>
+                                <li><span>—</span> Re-explaining the buyer-broker agreement and fumbling the commission
+                                    question</li>
+                                <li><span>—</span> A 42-page inspection report and a panicking buyer on the phone</li>
+                                <li><span>—</span> Showing feedback scattered across six texts the seller never sees
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="diff-col with">
+                            <h3>A TUESDAY WITH THE PACK</h3>
+                            <ul class="diff-list">
+                                <li><span>—</span> A sharp, fair-housing-safe listing description in 90 seconds</li>
+                                <li><span>—</span> Every portal lead gets a tailored reply the minute it lands</li>
+                                <li><span>—</span> A clean script that gets the agreement signed without hesitation</li>
+                                <li><span>—</span> The inspection sorted into critical, moderate, cosmetic — plus a
+                                    repair-ask plan</li>
+                                <li><span>—</span> One clear seller update with a recommended next move</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
 
             <!-- SECTION 1: PRICING TIERS -->
             <section class="pricing-section">
@@ -1807,13 +1944,115 @@
                 </div>
             </section>
 
+            <!-- SECTION 1.5: HOW IT WORKS -->
+            <section class="how-it-works-section" style="padding-top: 80px; padding-bottom: 40px;">
+                <div class="wrap">
+                    <div class="sec-head" style="margin-bottom: 60px;">
+                        <span class="kicker">• HOW IT WORKS</span>
+                        <h2 style="font-size: clamp(36px, 5vw, 48px); line-height: 1.15; margin-bottom: 24px;">
+                            Download, drop in,<br>
+                            <span style="color: var(--muted); font-weight: 500;">deploy. Three steps.</span>
+                        </h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 650px;">
+                            No setup, no tools to wire together, no monthly fee. Portable by design — exactly how MIVSO
+                            builds everything.
+                        </p>
+                    </div>
+
+                    <style>
+                        .steps-grid {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            gap: 24px;
+                        }
+
+                        @media(min-width: 768px) {
+                            .steps-grid {
+                                grid-template-columns: repeat(3, 1fr);
+                            }
+                        }
+
+                        .step-card {
+                            padding: 40px;
+                            background: #fff;
+                            border: 1px solid var(--line);
+                            border-radius: 16px;
+                            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+                        }
+
+                        .step-card:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .step-card .card-kicker {
+                            display: inline-block;
+                            font-size: 16px;
+                            font-family: "Space Grotesk", "Inter", sans-serif;
+                            font-weight: 700;
+                            letter-spacing: 0.04em;
+                            text-transform: uppercase;
+                            color: var(--ink);
+                            background: var(--bg-soft);
+                            border: 1px solid var(--line);
+                            padding: 8px 16px;
+                            border-radius: 999px;
+                            margin-bottom: 24px;
+                        }
+
+                        .step-card h3 {
+                            font-size: 18px;
+                            font-weight: 600;
+                            margin-bottom: 16px;
+                            color: var(--ink);
+                            letter-spacing: -0.01em;
+                        }
+
+                        .step-card p {
+                            font-size: 14.5px;
+                            line-height: 1.5;
+                            color: var(--ink-2);
+                            margin: 0;
+                        }
+                    </style>
+
+                    <div class="steps-grid">
+                        <div class="step-card">
+                            <div class="card-kicker">STEP 01 — GET</div>
+                            <h3>Download the pack</h3>
+                            <p>Buy once and get all 200 skill files instantly, organized by the eight parts of the
+                                workflow.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="card-kicker">STEP 02 — LOAD</div>
+                            <h3>Drop it in your workspace[claude, codex, etc]</h3>
+                            <p>Add a skill to your workspace, give it your property or client details, and it runs the
+                                task the way a sharp agent would.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="card-kicker">STEP 03 — RUN</div>
+                            <h3>Bring the work back done</h3>
+                            <p>Listing copy, follow-ups, summaries, scripts — finished output you can send, post, or
+                                hand to a client.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
             <!-- SECTION 2: SKILLS CATALOG -->
             <section class="catalog-section" id="catalog-section">
                 <div class="wrap">
-                    <div class="sec-head" style="margin-bottom: 40px;">
-                        <span class="kicker">WHAT'S INSIDE</span>
-                        <h2>200 skills. 8 categories.</h2>
-                        <p>Browse the full catalog — filter by tier or category.</p>
+                    <div class="sec-head" style="margin-bottom: 40px; max-width: 800px;">
+                        <span class="kicker">• WHAT'S INSIDE</span>
+                        <h2 style="font-size: clamp(36px, 5vw, 48px); line-height: 1.15; margin-bottom: 24px;">
+                            All parts of your job.<br>
+                            <span style="color: var(--muted); font-weight: 500;">Taken care by our Skills, choose the
+                                best package for you!</span>
+                        </h2>
+                        <p style="font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 650px;">
+                            Not a pile of prompts — a system mapped to the real arc of a transaction, from first contact
+                            to closing table and the referral after.
+                        </p>
                     </div>
 
                     <div id="tier-access-banner" style="display:none; background:#f0fdf4;
@@ -1835,8 +2074,10 @@
                             <button class="filter-btn active" data-category="all">All Categories</button>
                             <button class="filter-btn" data-category="lead-generation">Lead Generation</button>
                             <button class="filter-btn" data-category="listing-and-seller">Listing & Seller</button>
-                            <button class="filter-btn" data-category="buyer-representation">Buyer Representation</button>
-                            <button class="filter-btn" data-category="marketing-and-content">Marketing & Content</button>
+                            <button class="filter-btn" data-category="buyer-representation">Buyer
+                                Representation</button>
+                            <button class="filter-btn" data-category="marketing-and-content">Marketing &
+                                Content</button>
                             <button class="filter-btn" data-category="negotiation">Negotiation</button>
                             <button class="filter-btn" data-category="transaction-mgmt">Transaction Mgmt</button>
                             <button class="filter-btn" data-category="client-retention">Client Retention</button>
@@ -1855,6 +2096,184 @@
                         <!-- Category accordions injected by JS -->
                     </div>
 
+                </div>
+            </section>
+
+            <!-- SECTION 3: PERSONAS -->
+            <section class="personas-section"
+                style="padding-top: 80px; padding-bottom: 80px; border-top: 1px solid var(--line);">
+                <div class="wrap">
+                    <div class="sec-head" style="margin-bottom: 60px; text-align: center;">
+                        <span class="kicker">• ONE LICENCE, EVERY HAT</span>
+                        <h2 style="font-size: clamp(36px, 5vw, 48px); line-height: 1.15; margin-bottom: 24px;">
+                            Whether you're listing it, buying it,<br>
+                            <span style="color: var(--muted); font-weight: 500;">or running the whole operation.</span>
+                        </h2>
+                        <p
+                            style="font-size: 18px; line-height: 1.6; color: var(--ink-2); max-width: 700px; margin: 0 auto;">
+                            Real estate isn't just one job. The pack covers every angle — purpose-built skills for
+                            buyers, sellers, brokers, property managers, commercial agents, title, and mortgage
+                            professionals.
+                        </p>
+                    </div>
+
+                    <style>
+                        .personas-grid {
+                            display: grid;
+                            grid-template-columns: 1fr;
+                            gap: 24px;
+                        }
+
+                        @media(min-width: 768px) {
+                            .personas-grid {
+                                grid-template-columns: repeat(2, 1fr);
+                            }
+                        }
+
+                        @media(min-width: 1024px) {
+                            .personas-grid {
+                                grid-template-columns: repeat(3, 1fr);
+                            }
+                        }
+
+                        .persona-card {
+                            border: 1px solid var(--line);
+                            border-radius: 16px;
+                            padding: 32px;
+                            background: #fff;
+                            transition: transform 0.3s var(--ease), box-shadow 0.3s var(--ease);
+                        }
+
+                        .persona-card:hover {
+                            transform: translateY(-4px);
+                            box-shadow: 0 12px 30px -10px rgba(0, 0, 0, 0.1);
+                        }
+
+                        .persona-card .card-kicker {
+                            font-size: 11px;
+                            font-family: "Space Grotesk", "Inter", sans-serif;
+                            font-weight: 700;
+                            letter-spacing: 0.08em;
+                            text-transform: uppercase;
+                            color: var(--muted);
+                            margin-bottom: 16px;
+                        }
+
+                        .persona-card h3 {
+                            font-size: 24px;
+                            font-weight: 600;
+                            margin-bottom: 24px;
+                            letter-spacing: -0.02em;
+                        }
+
+                        .persona-list {
+                            list-style: none;
+                            padding: 0;
+                            margin: 0;
+                            display: flex;
+                            flex-direction: column;
+                            gap: 12px;
+                        }
+
+                        .persona-list li {
+                            display: flex;
+                            gap: 12px;
+                            font-size: 14.5px;
+                            color: var(--ink-2);
+                            line-height: 1.4;
+                        }
+
+                        .persona-list li span {
+                            color: var(--ink);
+                        }
+                    </style>
+
+                    <div class="personas-grid">
+                        <!-- Card 1 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR THE LISTING AGENT</div>
+                            <h3>Win it, price it, sell it.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> Listing descriptions that book the showing</li>
+                                <li><span>—</span> CMA narratives sellers actually say yes to</li>
+                                <li><span>—</span> Pricing objection scripts that hold the listing</li>
+                                <li><span>—</span> Pre-listing prep & room-by-room staging</li>
+                                <li><span>—</span> Just-listed / just-sold campaigns on tap</li>
+                            </ul>
+                        </div>
+                        <!-- Card 2 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR THE BUYER'S AGENT</div>
+                            <h3>Find it, win it, close it.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> Real buyer discovery that stops wasted tours</li>
+                                <li><span>—</span> The buyer broker agreement explained clearly</li>
+                                <li><span>—</span> Offer strategy that wins without overpaying</li>
+                                <li><span>—</span> 40-page inspections boiled to a one-page plan</li>
+                                <li><span>—</span> Financing & closing costs in plain English</li>
+                            </ul>
+                        </div>
+                        <!-- Card 3 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR THE BROKER / TEAM</div>
+                            <h3>Scale, train, and retain.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> Recruiting scripts that attract top producers</li>
+                                <li><span>—</span> Agent onboarding & 30-day success plans</li>
+                                <li><span>—</span> Weekly team meeting agendas & market briefs</li>
+                                <li><span>—</span> Performance review & accountability trackers</li>
+                                <li><span>—</span> Lead distribution & SLA enforcement rules</li>
+                            </ul>
+                        </div>
+                        <!-- Card 4 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR PROPERTY MANAGERS</div>
+                            <h3>Fill units, keep them full.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> Tenant screening & background review summaries</li>
+                                <li><span>—</span> Maintenance request triage & vendor dispatch</li>
+                                <li><span>—</span> Lease renewal negotiation & rent increase notices</li>
+                                <li><span>—</span> Move-in / Move-out inspection checklists</li>
+                                <li><span>—</span> Owner statements & portfolio performance updates</li>
+                            </ul>
+                        </div>
+                        <!-- Card 5 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR COMMERCIAL RE</div>
+                            <h3>Analyze, pitch, lease.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> Cap rate & NOI property analysis reports</li>
+                                <li><span>—</span> Commercial LOI (Letter of Intent) drafter</li>
+                                <li><span>—</span> Tenant mix & demographic pitch decks</li>
+                                <li><span>—</span> Triple-net (NNN) lease term explainers</li>
+                                <li><span>—</span> Zoning & entitlement summary briefs</li>
+                            </ul>
+                        </div>
+                        <!-- Card 6 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR TITLE & ESCROW</div>
+                            <h3>Clear it and close it.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> Preliminary title report summaries in plain English</li>
+                                <li><span>—</span> Defect & lien resolution email templates</li>
+                                <li><span>—</span> Closing day timeline & wire instruction guides</li>
+                                <li><span>—</span> Seller net sheet & closing disclosure explainers</li>
+                                <li><span>—</span> Post-closing recording & policy delivery</li>
+                            </ul>
+                        </div>
+                        <!-- Card 7 -->
+                        <div class="persona-card">
+                            <div class="card-kicker">• FOR MORTGAGE LENDERS</div>
+                            <h3>Pre-approve and fund.</h3>
+                            <ul class="persona-list">
+                                <li><span>—</span> First-time buyer loan program explainers</li>
+                                <li><span>—</span> Rate buydown vs. price drop ROI comparisons</li>
+                                <li><span>—</span> Underwriting condition request templates</li>
+                                <li><span>—</span> Weekly pipeline updates for agents & buyers</li>
+                                <li><span>—</span> Post-closing rate-monitoring campaigns</li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </section>
         </div>
@@ -2356,7 +2775,10 @@
                 const topCheckoutBtn = $('topCheckoutBtn');
                 if (topCheckoutBtn) {
                     topCheckoutBtn.addEventListener('click', () => {
-                        initiateCheckoutFlow(29); // Default to Top 100 on top banner click
+                        const pricingSection = document.querySelector('.pricing-section');
+                        if (pricingSection) {
+                            pricingSection.scrollIntoView({ behavior: 'smooth' });
+                        }
                     });
                 }
             }
