@@ -2,7 +2,7 @@
 
 This document serves as the comprehensive source of truth for the MIVSO project. It covers architecture, workflows, environment setup, and deployment strategies.
 
-> **Last updated**: Split "The Difference" section into separate cards, and styled section headings into pill shapes for elevated design. Beautified "The Difference" section and "How It Works" labels. Added "How It Works" section, standardized typography across UI cards, and updated checkout banner button to smooth-scroll to Pricing. Added the "Personas" grid section below the skills catalog to showcase all 7 personas. Added "The Difference" section and updated the "What's Inside" catalog headline in products.html to match new design specs. Navbar consistency (all 3 pages: Home | Products | Services | How it works | About | Get in touch), SKILL.md always index 0 + REQUIRED, all companion files OPTIONAL.
+> **Last updated**: Sorted skills in category accordions to display free/unlocked skills at the top and locked skills at the bottom. Split "The Difference" section into separate cards, and styled section headings into pill shapes for elevated design. Beautified "The Difference" section and "How It Works" labels. Added "How It Works" section, standardized typography across UI cards, and updated checkout banner button to smooth-scroll to Pricing. Added the "Personas" grid section below the skills catalog to showcase all 7 personas. Added "The Difference" section and updated the "What's Inside" catalog headline in products.html to match new design specs. Navbar consistency (all 3 pages: Home | Products | Services | How it works | About | Get in touch), SKILL.md always index 0 + REQUIRED, all companion files OPTIONAL.
 
 ---
 

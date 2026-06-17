@@ -2496,7 +2496,22 @@
                 const tbody = accBlock.querySelector(`#table-body-${category.slug}`);
                 let visibleCount = 0;
 
-                category.skills.forEach(skill => {
+                // Sort skills: free/unlocked skills at the top, locked at the bottom
+                const sortedSkills = [...category.skills].sort((a, b) => {
+                    const metaA = REAL_ESTATE_SKILLS_METADATA[a.slug] || {};
+                    const tierA = metaA.tier || 19;
+                    const isUnlockedA = (hasPaid && userTier >= tierA) || (tierA === 19);
+
+                    const metaB = REAL_ESTATE_SKILLS_METADATA[b.slug] || {};
+                    const tierB = metaB.tier || 19;
+                    const isUnlockedB = (hasPaid && userTier >= tierB) || (tierB === 19);
+
+                    if (isUnlockedA && !isUnlockedB) return -1;
+                    if (!isUnlockedA && isUnlockedB) return 1;
+                    return 0;
+                });
+
+                sortedSkills.forEach(skill => {
                     const meta = REAL_ESTATE_SKILLS_METADATA[skill.slug] || {};
                     const skillTier = meta.tier || 19;
                     const skillPersona = meta.persona || 'BUYER & SELLER';
