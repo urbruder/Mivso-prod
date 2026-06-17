@@ -60,6 +60,7 @@ module.exports = async function handler(req, res) {
             );
 
             const host = req.headers.host || 'mivso.com';
+            const protocol = host.includes('localhost') ? 'http' : 'https';
             let authUserId;
 
             // Step 1: Create or find the auth user and generate a magic link
@@ -68,7 +69,7 @@ module.exports = async function handler(req, res) {
                 type: 'magiclink',
                 email: customerEmail,
                 options: {
-                    redirectTo: `https://${host}/auth-callback`,
+                    redirectTo: `${protocol}://${host}/auth-callback`,
                 },
             });
 

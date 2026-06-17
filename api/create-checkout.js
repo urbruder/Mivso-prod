@@ -30,6 +30,9 @@ module.exports = async function handler(req, res) {
 
         const stripe = new Stripe(process.env.STRIPE_SECRET_KEY);
 
+        const host = req.headers.host || 'mivso.com';
+        const protocol = host.includes('localhost') ? 'http' : 'https';
+
         const session = await stripe.checkout.sessions.create({
             mode: 'payment',
             customer_email: email,
@@ -42,8 +45,8 @@ module.exports = async function handler(req, res) {
             metadata: {
                 tier: String(parsedTier)
             },
-            success_url: `https://${req.headers.host}/products?paid=true`,
-            cancel_url: `https://${req.headers.host}/products?cancelled=true`,
+            success_url: `${protocol}://${host}/products?paid=true`,
+            cancel_url: `${protocol}://${host}/products?cancelled=true`,
         });
 
         return res.status(200).json({ url: session.url });
