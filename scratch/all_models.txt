@@ -1,0 +1,3813 @@
+=== V0 MODELS ===
+[
+  {
+    "name": "Amazon: Nova Lite 1.0",
+    "model": "amazon/nova-lite-v1",
+    "pricing": {
+      "coins": 0.2,
+      "words": 100
+    },
+    "max_output": 5000
+  },
+  {
+    "name": "Amazon: Nova Micro 1.0",
+    "model": "amazon/nova-micro-v1",
+    "pricing": {
+      "coins": 0.1,
+      "words": 100
+    },
+    "max_output": 5000
+  },
+  {
+    "name": "Anthropic: Claude Haiku 4.5",
+    "model": "claude-haiku-4-5-5",
+    "pricing": {
+      "coins": 4,
+      "words": 100
+    },
+    "max_output": 64000
+  },
+  {
+    "name": "Anthropic: Claude Opus 4.1",
+    "model": "anthropic/claude-opus-4",
+    "pricing": {
+      "coins": 30,
+      "words": 100
+    },
+    "max_output": 200000
+  },
+  {
+    "name": "Anthropic: Claude Opus 4.5",
+    "model": "claude-opus-4-5",
+    "pricing": {
+      "coins": 12,
+      "words": 100
+    },
+    "max_output": 64000
+  },
+  {
+    "name": "Anthropic: Claude Sonnet 4",
+    "model": "anthropic/claude-sonnet-4",
+    "pricing": {
+      "coins": 6,
+      "words": 100
+    },
+    "max_output": 64000
+  },
+  {
+    "name": "Anthropic: Claude Sonnet 4.5",
+    "model": "anthropic/claude-sonnet-4.5",
+    "pricing": {
+      "coins": 10,
+      "words": 100
+    },
+    "max_output": 64000
+  },
+  {
+    "name": "Cohere: Command R (08-2024)",
+    "model": "cohere/command-r-08-2024",
+    "pricing": {
+      "coins": 0.2,
+      "words": 100
+    },
+    "max_output": 4000
+  },
+  {
+    "name": "Cohere: Command R+ (08-2024)",
+    "model": "cohere/command-r-plus-08-2024",
+    "pricing": {
+      "coins": 3.4,
+      "words": 100
+    },
+    "max_output": 4000
+  },
+  {
+    "name": "DeepSeek V3",
+    "model": "deepseek/deepseek-chat",
+    "pricing": {
+      "coins": 1.1,
+      "words": 100
+    },
+    "max_output": 8000
+  },
+  {
+    "name": "DeepSeek: DeepSeek R1 Reasoning",
+    "model": "deepseek/deepseek-r1",
+    "pricing": {
+      "coins": 5.16,
+      "words": 100
+    },
+    "max_output": 8000
+  },
+  {
+    "name": "DeepSeek: DeepSeek R1 Reasoning (nitro)",
+    "model": "deepseek/deepseek-r1:nitro",
+    "pricing": {
+      "coins": 5.16,
+      "words": 100
+    },
+    "max_output": 8000
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3 0324",
+    "model": "deepseek/deepseek-chat-v3-0324",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 8000
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3.1",
+    "model": "deepseek/deepseek-chat-v3.1",
+    "pricing": {
+      "coins": 2,
+      "words": 100
+    },
+    "max_output": 131000
+  },
+  {
+    "name": "DeepSeek: DeepSeek V3.2",
+    "model": "deepseek/DeepSeek-V3.2",
+    "pricing": {
+      "coins": 1.5,
+      "words": 100
+    },
+    "max_output": 131000
+  },
+  {
+    "name": "Dolphin 2.6 Mixtral 8x7B",
+    "model": "cognitivecomputations/dolphin-mixtral-8x7b",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 32768
+  },
+  {
+    "name": "Goliath 120B",
+    "model": "alpindale/goliath-120b",
+    "pricing": {
+      "coins": 5,
+      "words": 100
+    },
+    "max_output": 400
+  },
+  {
+    "name": "Google: Gemini 2.5 Flash Lite",
+    "model": "google/gemini-2.5-flash-lite",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 66000
+  },
+  {
+    "name": "Google: Gemini 3 Flash Preview",
+    "model": "google/gemini-3-flash-preview",
+    "pricing": {
+      "coins": 2,
+      "words": 100
+    },
+    "max_output": 66000
+  },
+  {
+    "name": "Google: Gemini 3.1 Pro Preview",
+    "model": "google/gemini-3.1-pro-preview",
+    "pricing": {
+      "coins": 33.2,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "Google: Gemma 2 27B",
+    "model": "google/gemma-2-27b-it",
+    "pricing": {
+      "coins": 0.4,
+      "words": 100
+    },
+    "max_output": 8192
+  },
+  {
+    "name": "Gryphe: MythoMax L2 13B 8k",
+    "model": "gryphe/mythomax-l2-13b",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 4096
+  },
+  {
+    "name": "Meta: Llama 3 70B Instruct (nitro)",
+    "model": "meta-llama/llama-3-70b-instruct:nitro",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 8192
+  },
+  {
+    "name": "Meta: Llama 3.1 405B Instruct",
+    "model": "meta-llama/llama-3.1-405b-instruct",
+    "pricing": {
+      "coins": 1.6,
+      "words": 100
+    },
+    "max_output": 32768
+  },
+  {
+    "name": "Meta: Llama 3.1 70B Instruct",
+    "model": "meta-llama/llama-3.1-70b-instruct",
+    "pricing": {
+      "coins": 0.7,
+      "words": 100
+    },
+    "max_output": 32768
+  },
+  {
+    "name": "Meta: Llama 3.3 70B Instruct",
+    "model": "meta-llama/llama-3.3-70b-instruct",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 131000
+  },
+  {
+    "name": "Meta: Llama 4 Maverick",
+    "model": "meta-llama/llama-4-maverick",
+    "pricing": {
+      "coins": 0.7,
+      "words": 100
+    },
+    "max_output": 131000
+  },
+  {
+    "name": "Microsoft: Phi 4",
+    "model": "microsoft/phi-4",
+    "pricing": {
+      "coins": 0.1,
+      "words": 100
+    },
+    "max_output": 16000
+  },
+  {
+    "name": "MiniMax: MiniMax M2",
+    "model": "minimax/minimax-m2",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 131100
+  },
+  {
+    "name": "Mistral: Codestral Mamba",
+    "model": "mistralai/codestral-mamba",
+    "pricing": {
+      "coins": 0.2,
+      "words": 100
+    },
+    "max_output": 256000
+  },
+  {
+    "name": "Mistral: Mistral Medium 3",
+    "model": "mistralai/mistral-medium-3",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 32768
+  },
+  {
+    "name": "MoonshotAI: Kimi K2 0711",
+    "model": "moonshotai/kimi-k2:free",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 4096
+  },
+  {
+    "name": "MoonshotAI: Kimi K2 0905",
+    "model": "moonshotai/kimi-k2-0905",
+    "pricing": {
+      "coins": 2,
+      "words": 100
+    },
+    "max_output": 262000
+  },
+  {
+    "name": "MoonshotAI: Kimi K2 Thinking",
+    "model": "moonshotai/kimi-k2-thinking",
+    "pricing": {
+      "coins": 1.5,
+      "words": 100
+    },
+    "max_output": 5000
+  },
+  {
+    "name": "MoonshotAI: Kimi K2.5",
+    "model": "moonshotai/Kimi-K2.5",
+    "pricing": {
+      "coins": 2.5,
+      "words": 100
+    },
+    "max_output": 5000
+  },
+  {
+    "name": "NVIDIA: Llama 3.1 Nemotron Ultra 253B v1",
+    "model": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+    "pricing": {
+      "coins": 0.7,
+      "words": 100
+    },
+    "max_output": 131072
+  },
+  {
+    "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5 (Reasoning)",
+    "model": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 131100
+  },
+  {
+    "name": "NVIDIA: Llama 3.3 Nemotron Super 49B v1",
+    "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 131072
+  },
+  {
+    "name": "OpenAI: GPT-4.1",
+    "model": "openai/gpt-4.1",
+    "pricing": {
+      "coins": 3,
+      "words": 100
+    },
+    "max_output": 1047576
+  },
+  {
+    "name": "OpenAI: GPT-4.1 Mini",
+    "model": "openai/gpt-4.1-mini",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 1047576
+  },
+  {
+    "name": "OpenAI: GPT-4.1 Nano",
+    "model": "openai/gpt-4.1-nano",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 1047576
+  },
+  {
+    "name": "OpenAI: GPT-4o - (Aug-06)",
+    "model": "openai/gpt-4o-2024-08-06",
+    "pricing": {
+      "coins": 3,
+      "words": 100
+    },
+    "max_output": 16384
+  },
+  {
+    "name": "OpenAI: GPT-4o - (Nov-20)",
+    "model": "openai/gpt-4o-2024-11-20",
+    "pricing": {
+      "coins": 3.3,
+      "words": 100
+    },
+    "max_output": 16000
+  },
+  {
+    "name": "OpenAI: GPT-4o mini",
+    "model": "openai/gpt-4o-mini",
+    "pricing": {
+      "coins": 0.4,
+      "words": 100
+    },
+    "max_output": 16384
+  },
+  {
+    "name": "OpenAI: GPT-5",
+    "model": "openai/gpt-5",
+    "pricing": {
+      "coins": 8,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5 Chat",
+    "model": "openai/gpt-5-chat",
+    "pricing": {
+      "coins": 5,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5 Mini",
+    "model": "openai/gpt-5-mini",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5 Nano",
+    "model": "openai/gpt-5-nano",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5 Pro",
+    "model": "openai/gpt-5-pro",
+    "pricing": {
+      "coins": 40,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5.2",
+    "model": "openai/gpt-5.2",
+    "pricing": {
+      "coins": 6,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5.2 Chat",
+    "model": "openai/gpt-5.2-chat",
+    "pricing": {
+      "coins": 6,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5.4",
+    "model": "openai/gpt-5.4",
+    "pricing": {
+      "coins": 6,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: GPT-5.4 Mini",
+    "model": "openai/gpt-5.4-mini",
+    "pricing": {
+      "coins": 4,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: OpenAI: GPT-5.1",
+    "model": "openai/gpt-5.1",
+    "pricing": {
+      "coins": 5,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: o1",
+    "model": "openai/o1",
+    "pricing": {
+      "coins": 20,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "OpenAI: o1 High Reasoning",
+    "model": "openai/o1-pro",
+    "pricing": {
+      "coins": 35,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "OpenAI: o1 mini",
+    "model": "openai/o1-mini",
+    "pricing": {
+      "coins": 4,
+      "words": 100
+    },
+    "max_output": 65536
+  },
+  {
+    "name": "OpenAI: o3",
+    "model": "o3-2025-04-16",
+    "pricing": {
+      "coins": 20,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "OpenAI: o3 Deep Research",
+    "model": "o3-deep-research-2025-06-26",
+    "pricing": {
+      "coins": 190,
+      "words": 100
+    },
+    "max_output": 128000
+  },
+  {
+    "name": "OpenAI: o3 Mini (High)",
+    "model": "openai/o3-mini-high",
+    "pricing": {
+      "coins": 3,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "OpenAI: o3 Mini (Medium)",
+    "model": "openai/o3-mini",
+    "pricing": {
+      "coins": 1.5,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "OpenAI: o4 Mini",
+    "model": "openai/o4-mini",
+    "pricing": {
+      "coins": 1.5,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "OpenAI: o4 Mini High",
+    "model": "openai/o4-mini-high",
+    "pricing": {
+      "coins": 2.4,
+      "words": 100
+    },
+    "max_output": 100000
+  },
+  {
+    "name": "Perplexity: Sonar",
+    "model": "perplexity/sonar",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 127072
+  },
+  {
+    "name": "Perplexity: Sonar Deep Research Reasoning",
+    "model": "perplexity/sonar-deep-research",
+    "pricing": {
+      "coins": 192,
+      "words": 100
+    },
+    "max_output": 127072
+  },
+  {
+    "name": "Qwen 2 72B Instruct",
+    "model": "qwen/qwen-2-72b-instruct",
+    "pricing": {
+      "coins": 0.5,
+      "words": 100
+    },
+    "max_output": 32768
+  },
+  {
+    "name": "Qwen2-VL 72B Instruct",
+    "model": "qwen/qwen-2-vl-72b-instruct",
+    "pricing": {
+      "coins": 0.2,
+      "words": 100
+    },
+    "max_output": 4096
+  },
+  {
+    "name": "Qwen2.5 72B Instruct",
+    "model": "qwen/qwen-2.5-72b-instruct",
+    "pricing": {
+      "coins": 0.2,
+      "words": 100
+    },
+    "max_output": 32768
+  },
+  {
+    "name": "Qwen: Qwen2.5 VL 32B Instruct",
+    "model": "qwen/qwen2.5-vl-32b-instruct:free",
+    "pricing": {
+      "coins": 0.7,
+      "words": 100
+    },
+    "max_output": 33000
+  },
+  {
+    "name": "Qwen: Qwen3 235B A22B Reasoning",
+    "model": "qwen/qwen3-235b-a22b",
+    "pricing": {
+      "coins": 0.6,
+      "words": 100
+    },
+    "max_output": 33000
+  },
+  {
+    "name": "Qwen: Qwen3 Coder",
+    "model": "qwen/qwen3-coder",
+    "pricing": {
+      "coins": 3,
+      "words": 100
+    },
+    "max_output": 66000
+  },
+  {
+    "name": "WizardLM-2 8x22B",
+    "model": "microsoft/wizardlm-2-8x22b",
+    "pricing": {
+      "coins": 0.6,
+      "words": 100
+    },
+    "max_output": 66000
+  },
+  {
+    "name": "Z.AI: GLM 4.5V Reasoning",
+    "model": "z-ai/glm-4.5v",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 65500
+  },
+  {
+    "name": "Z.AI: GLM 4.6",
+    "model": "z-ai/glm-4.6",
+    "pricing": {
+      "coins": 1,
+      "words": 100
+    },
+    "max_output": 131100
+  }
+]
+
+=== V1 MODELS ===
+{
+  "chat": [
+    {
+      "name": "Amazon: Nova Lite 1.0",
+      "model": "amazon/nova-lite-v1",
+      "word_limit": 225000,
+      "pricing": {
+        "coins": 0.2,
+        "words": 100
+      },
+      "max_output": 5000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "May not perform strongly on deeply complex textual inference or long-chain reasoning tasks"
+        ],
+        "pros": [
+          "Very low cost and lightning-fast multimodal processing"
+        ],
+        "applications": [
+          "Tutoring",
+          "Social chat",
+          "Writing"
+        ],
+        "capabilities": [],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/nova-lite-1.0.png"
+      }
+    },
+    {
+      "name": "Amazon: Nova Micro 1.0",
+      "model": "amazon/nova-micro-v1",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 0.1,
+        "words": 100
+      },
+      "max_output": 5000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited to text-only tasks, lacks multimodal capabilities",
+          "Less advanced reasoning capabilities compared to higher-end models like Nova Pro"
+        ],
+        "pros": [
+          "Lowest latency and most cost-effective in the Amazon Nova family",
+          "Strong in tasks like summarization, translation, interactive chat, classification"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Social chat"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/nova-micro-1.0.png"
+      }
+    },
+    {
+      "name": "Anthropic: Claude Haiku 4.5",
+      "model": "claude-haiku-4-5-5",
+      "word_limit": 16667,
+      "pricing": {
+        "coins": 4,
+        "words": 100
+      },
+      "max_output": 64000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [],
+        "pros": [
+          "Fast and cost-effective",
+          "Hosted on Azure for enterprise compliance"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Social chat"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/claude-3-haiku.png"
+      }
+    },
+    {
+      "name": "Anthropic: Claude Opus 4.1",
+      "model": "anthropic/claude-opus-4",
+      "word_limit": 16667,
+      "pricing": {
+        "coins": 30,
+        "words": 100
+      },
+      "max_output": 200000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Being the premium model, its cost per word is significantly higher than Sonnet 4.5."
+        ],
+        "pros": [
+          "Maximum Pure Coding Accuracy: Achieves 74.5% on SWE-bench Verified, making it the most reliable model for surgical debugging and refactoring extensive code."
+        ],
+        "applications": [
+          "Writing",
+          "Coding",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/claude-4-sonnet.png"
+      }
+    },
+    {
+      "name": "Anthropic: Claude Opus 4.5",
+      "model": "claude-opus-4-5",
+      "word_limit": 16667,
+      "pricing": {
+        "coins": 12,
+        "words": 100
+      },
+      "max_output": 64000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [],
+        "pros": [
+          "Fast and cost-effective",
+          "Hosted on Azure for enterprise compliance"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Social chat"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/claude-3-haiku.png"
+      }
+    },
+    {
+      "name": "Anthropic: Claude Sonnet 4",
+      "model": "anthropic/claude-sonnet-4",
+      "word_limit": 150000,
+      "pricing": {
+        "coins": 6,
+        "words": 100
+      },
+      "max_output": 64000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Claude tends to be more conservative than models like GPT 4o. It may avoid answering certain questions or respond vaguely even when the queries are reasonable."
+        ],
+        "pros": [
+          "It outperforms earlier models and some competitors in solving complex problems, analyzing long texts and generating or translating code between languages",
+          "Twice as fast as Claude 3 Opus, making it great for demanding workflows like realtime analysis or agile software development"
+        ],
+        "applications": [
+          "Writing",
+          "Coding",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/claude-4-sonnet.png"
+      }
+    },
+    {
+      "name": "Anthropic: Claude Sonnet 4.5",
+      "model": "anthropic/claude-sonnet-4.5",
+      "word_limit": 83333,
+      "pricing": {
+        "coins": 10,
+        "words": 100
+      },
+      "max_output": 64000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 3,
+        "cons": [
+          "Not the most precise pure coder; Opus 4.1 holds the top SWE-bench benchmark for code accuracy."
+        ],
+        "pros": [
+          "Superior Specialized Knowledge in Finance, Law, Medicine, and STEM. 2. Substantial gains in Reasoning and Math over prior models."
+        ],
+        "applications": [
+          "Writing",
+          "Coding",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/claude-4-sonnet.png"
+      }
+    },
+    {
+      "name": "Cohere: Command R (08-2024)",
+      "model": "cohere/command-r-08-2024",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 0.2,
+        "words": 100
+      },
+      "max_output": 4000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Context and Instruction Sensitivity",
+          "Ethical and Bias Considerations"
+        ],
+        "pros": [
+          "Capable of generating human-like text, allowing for engaging and contextually relevant conversations",
+          "Adaptable to various user preferences, offering tailored assistance for individual needs"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Math and logic",
+          "Coding",
+          "Tutoring"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/command-r-(08-2024).png"
+      }
+    },
+    {
+      "name": "Cohere: Command R+ (08-2024)",
+      "model": "cohere/command-r-plus-08-2024",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 3.4,
+        "words": 100
+      },
+      "max_output": 4000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Potential for bias and ethical concerns, requiring human oversight",
+          "Difficulty in handling ambiguous or unclear prompts"
+        ],
+        "pros": [
+          "Ability to generate human-like text with a vast knowledge base",
+          "Efficient at handling large amounts of data for training and contextual understanding",
+          "Versatility in assisting with various tasks and domains"
+        ],
+        "applications": [
+          "Writing",
+          "Tutoring",
+          "Math and logic"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/command-r%2B-(08-2024).png"
+      }
+    },
+    {
+      "name": "DeepSeek V3",
+      "model": "deepseek/deepseek-chat",
+      "word_limit": 49152,
+      "pricing": {
+        "coins": 1.1,
+        "words": 100
+      },
+      "max_output": 8000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Its broad knowledge base can lead to oversimplifications for very niche or highly specialized topics",
+          "Neutral tone on subjective and ethical issues may feel underwhelming for users seeking bold stances"
+        ],
+        "pros": [
+          "Strong ability to give step-by-step problem breakdowns for technical and general topics",
+          "Multilingual capabilities for diverse user needs",
+          "Handles a wide range of topics, including history, tech, and literature, making it highly versatile"
+        ],
+        "applications": [
+          "Writing",
+          "Coding",
+          "Tutoring",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-v2.5.png"
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek R1 Reasoning",
+      "model": "deepseek/deepseek-r1",
+      "word_limit": 48000,
+      "pricing": {
+        "coins": 5.16,
+        "words": 100
+      },
+      "max_output": 8000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 0,
+        "cons": [
+          "Tends to produce more extensive explanations unnecessarily",
+          "Slightly weaker in math compared to competitors"
+        ],
+        "pros": [
+          "Creative writing with personality and less censorship",
+          "Cost-effective for general-purpose coding",
+          "Strong performance in complex reasoning tasks"
+        ],
+        "applications": [
+          "Writing",
+          "Coding",
+          "Reasoning"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [
+          "Uncensored"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-r1.png"
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek R1 Reasoning (nitro)",
+      "model": "deepseek/deepseek-r1:nitro",
+      "word_limit": 122880,
+      "pricing": {
+        "coins": 5.16,
+        "words": 100
+      },
+      "max_output": 8000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 0,
+        "cons": [
+          "May follow prompts too literally/intensely"
+        ],
+        "pros": [
+          "Extended context for long-form engagement",
+          "Handles memory-intensive tasks well",
+          "Enhances creative writing with better continuity"
+        ],
+        "applications": [
+          "Writing",
+          "Coding",
+          "Reasoning",
+          "Roleplay"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [
+          "Uncensored"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-r1-nitro.png"
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3 0324",
+      "model": "deepseek/deepseek-chat-v3-0324",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 8000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Its broad knowledge base can lead to oversimplifications for very niche or highly specialized topics",
+          "Neutral tone on subjective and ethical issues may feel underwhelming for users seeking bold stances"
+        ],
+        "pros": [
+          "Strong ability to give step-by-step problem breakdowns for technical and general topics",
+          "Multilingual capabilities for diverse user needs",
+          "Handles a wide range of topics, including history, tech, and literature, making it highly versatile"
+        ],
+        "applications": [
+          "Coding",
+          "Math and logic"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-v2.5.png"
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.1",
+      "model": "deepseek/deepseek-chat-v3.1",
+      "word_limit": 10667,
+      "pricing": {
+        "coins": 2,
+        "words": 100
+      },
+      "max_output": 131000,
+      "metadata": {
+        "editors_link": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-r1.png",
+        "editors_choice_level": 3,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-r1.png"
+      }
+    },
+    {
+      "name": "DeepSeek: DeepSeek V3.2",
+      "model": "deepseek/DeepSeek-V3.2",
+      "word_limit": 10667,
+      "pricing": {
+        "coins": 1.5,
+        "words": 100
+      },
+      "max_output": 131000,
+      "metadata": {
+        "editors_link": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-r1.png",
+        "editors_choice_level": 5,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/deepseek-r1.png"
+      }
+    },
+    {
+      "name": "Dolphin 2.6 Mixtral 8x7B",
+      "model": "cognitivecomputations/dolphin-mixtral-8x7b",
+      "word_limit": 24000,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 32768,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Tutoring may lack depth in some subjects",
+          "Roleplay may lack creativity",
+          "Content generation can sometimes be generic"
+        ],
+        "pros": [
+          "Strong writing skills",
+          "Proficient in social chat",
+          "Reasonable math and logic skills"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [
+          "Uncensored"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/dolphin-2.6-mixtral-8x7b.png"
+      }
+    },
+    {
+      "name": "Goliath 120B",
+      "model": "alpindale/goliath-120b",
+      "word_limit": 4608,
+      "pricing": {
+        "coins": 5,
+        "words": 100
+      },
+      "max_output": 400,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited Explainability (Black Box reasoning)",
+          "Data Privacy Concerns",
+          "Difficulty in Fine-Tuning"
+        ],
+        "pros": [
+          "High Multilingual Fluency",
+          "Advanced Contextual Understanding",
+          "Rich Knowledge Base"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "Google: Gemini 2.5 Flash Lite",
+      "model": "google/gemini-2.5-flash-lite",
+      "word_limit": 49151,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 66000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 0,
+        "cons": [
+          "Lack of precision when responding",
+          "Dependency on training data does not have web browsing"
+        ],
+        "pros": [
+          "Capacity to manage extensive context",
+          "Versatile writing and communication skills",
+          "Fast code generation"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gemini-flash-2.0.png"
+      }
+    },
+    {
+      "name": "Google: Gemini 3 Flash Preview",
+      "model": "google/gemini-3-flash-preview",
+      "word_limit": 786432,
+      "pricing": {
+        "coins": 2,
+        "words": 100
+      },
+      "max_output": 66000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 1,
+        "cons": [
+          "Lack of precision when responding",
+          "Dependency on training data does not have web browsing"
+        ],
+        "pros": [
+          "Capacity to manage extensive context",
+          "Versatile writing and communication skills",
+          "Fast code generation"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gemini-flash-2.0.png"
+      }
+    },
+    {
+      "name": "Google: Gemini 3.1 Pro Preview",
+      "model": "google/gemini-3.1-pro-preview",
+      "word_limit": 750000,
+      "pricing": {
+        "coins": 33.2,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 5,
+        "cons": [
+          "Could provide code with some readability issues",
+          "Might have problems by using unwanted code from previous messages"
+        ],
+        "pros": [
+          "Very good performance at STEM related tasks",
+          "Excellent reasoning capabilities",
+          "Capacity to manage extensive context"
+        ],
+        "applications": [
+          "Reasoning",
+          "Math and logic",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [
+          "Web browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gemini-pro-2.0-experimental.png"
+      }
+    },
+    {
+      "name": "Google: Gemma 2 27B",
+      "model": "google/gemma-2-27b-it",
+      "word_limit": 3072,
+      "pricing": {
+        "coins": 0.4,
+        "words": 100
+      },
+      "max_output": 8192,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Training data may contain biases"
+        ],
+        "pros": [
+          "Can process information and retrieve relevant facts quickly",
+          "Translate and understand text in different languages"
+        ],
+        "applications": [
+          "Content",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [
+          "Open source"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gemma-2-27b.png"
+      }
+    },
+    {
+      "name": "Gryphe: MythoMax L2 13B 8k",
+      "model": "gryphe/mythomax-l2-13b",
+      "word_limit": 6144,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 4096,
+      "metadata": {
+        "editors_link": "https://straico.com/gryphe-mythomax-l2-13b-8k-beta/",
+        "editors_choice_level": -1,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/mythomax-l2-13b-8k.png"
+      }
+    },
+    {
+      "name": "Meta: Llama 3 70B Instruct (nitro)",
+      "model": "meta-llama/llama-3-70b-instruct:nitro",
+      "word_limit": 6144,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 8192,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Specific tuning needed to fully utilize in distinct fields",
+          "Dependence on Input Quality"
+        ],
+        "pros": [
+          "Produces coherent and contextually relevant responses",
+          "Improved Instruction Following",
+          "Enhanced Language Understanding"
+        ],
+        "applications": [
+          "Tutoring",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3-70b-instruct-(nitro).png"
+      }
+    },
+    {
+      "name": "Meta: Llama 3.1 405B Instruct",
+      "model": "meta-llama/llama-3.1-405b-instruct",
+      "word_limit": 98000,
+      "pricing": {
+        "coins": 1.6,
+        "words": 100
+      },
+      "max_output": 32768,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Fails at self referencial tasks"
+        ],
+        "pros": [
+          "Basic mathmatics",
+          "Can solve logic puzzles"
+        ],
+        "applications": [
+          "Social chat",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [
+          "Open source"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.1-405b.png"
+      }
+    },
+    {
+      "name": "Meta: Llama 3.1 70B Instruct",
+      "model": "meta-llama/llama-3.1-70b-instruct",
+      "word_limit": 98000,
+      "pricing": {
+        "coins": 0.7,
+        "words": 100
+      },
+      "max_output": 32768,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "May struggle with reasoning",
+          "Specific tuning needed to fully utilize in distinct fields",
+          "Dependence on Input Quality or Instructions"
+        ],
+        "pros": [
+          "High-Quality Outputs",
+          "Improved Instruction Following",
+          "Multilingual capabilities"
+        ],
+        "applications": [
+          "Tutoring",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.1-70b-instruct.png"
+      }
+    },
+    {
+      "name": "Meta: Llama 3.3 70B Instruct",
+      "model": "meta-llama/llama-3.3-70b-instruct",
+      "word_limit": 98304,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 131000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "It lacks multimodal capabilities (e.g., image or audio input/output) that some newer LLMs support"
+        ],
+        "pros": [
+          "The model is optimized for multiple languages, making it highly versatile for global applications",
+          "It outperforms many open-source and closed-source chat models on widely used industry benchmarks, suggesting high-quality outputs"
+        ],
+        "applications": [
+          "Translation",
+          "Writing",
+          "Social chat",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.3-70b-instruct.png"
+      }
+    },
+    {
+      "name": "Meta: Llama 4 Maverick",
+      "model": "meta-llama/llama-4-maverick",
+      "word_limit": 78643,
+      "pricing": {
+        "coins": 0.7,
+        "words": 100
+      },
+      "max_output": 131000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Might struggle with complex coding tasks",
+          "Could have difficulties with logical and mathematical problems"
+        ],
+        "pros": [
+          "Optimized for vision-language tasks",
+          "Excellent for assistant-like behavior",
+          "Excels at translation and language-related tasks"
+        ],
+        "applications": [
+          "Coding",
+          "Roleplay",
+          "Writing",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.3-70b-instruct.png"
+      }
+    },
+    {
+      "name": "Microsoft: Phi 4",
+      "model": "microsoft/phi-4",
+      "word_limit": 12288,
+      "pricing": {
+        "coins": 0.1,
+        "words": 100
+      },
+      "max_output": 16000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited capability outside STEM subjects",
+          "Rigid in following instructions, limiting creativity"
+        ],
+        "pros": [
+          "Excels in technical and QA tasks",
+          "Top-tier STEM/math problem-solving"
+        ],
+        "applications": [
+          "Math and logic",
+          "Tutoring",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/phi-4.png"
+      }
+    },
+    {
+      "name": "MiniMax: MiniMax M2",
+      "model": "minimax/minimax-m2",
+      "word_limit": 17067,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 131100,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited Explainability (Black Box reasoning)",
+          "Data Privacy Concerns",
+          "Difficulty in Fine-Tuning"
+        ],
+        "pros": [
+          "High Multilingual Fluency",
+          "Advanced Contextual Understanding",
+          "Rich Knowledge Base"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "Mistral: Codestral Mamba",
+      "model": "mistralai/codestral-mamba",
+      "word_limit": 192000,
+      "pricing": {
+        "coins": 0.2,
+        "words": 100
+      },
+      "max_output": 256000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited Creative Problem Solving",
+          "May generate syntactically correct but functionally incorrect code"
+        ],
+        "pros": [
+          "High Coding Proficiency",
+          "Multilingual capabilities",
+          "Advanced Natural Language Understanding"
+        ],
+        "applications": [
+          "Coding"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/codestral-mamba.png"
+      }
+    },
+    {
+      "name": "Mistral: Mistral Medium 3",
+      "model": "mistralai/mistral-medium-3",
+      "word_limit": 24576,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 32768,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "A potential drawback of Mistral Medium 3 is its lack of native image processing capabilities, which limits its use in tasks that require visual input or multimodal reasoning involving images"
+        ],
+        "pros": [
+          "Delivers strong and efficient performance, optimized for tasks such as coding, multimodal understanding, and continuous learning"
+        ],
+        "applications": [
+          "Writing",
+          "Content",
+          "Translation",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/mistral-large.png"
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K2 0711",
+      "model": "moonshotai/kimi-k2:free",
+      "word_limit": 24576,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 4096,
+      "metadata": {
+        "editors_link": "https://straico.com/gryphe-mythomax-l2-13b-8k-beta/",
+        "editors_choice_level": -1,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K2 0905",
+      "model": "moonshotai/kimi-k2-0905",
+      "word_limit": 41833,
+      "pricing": {
+        "coins": 2,
+        "words": 100
+      },
+      "max_output": 262000,
+      "metadata": {
+        "editors_link": "https://straico.com/gryphe-mythomax-l2-13b-8k-beta/",
+        "editors_choice_level": -1,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K2 Thinking",
+      "model": "moonshotai/kimi-k2-thinking",
+      "word_limit": 21845,
+      "pricing": {
+        "coins": 1.5,
+        "words": 100
+      },
+      "max_output": 5000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "High capability might lead to increased resource usage for basic applications"
+        ],
+        "pros": [
+          "Outstanding multimodal capabilities\n",
+          "High accuracy, speed, and cost-efficiency",
+          "Exceptional at handling large context input and long workflows"
+        ],
+        "applications": [
+          "Tutoring",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "MoonshotAI: Kimi K2.5",
+      "model": "moonshotai/Kimi-K2.5",
+      "word_limit": 21845,
+      "pricing": {
+        "coins": 2.5,
+        "words": 100
+      },
+      "max_output": 5000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 4,
+        "cons": [
+          "High capability might lead to increased resource usage for basic applications"
+        ],
+        "pros": [
+          "Outstanding multimodal capabilities\n",
+          "High accuracy, speed, and cost-efficiency",
+          "Exceptional at handling large context input and long workflows"
+        ],
+        "applications": [
+          "Tutoring",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "NVIDIA: Llama 3.1 Nemotron Ultra 253B v1",
+      "model": "nvidia/llama-3.1-nemotron-ultra-253b-v1",
+      "word_limit": 98304,
+      "pricing": {
+        "coins": 0.7,
+        "words": 100
+      },
+      "max_output": 131072,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited reasoning power compared to larger models like Ultra.\nSlower response time: May lag in real-time applications.\n\n\n"
+        ],
+        "pros": [
+          "Advanced reasoning capabilities: Excellent for complex logic, scientific analysis, and structured generation.\n",
+          "Strong in specialized tasks: Performs best in research environments and custom AI workflows.\n\n\n"
+        ],
+        "applications": [
+          "Coding",
+          "Tutoring",
+          "Math and logic"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.1-nemotron-70b-instruct.png"
+      }
+    },
+    {
+      "name": "NVIDIA: Llama 3.3 Nemotron Super 49B V1.5 (Reasoning)",
+      "model": "nvidia/llama-3.3-nemotron-super-49b-v1.5",
+      "word_limit": 100925,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 131100,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 3,
+        "cons": [
+          "Modified Architecture & Data Ceiling: Derived and customized architecture for efficiency, with a pre-training data cutoff in 2023."
+        ],
+        "pros": [
+          "Elite Reasoning & Superior Efficiency: Optimized for low operational cost (savings) via NAS design, maintaining advanced reasoning and agency capabilities."
+        ],
+        "applications": [
+          "Reasoning",
+          "Tutoring",
+          "Math and logic"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.1-nemotron-70b-instruct.png"
+      }
+    },
+    {
+      "name": "NVIDIA: Llama 3.3 Nemotron Super 49B v1",
+      "model": "nvidia/llama-3.3-nemotron-super-49b-v1",
+      "word_limit": 98304,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 131072,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited reasoning power compared to larger models like Ultra.",
+          "Not ideal for complex scientific or abstract tasks: May underperform in research-level challenges"
+        ],
+        "pros": [
+          "Highly efficient for production: Designed for real-time applications with lower computational cost",
+          "Fast response time: Great for virtual assistants, RAG systems, and low-latency use cases.\n\n"
+        ],
+        "applications": [
+          "Coding",
+          "Tutoring",
+          "Math and logic",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/llama-3.1-nemotron-70b-instruct.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-4.1",
+      "model": "openai/gpt-4.1",
+      "word_limit": 785682,
+      "pricing": {
+        "coins": 3,
+        "words": 100
+      },
+      "max_output": 1047576,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": 0,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-4.1 Mini",
+      "model": "openai/gpt-4.1-mini",
+      "word_limit": 785682,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 1047576,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "can handle massive documents, long conversations, or large codebases without losing track of earlier content. This makes it perfect for complex projects that require deep memory and continuity"
+        ],
+        "pros": [
+          "While it can process up to 1 million tokens, its precision decreases as the context gets longer. For example, accuracy dropped from 84% at 8,000 tokens to 50% when using the full million. So, it fits - but doesn't always grasp everything well"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-4.1 Nano",
+      "model": "openai/gpt-4.1-nano",
+      "word_limit": 785682,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 1047576,
+      "metadata": {
+        "editors_link": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png",
+        "editors_choice_level": -1,
+        "cons": [
+          "Without prompting for modularity, GPT-4.1 tends to generate monolithic code. It's better than 4.0, but still needs strong scaffolding to abstract functions, organize files, or implement design patterns cleanly."
+        ],
+        "pros": [
+          "It builds more coherent internal representations (like AST-like logic) for code. It handles complex dependencies and modular structures better, especially across languages like Python, TypeScript, Rust, etc"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-4o - (Aug-06)",
+      "model": "openai/gpt-4o-2024-08-06",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 3,
+        "words": 100
+      },
+      "max_output": 16384,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Can struggle with tasks requiring everyday reasoning or understanding of real-world physical interactions",
+          "Struggles with understanding subtle context, humor, or sarcasm"
+        ],
+        "pros": [
+          "Ability for idea generation, storytelling, and crafting engaging narratives",
+          "Multi-model infrastructure",
+          "Real-time roleplaying"
+        ],
+        "applications": [
+          "Coding",
+          "Math and logic",
+          "Roleplay",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4o-(aug-06).png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-4o - (Nov-20)",
+      "model": "openai/gpt-4o-2024-11-20",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 3.3,
+        "words": 100
+      },
+      "max_output": 16000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Performance may degrade with vague or unclear inputs",
+          "While great overall, it might still underperform in niche tasks compared to specialized models"
+        ],
+        "pros": [
+          "Delivers more natural, engaging, and tailored content with improved relevance and readability",
+          "Shows better performance in processing non-English languages with improved understanding of visual content"
+        ],
+        "applications": [
+          "Writing",
+          "Tutoring",
+          "Coding",
+          "Math and logic"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4o-(nov-20).png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-4o mini",
+      "model": "openai/gpt-4o-mini",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 0.4,
+        "words": 100
+      },
+      "max_output": 16384,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Knowledge Compression Limits (Limited knowledge)"
+        ],
+        "pros": [
+          "Good at tasks where it has to manipulate data"
+        ],
+        "applications": [
+          "Coding",
+          "Math and logic",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4o-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5",
+      "model": "openai/gpt-5",
+      "word_limit": 333000,
+      "pricing": {
+        "coins": 8,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": 3,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5 Chat",
+      "model": "openai/gpt-5-chat",
+      "word_limit": 300000,
+      "pricing": {
+        "coins": 5,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 0,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5 Mini",
+      "model": "openai/gpt-5-mini",
+      "word_limit": 300000,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 3,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5 Nano",
+      "model": "openai/gpt-5-nano",
+      "word_limit": 300000,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5 Pro",
+      "model": "openai/gpt-5-pro",
+      "word_limit": 333330,
+      "pricing": {
+        "coins": 40,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "A flatter tone, along with more refusals to address controversial topics.\n"
+        ],
+        "pros": [
+          "Dynamic reasoning engine. Advanced context management. Versatility across domain.\n"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5.2",
+      "model": "openai/gpt-5.2",
+      "word_limit": 333330,
+      "pricing": {
+        "coins": 6,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "A flatter tone, along with more refusals to address controversial topics.\n"
+        ],
+        "pros": [
+          "Dynamic reasoning engine. Advanced context management. Versatility across domain.\n"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5.2 Chat",
+      "model": "openai/gpt-5.2-chat",
+      "word_limit": 333330,
+      "pricing": {
+        "coins": 6,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "A flatter tone, along with more refusals to address controversial topics.\n"
+        ],
+        "pros": [
+          "Dynamic reasoning engine. Advanced context management. Versatility across domain.\n"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5.4",
+      "model": "openai/gpt-5.4",
+      "word_limit": 333330,
+      "pricing": {
+        "coins": 6,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "A flatter tone, along with more refusals to address controversial topics.\n"
+        ],
+        "pros": [
+          "Dynamic reasoning engine. Advanced context management. Versatility across domain.\n"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: GPT-5.4 Mini",
+      "model": "openai/gpt-5.4-mini",
+      "word_limit": 333330,
+      "pricing": {
+        "coins": 4,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": 4,
+        "cons": [
+          "A flatter tone, along with more refusals to address controversial topics.\n"
+        ],
+        "pros": [
+          "Dynamic reasoning engine. Advanced context management. Versatility across domain.\n"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: OpenAI: GPT-5.1",
+      "model": "openai/gpt-5.1",
+      "word_limit": 333330,
+      "pricing": {
+        "coins": 5,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": 3,
+        "cons": [
+          "While its new dynamic thinking ability boosts accuracy in complex problems this variability can lead to noticeable delays for the user For example processing time for the most difficult tasks can be twice as slow or 71 longer than the previous version So it fits the job but not always quickly\n"
+        ],
+        "pros": [
+          "While it can process simple requests very quickly its accuracy increases significantly when its allowed to spend more time thinking on complex problems For example the model can be twice as fast on the quickest tasks while dedicating up to 71 more time on the slowest tasks improving comprehensive responses So it adapts its speed to maximize results\n"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png"
+      }
+    },
+    {
+      "name": "OpenAI: o1",
+      "model": "openai/o1",
+      "word_limit": 150000,
+      "pricing": {
+        "coins": 20,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Not as broadly conversational or general-purpose compared to other models",
+          "Computationally expensive, requiring significant resources to run efficiently"
+        ],
+        "pros": [
+          "Best-in-class reasoning for STEM disciplines, consistently outperforming human experts in niche benchmarks",
+          "Exceptional coding performance, including competitive programming results far above prior LLMs",
+          "Advanced chain-of-thought reasoning improves problem-solving and error correction"
+        ],
+        "applications": [
+          "Coding",
+          "Tutoring",
+          "Math and logic"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o1.png"
+      }
+    },
+    {
+      "name": "OpenAI: o1 High Reasoning",
+      "model": "openai/o1-pro",
+      "word_limit": 150000,
+      "pricing": {
+        "coins": 35,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "It has a fairly high cost, it must be used for specific tasks",
+          "The model takes a long time to process the information"
+        ],
+        "pros": [
+          "Best-in-class reasoning for STEM disciplines, consistently outperforming human experts in niche benchmarks",
+          "Exceptional coding performance, including competitive programming results far above prior LLMs",
+          "",
+          ""
+        ],
+        "applications": [
+          "Coding",
+          "Math and logic"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o1-preview.png"
+      }
+    },
+    {
+      "name": "OpenAI: o1 mini",
+      "model": "openai/o1-mini",
+      "word_limit": 96000,
+      "pricing": {
+        "coins": 4,
+        "words": 100
+      },
+      "max_output": 65536,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Falls short on tasks requiring non-STEM broad knowledge",
+          "Low effectiveness for domain knowledge beyond math and programming"
+        ],
+        "pros": [
+          "Same high-compute reinforcement learning pipeline as o1 but at a significantly lower cost",
+          "Faster inference speeds and lower latency compared to full o1"
+        ],
+        "applications": [
+          "Coding",
+          "Math and logic"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o1-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: o3",
+      "model": "o3-2025-04-16",
+      "word_limit": 150000,
+      "pricing": {
+        "coins": 20,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: o3 Deep Research",
+      "model": "o3-deep-research-2025-06-26",
+      "word_limit": 83333,
+      "pricing": {
+        "coins": 190,
+        "words": 100
+      },
+      "max_output": 128000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 0,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [],
+        "features": [
+          "Web search"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: o3 Mini (High)",
+      "model": "openai/o3-mini-high",
+      "word_limit": 150000,
+      "pricing": {
+        "coins": 3,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini-high.png"
+      }
+    },
+    {
+      "name": "OpenAI: o3 Mini (Medium)",
+      "model": "openai/o3-mini",
+      "word_limit": 150000,
+      "pricing": {
+        "coins": 1.5,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "",
+          ""
+        ],
+        "pros": [
+          "Exceptional ability to solve complex problems in mathematics, physics, and programming",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o3-mini.png"
+      }
+    },
+    {
+      "name": "OpenAI: o4 Mini",
+      "model": "openai/o4-mini",
+      "word_limit": 200000,
+      "pricing": {
+        "coins": 1.5,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "\"",
+        "editors_choice_level": -1,
+        "cons": [
+          "Focusing on text tasks, it dismisses visual content processing or generation support, anchoring itself in text-based capabilities",
+          "Performs well in logic, mathematics, and coding tasks, especially when using tools like Python",
+          "Despite being a \"mini\" model, it delivers solid performance in general tasks, thanks to a well-optimized architecture."
+        ],
+        "pros": [
+          "Runs fast and consumes fewer resources, making it ideal for real-time responses, even on devices with lower capacity",
+          " It is capable of maintaining a dialogue with contextual continuity, allowing for extended conversations and adapting to the information provided throughout the interaction.",
+          "Web Browsing Compatibility: It is capable of accessing up-to-date information through web browsing"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o4-mini-medium.png"
+      }
+    },
+    {
+      "name": "OpenAI: o4 Mini High",
+      "model": "openai/o4-mini-high",
+      "word_limit": 200000,
+      "pricing": {
+        "coins": 2.4,
+        "words": 100
+      },
+      "max_output": 100000,
+      "metadata": {
+        "editors_link": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/gpt-4.5.png",
+        "editors_choice_level": 0,
+        "cons": [
+          "While it performs well on concrete tasks, it falls short when dealing with problems that require long chains of logic or deep conceptual interpretation",
+          "Its ability to maintain coherence and precision in long prompts or multitasking scenarios is weaker than larger models like o3.",
+          "It can process images, but not with the same depth or accuracy as o3. It struggles with interpreting intricate details or complex structures"
+        ],
+        "pros": [
+          "Runs fast and consumes fewer resources, making it ideal for real-time responses, even on devices with lower capacity.",
+          "Performs well in logic, mathematics, and coding tasks, especially when using tools like Python.",
+          "Despite being a \"mini\" model, it delivers solid performance in general tasks, thanks to a well-optimized architecture."
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/o4-mini-high.png"
+      }
+    },
+    {
+      "name": "Perplexity: Sonar",
+      "model": "perplexity/sonar",
+      "word_limit": 95304,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 127072,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Smaller models may not capture as much information as larger counterparts",
+          "No account found with an image entry."
+        ],
+        "pros": [
+          "Rapid information retrieval.",
+          "Detailed, precise question answering.\n",
+          "Multilingual capabilities"
+        ],
+        "applications": [
+          "Content",
+          "Tutoring",
+          "Writing"
+        ],
+        "capabilities": [],
+        "features": [
+          "Web search"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/perplexity-sonar.png"
+      }
+    },
+    {
+      "name": "Perplexity: Sonar Deep Research Reasoning",
+      "model": "perplexity/sonar-deep-research",
+      "word_limit": 95250,
+      "pricing": {
+        "coins": 192,
+        "words": 100
+      },
+      "max_output": 127072,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": 4,
+        "cons": [
+          "Due to the research complexity, completing a task can even take several minutes"
+        ],
+        "pros": [
+          "Very powerful in research",
+          "Ability to apply reasoning to large amounts of data",
+          "Skilled at researching a single topic through dozens of reliable sources"
+        ],
+        "applications": [
+          "Content",
+          "Reasoning",
+          "Tutoring"
+        ],
+        "capabilities": [],
+        "features": [
+          "Web search"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/perplexity-sonar-reasoning.png"
+      }
+    },
+    {
+      "name": "Qwen 2 72B Instruct",
+      "model": "qwen/qwen-2-72b-instruct",
+      "word_limit": 24576,
+      "pricing": {
+        "coins": 0.5,
+        "words": 100
+      },
+      "max_output": 32768,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Limited world and popular knowledge",
+          "Lack of depth for expert knowledge or niche"
+        ],
+        "pros": [
+          "Wide Domain Expertise",
+          "Multilingual capabilities",
+          "Structured data understanding (good on Tables and JSON)"
+        ],
+        "applications": [
+          "Social chat",
+          "Translation"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/qwen-2-72b-instruct.png"
+      }
+    },
+    {
+      "name": "Qwen2-VL 72B Instruct",
+      "model": "qwen/qwen-2-vl-72b-instruct",
+      "word_limit": 24576,
+      "pricing": {
+        "coins": 0.2,
+        "words": 100
+      },
+      "max_output": 4096,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Requires more development for non-visual language-specific tasks"
+        ],
+        "pros": [
+          "State-of-the-art performance in image understanding and content creation"
+        ],
+        "applications": [
+          "Social chat",
+          "Translation",
+          "Content"
+        ],
+        "capabilities": [],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/qwen2-vl-72b.png"
+      }
+    },
+    {
+      "name": "Qwen2.5 72B Instruct",
+      "model": "qwen/qwen-2.5-72b-instruct",
+      "word_limit": 98304,
+      "pricing": {
+        "coins": 0.2,
+        "words": 100
+      },
+      "max_output": 32768,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Primarily focused on text, limiting multimodal applications"
+        ],
+        "pros": [
+          "Enhanced capabilities in coding and complex mathematical reasoning",
+          "Excellent instruction-following and long-form content generation"
+        ],
+        "applications": [
+          "Coding",
+          "Tutoring"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/qwen2.5-72b.png"
+      }
+    },
+    {
+      "name": "Qwen: Qwen2.5 VL 32B Instruct",
+      "model": "qwen/qwen2.5-vl-32b-instruct:free",
+      "word_limit": 24576,
+      "pricing": {
+        "coins": 0.7,
+        "words": 100
+      },
+      "max_output": 33000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Circular reasoning loops, can produce lengthy inconclusive responses"
+        ],
+        "pros": [
+          "Promising reasoning and analytical math/coding capabilities",
+          "Designed for experimental reasoning-focused tasks",
+          "Designed for long outputs"
+        ],
+        "applications": [
+          "Coding",
+          "Writing"
+        ],
+        "capabilities": [],
+        "features": [
+          "Image input"
+        ],
+        "other": [
+          "Open source"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/qwen2.5-coder-32b.png"
+      }
+    },
+    {
+      "name": "Qwen: Qwen3 235B A22B Reasoning",
+      "model": "qwen/qwen3-235b-a22b",
+      "word_limit": 30720,
+      "pricing": {
+        "coins": 0.6,
+        "words": 100
+      },
+      "max_output": 33000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Despite its strength, like all LLMs, it can generate confident but incorrect answers, especially on niche or sensitive topics"
+        ],
+        "pros": [
+          "Offers deep understanding in multiple languages including English, Spanish, and Chinese  which makes it ideal for global or multilingual projects",
+          "Handles long context inputs while maintaining coherence, which is great for technical writing, storytelling, deep analysis, or extended research tasks.\n\n"
+        ],
+        "applications": [
+          "Coding",
+          "Writing",
+          "Reasoning"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [
+          "Open source"
+        ],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/qwen2.5-coder-32b.png"
+      }
+    },
+    {
+      "name": "Qwen: Qwen3 Coder",
+      "model": "qwen/qwen3-coder",
+      "word_limit": 49500,
+      "pricing": {
+        "coins": 3,
+        "words": 100
+      },
+      "max_output": 66000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Does not show its internal thought process (doesn't generate <think>), making it harder to understand how it arrives at its coding answers."
+        ],
+        "pros": [
+          "Efficient processing of large text volumes (up to 1M tokens) thanks to its MoE architecture and extended context, ideal for summarizing and analyzing lengthy documents."
+        ],
+        "applications": [
+          "Coding"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/qwen2.5-coder-32b.png"
+      }
+    },
+    {
+      "name": "WizardLM-2 8x22B",
+      "model": "microsoft/wizardlm-2-8x22b",
+      "word_limit": 49152,
+      "pricing": {
+        "coins": 0.6,
+        "words": 100
+      },
+      "max_output": 66000,
+      "metadata": {
+        "editors_link": "",
+        "editors_choice_level": -1,
+        "cons": [
+          "Slightly falls behind the latest proprietary cutting-edge models",
+          "Resource-intensive for large-scale or basic applications"
+        ],
+        "pros": [
+          "Excellent performance in complex multilingual, reasoning, and coding tasks",
+          "Significantly outperforms other opensource models in evaluations"
+        ],
+        "applications": [
+          "Math and logic",
+          "Coding"
+        ],
+        "capabilities": [],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/wizardlm-2-8x22b.png"
+      }
+    },
+    {
+      "name": "Z.AI: GLM 4.5V Reasoning",
+      "model": "z-ai/glm-4.5v",
+      "word_limit": 5458,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 65500,
+      "metadata": {
+        "editors_link": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png",
+        "editors_choice_level": -1,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Reasoning",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [
+          "Image input"
+        ],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    },
+    {
+      "name": "Z.AI: GLM 4.6",
+      "model": "z-ai/glm-4.6",
+      "word_limit": 16900,
+      "pricing": {
+        "coins": 1,
+        "words": 100
+      },
+      "max_output": 131100,
+      "metadata": {
+        "editors_link": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png",
+        "editors_choice_level": -1,
+        "cons": [
+          "May struggle with tasks that require a high level of creativity or original thought",
+          "Limited understanding of human emotions and social cues in social chat settings",
+          "May require additional time to complete assignments due to language processing"
+        ],
+        "pros": [
+          "Excellent language skills and ability to understand complex text",
+          "Strong communication skills, both written and verbal",
+          "Adaptable to different writing styles and formats"
+        ],
+        "applications": [
+          "Writing",
+          "Reasoning",
+          "Content"
+        ],
+        "capabilities": [
+          "Browsing"
+        ],
+        "features": [],
+        "other": [],
+        "icon": "https://prompt-rack.s3.us-east-1.amazonaws.com/model-icons/goliath-120b.png"
+      }
+    }
+  ],
+  "image": [
+    {
+      "pricing": {
+        "square": {
+          "coins": 90,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 120,
+          "size": "1792x1024"
+        },
+        "portrait": {
+          "coins": 120,
+          "size": "1024x1792"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e08e044e0a3624a03ab154",
+      "name": "OpenAI: Dall-E 3",
+      "model": "openai/dall-e-3",
+      "provider": "openai",
+      "enabled": true,
+      "model_date": "2023-10-10T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 250,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 250,
+          "size": "1280x768"
+        },
+        "portrait": {
+          "coins": 250,
+          "size": "768x1280"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e08e274e0a3624a03ab155",
+      "name": "Flux 1.1",
+      "model": "flux/1.1",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 180,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 180,
+          "size": "1312x736"
+        },
+        "portrait": {
+          "coins": 180,
+          "size": "736x1312"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e08eb04e0a3624a03ab156",
+      "name": "Ideogram V_2A",
+      "model": "ideogram/V_2A",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 113,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 113,
+          "size": "1312x736"
+        },
+        "portrait": {
+          "coins": 113,
+          "size": "736x1312"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e0c232cea26a2e4ae10f42",
+      "name": "Ideogram V_2A Turbo",
+      "model": "ideogram/V_2A_TURBO",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 225,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 225,
+          "size": "1312x736"
+        },
+        "portrait": {
+          "coins": 225,
+          "size": "736x1312"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e0c39ecea26a2e4ae10f43",
+      "name": "Ideogram V_2 Turbo",
+      "model": "ideogram/V_2_TURBO",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 360,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 360,
+          "size": "1312x736"
+        },
+        "portrait": {
+          "coins": 360,
+          "size": "736x1312"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e0c422cea26a2e4ae10f44",
+      "name": "Ideogram V_2",
+      "model": "ideogram/V_2",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 270,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 270,
+          "size": "1280x720"
+        },
+        "portrait": {
+          "coins": 270,
+          "size": "720x1280"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e0c668cea26a2e4ae10f45",
+      "name": "Ideogram V_1",
+      "model": "ideogram/V_1",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 90,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 90,
+          "size": "1280x720"
+        },
+        "portrait": {
+          "coins": 90,
+          "size": "720x1280"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "67e0c67ecea26a2e4ae10f46",
+      "name": "Ideogram V_1 TURBO",
+      "model": "ideogram/V_1_TURBO",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 37,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 37,
+          "size": "1536x1024"
+        },
+        "portrait": {
+          "coins": 37,
+          "size": "1024x1536"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "6858915ef5bd84492b034ce7",
+      "name": "GPT Image 1 (Azure)",
+      "model": "openai/gpt-image-1",
+      "api_version": "v1",
+      "provider": "openai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 167,
+          "aspect_ratio": "1:1"
+        },
+        "landscape": {
+          "coins": 167,
+          "aspect_ratio": "16:9"
+        },
+        "portrait": {
+          "coins": 167,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "685894d0f5bd84492b034ce8",
+      "name": "Google Imagen 4 (Fal AI)",
+      "model": "fal-ai/imagen4/preview",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 333
+        },
+        "landscape": {
+          "coins": 333
+        },
+        "portrait": {
+          "coins": 333
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68589d36f5bd84492b034ce9",
+      "name": "Bagel (Fal AI)",
+      "model": "fal-ai/bagel",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 133,
+          "size": "square"
+        },
+        "landscape": {
+          "coins": 133,
+          "size": "landscape_16_9"
+        },
+        "portrait": {
+          "coins": 133,
+          "size": "portrait_16_9"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68589fb2f5bd84492b034cea",
+      "name": "Recraft V3 (Fal AI)",
+      "model": "fal-ai/recraft/v3/text-to-image",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 100,
+          "size": "square_hd"
+        },
+        "landscape": {
+          "coins": 100,
+          "size": "landscape_16_9"
+        },
+        "portrait": {
+          "coins": 100,
+          "size": "portrait_16_9"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "6858a109f5bd84492b034ceb",
+      "name": "Ideogram V3 (Fal AI)",
+      "model": "fal-ai/ideogram/v3",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 1500,
+          "size": "1:1"
+        },
+        "landscape": {
+          "coins": 1500,
+          "size": "16:9"
+        },
+        "portrait": {
+          "coins": 1500,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "_id": "6861c12c3a80bd0de0dd9209",
+      "name": "Kling 2.1 Image To Video (Fal AI)",
+      "model": "fal-ai/kling-video/v2.1/master/image-to-video",
+      "allowed_durations": [
+        5,
+        10
+      ],
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 8567,
+          "aspect_ratio": "auto"
+        },
+        "landscape": {
+          "coins": 8467,
+          "size": "16:9"
+        },
+        "portrait": {
+          "coins": 8467,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "_id": "6861ef1b3a80bd0de0dd920b",
+      "name": "Google Veo 2 (Fal AI)",
+      "model": "fal-ai/veo2/image-to-video",
+      "allowed_durations": [
+        5,
+        6,
+        7,
+        8
+      ],
+      "durations_unit": "s",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 1667,
+          "aspect_ratio": "auto"
+        },
+        "landscape": {
+          "coins": 1667,
+          "size": "16:9"
+        },
+        "portrait": {
+          "coins": 1667,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "_id": "6861f9033a80bd0de0dd9211",
+      "name": "Vidu Q1 (Fal AI)",
+      "model": "fal-ai/vidu/q1/image-to-video",
+      "allowed_durations": [
+        5
+      ],
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 833,
+          "ratio": "768:1280"
+        },
+        "landscape": {
+          "coins": 833,
+          "ratio": "1280:768"
+        },
+        "portrait": {
+          "coins": 833,
+          "ratio": "768:1280"
+        }
+      },
+      "_id": "6862cfb8ec51852cf1e05969",
+      "name": "Runway Gen 3 Alpha Turbo",
+      "model": "gen3a_turbo",
+      "allowed_durations": [
+        5,
+        10
+      ],
+      "api_version": "v1",
+      "provider": "runway",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 833,
+          "ratio": "960:960"
+        },
+        "landscape": {
+          "coins": 833,
+          "ratio": "1280:720"
+        },
+        "portrait": {
+          "coins": 833,
+          "ratio": "720:1280"
+        }
+      },
+      "_id": "68651086d8c6fc37d3903570",
+      "name": "Runway Gen 4 Turbo",
+      "model": "gen4_turbo",
+      "allowed_durations": [
+        5,
+        10
+      ],
+      "api_version": "v1",
+      "provider": "runway",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 195,
+          "aspect_ratio": "1:1"
+        },
+        "landscape": {
+          "coins": 195,
+          "aspect_ratio": "16:9"
+        },
+        "portrait": {
+          "coins": 195,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68f0079bb7467370831c5e6b",
+      "name": "Nano Banana: Text to image",
+      "model": "fal-ai/nano-banana",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 195,
+          "aspect_ratio": "1:1"
+        },
+        "landscape": {
+          "coins": 195,
+          "aspect_ratio": "16:9"
+        },
+        "portrait": {
+          "coins": 195,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68f00e23b7467370831c5e6c",
+      "name": "Nano Banana: Images to image",
+      "model": "fal-ai/nano-banana/edit",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 350,
+          "size": "square"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68f050ad8f81519e195e1dec",
+      "name": "Qwen Image : Image generation (Text to Image)",
+      "model": "fal-ai/qwen-image",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 200,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 200,
+          "size": "1920x1080"
+        },
+        "portrait": {
+          "coins": 200,
+          "size": "1080x1920"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68f910349a3f8db9e358bbc0",
+      "name": "FLUX.1 Kontext [pro]: Image generation (Text to Image)",
+      "model": "flux-pro/kontext/text-to-image",
+      "api_version": "v1",
+      "provider": "openai",
+      "enabled": true,
+      "model_date": "2025-10-23T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 150,
+          "size": "square"
+        },
+        "landscape": {
+          "coins": 150,
+          "size": "landscape_16_9"
+        },
+        "portrait": {
+          "coins": 150,
+          "size": "portrait_16_9"
+        },
+        "square_hd": {
+          "coins": 150,
+          "size": "square_hd"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68fa5e9fa965194a099d7791",
+      "name": "Seedream 4.0 Edit: (Image to Image)",
+      "model": "fal-ai/bytedance/seedream/v4/edit",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 150,
+          "size": "square_hd"
+        },
+        "landscape": {
+          "coins": 150,
+          "size": "landscape_16_9"
+        },
+        "portrait": {
+          "coins": 150,
+          "size": "portrait_16_9"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "68fa60e1a965194a099d7792",
+      "name": "Ideogram V3 Replace Background: Image generation",
+      "model": "fal-ai/ideogram/v3/replace-background",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 1750,
+          "aspect_ratio": "auto"
+        },
+        "landscape": {
+          "coins": 1750,
+          "size": "16:9"
+        },
+        "portrait": {
+          "coins": 1750,
+          "aspect_ratio": "9:16"
+        }
+      },
+      "_id": "69066f9a2c5691ff2de65a17",
+      "name": "Kling 2.5 Turbo Pro",
+      "model": "fal-ai/kling-video/v2.5-turbo/pro/image-to-video",
+      "allowed_durations": [
+        5
+      ],
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 200,
+          "aspect_ratio": "1:1"
+        },
+        "landscape": {
+          "coins": 200,
+          "aspect_ratio": "16:9"
+        },
+        "portrait": {
+          "coins": 200,
+          "size": "9:16"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "691455541141c55b53bcec1e",
+      "name": "FLUX.1 Kontext [pro]: Image generation (Image to Image)",
+      "model": "fal-ai/flux-pro/kontext",
+      "api_version": "v1",
+      "provider": "falai",
+      "enabled": true,
+      "model_date": "2025-10-23T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 250,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 250,
+          "size": "1280x768"
+        },
+        "portrait": {
+          "coins": 250,
+          "size": "768x1280"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "69151a84baa935a785ec2663",
+      "name": "Flux 1.1",
+      "model": "FLUX-1.1-pro",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "square": {
+          "coins": 250,
+          "size": "1024x1024"
+        },
+        "landscape": {
+          "coins": 250,
+          "size": "1280x768"
+        },
+        "portrait": {
+          "coins": 250,
+          "size": "768x1280"
+        }
+      },
+      "allowed_durations": [],
+      "_id": "69151f86f106a1ccea0617c1",
+      "name": "Flux 1.1",
+      "model": "fal-ai/flux/dev",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    }
+  ],
+  "audio": [
+    {
+      "pricing": {
+        "base_cost": 8,
+        "per_word_cost": 0.08
+      },
+      "_id": "686724d83dc8c806b63a6d95",
+      "name": "Eleven Labs Multilingual V2",
+      "model": "eleven_multilingual_v2",
+      "provider": "elevenlabs",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "base_cost": 5,
+        "per_word_cost": 0.05
+      },
+      "_id": "686b97feb70ac7168c52c169",
+      "name": "OpenAI TTS 1",
+      "model": "tts-1",
+      "provider": "openai",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    },
+    {
+      "pricing": {
+        "base_cost": 8,
+        "per_word_cost": 0.012
+      },
+      "_id": "690416182c5691ff2de65a11",
+      "name": "ElevenLabs V3 TTS",
+      "model": "eleven_v3",
+      "provider": "elevenlabs",
+      "enabled": true,
+      "model_date": "2025-03-28T00:00:00.000Z"
+    }
+  ]
+}
+
