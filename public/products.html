@@ -1594,6 +1594,28 @@
             width: 18px;
             height: 18px
         }
+
+        /* ---------- industry badge ---------- */
+        .industry-badge {
+            display: none;
+            align-items: center;
+            gap: 0;
+        }
+        .industry-badge-sep {
+            width: 1px;
+            height: 16px;
+            background: var(--line);
+            margin: 0 12px;
+            flex-shrink: 0
+        }
+        .industry-badge-label {
+            font-size: 11px;
+            font-weight: 700;
+            letter-spacing: .12em;
+            text-transform: uppercase;
+            color: var(--muted);
+            white-space: nowrap
+        }
     </style>
 </head>
 
@@ -1603,6 +1625,10 @@
         <div class="wrap nav">
             <a class="brand" href="/" aria-label="MIVSO home">
                 <img class="logo" src="/logo-horizontal.png" alt="MIVSO" />
+                <span class="industry-badge" id="industryBadge">
+                    <span class="industry-badge-sep"></span>
+                    <span class="industry-badge-label" id="industryBadgeLabel"></span>
+                </span>
             </a>
             <nav class="links" id="navlinks">
                 <a href="/">Home</a>
@@ -3096,6 +3122,17 @@
                 if (target) {
                     setTimeout(() => target.scrollIntoView({ behavior: 'smooth', block: 'start' }), 100);
                 }
+            }
+        })();
+
+        /* --- Industry badge from sessionStorage --- */
+        (function() {
+            const ind = sessionStorage.getItem('mivso_industry');
+            if (ind) {
+                const badge = document.getElementById('industryBadge');
+                const label = document.getElementById('industryBadgeLabel');
+                label.textContent = ind + ' Pack';
+                badge.style.display = 'inline-flex';
             }
         })();
     </script>

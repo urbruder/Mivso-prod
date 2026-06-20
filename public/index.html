@@ -1002,6 +1002,160 @@
                 padding: 44px 28px
             }
         }
+
+        /* ---------- industry modal ---------- */
+        .ind-overlay {
+            position: fixed;
+            inset: 0;
+            z-index: 200;
+            background: rgba(10,10,10,.55);
+            backdrop-filter: blur(6px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            opacity: 0;
+            pointer-events: none;
+            transition: opacity .35s var(--ease)
+        }
+        .ind-overlay.open {
+            opacity: 1;
+            pointer-events: auto
+        }
+        .ind-modal {
+            background: #fff;
+            border-radius: 22px;
+            padding: 44px 40px 36px;
+            max-width: 700px;
+            width: 100%;
+            max-height: 90vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(24px) scale(.97);
+            transition: transform .4s var(--ease);
+            box-shadow: 0 40px 100px -30px rgba(0,0,0,.45)
+        }
+        .ind-overlay.open .ind-modal {
+            transform: none
+        }
+        .ind-close {
+            position: absolute;
+            top: 18px;
+            right: 20px;
+            background: none;
+            border: 0;
+            font-size: 22px;
+            color: var(--muted);
+            cursor: pointer;
+            line-height: 1;
+            padding: 4px 8px;
+            border-radius: 8px;
+            transition: color .2s, background .2s
+        }
+        .ind-close:hover { background: var(--bg-soft); color: var(--ink) }
+        .ind-modal h2 {
+            font-size: clamp(1.4rem, 3vw, 1.9rem);
+            font-weight: 700;
+            margin-bottom: 8px
+        }
+        .ind-modal .sub {
+            color: var(--muted);
+            font-size: .98rem;
+            margin-bottom: 28px
+        }
+        .ind-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 12px
+        }
+        .ind-card {
+            border: 1.5px solid var(--line);
+            border-radius: 14px;
+            padding: 20px 18px;
+            cursor: pointer;
+            transition: border-color .25s, transform .25s var(--ease), box-shadow .25s;
+            background: #fff;
+            text-align: left;
+            font-family: inherit
+        }
+        .ind-card:hover {
+            border-color: var(--ink);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 30px -14px rgba(0,0,0,.25)
+        }
+        .ind-card .ind-emoji {
+            font-size: 1.8rem;
+            margin-bottom: 10px;
+            display: block
+        }
+        .ind-card .ind-name {
+            font-weight: 700;
+            font-size: 1rem;
+            color: var(--ink);
+            font-family: "Space Grotesk", sans-serif;
+            display: block;
+            margin-bottom: 4px
+        }
+        .ind-card .ind-desc {
+            font-size: .82rem;
+            color: var(--muted)
+        }
+        .ind-card.ind-other {
+            border-style: dashed
+        }
+        .ind-card.ind-soon {
+            opacity: .45;
+            cursor: not-allowed;
+            pointer-events: none;
+            position: relative
+        }
+        .ind-soon-pill {
+            display: inline-block;
+            margin-top: 10px;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .1em;
+            text-transform: uppercase;
+            color: var(--muted);
+            background: var(--bg-soft);
+            border: 1px solid var(--line);
+            padding: 3px 9px;
+            border-radius: 100px
+        }
+        .ind-other-form {
+            display: none;
+            flex-direction: column;
+            gap: 10px;
+            margin-top: 12px
+        }
+        .ind-other-form.show { display: flex }
+        .ind-other-input {
+            font-family: inherit;
+            font-size: .9rem;
+            padding: 10px 12px;
+            border: 1.5px solid var(--line);
+            border-radius: 10px;
+            outline: none;
+            transition: border-color .2s
+        }
+        .ind-other-input:focus { border-color: var(--ink) }
+        .ind-other-go {
+            font-family: inherit;
+            font-size: .88rem;
+            font-weight: 600;
+            padding: 9px 14px;
+            border-radius: 10px;
+            border: 1.5px solid var(--ink);
+            background: var(--ink);
+            color: #fff;
+            cursor: pointer;
+            transition: opacity .2s
+        }
+        .ind-other-go:hover { opacity: .8 }
+        @media(max-width:560px) {
+            .ind-grid { grid-template-columns: repeat(2,1fr) }
+            .ind-modal { padding: 32px 20px 28px }
+        }
     </style>
 </head>
 
@@ -1079,14 +1233,14 @@
                         and your customers.</p>
                 </div>
                 <div class="grid">
-                    <a href="/products#catalog-section" class="card reveal" style="display:block; cursor:pointer; text-decoration:none; color:inherit;">
+                    <div class="card reveal" id="claudeSkillsCard" onclick="openIndustryModal()" style="cursor:pointer;">
                         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                                 <path d="M12 2l2.5 6L21 9l-5 4 1.5 7L12 16l-5.5 4L8 13 3 9l6.5-1z" />
                             </svg></div>
                         <h3>Claude Skills</h3>
                         <p>Custom, packaged skills that extend Claude with your knowledge, tools and workflows —
                             installable and reusable.</p>
-                    </a>
+                    </div>
                     <div class="card reveal">
                         <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
                                 <rect x="4" y="7" width="16" height="12" rx="3" />
@@ -1173,17 +1327,15 @@
                         <h3>AEO</h3>
                         <p>Answer Engine Optimisation — craft authoritative, structured answers so your business wins featured snippets and voice search results.</p>
                     </div>
-                    <a href="#contact" class="card card-cta reveal" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">
-                        <div>
-                            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
-                                    <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z" />
-                                    <path d="M8 11h8M8 15h5" />
-                                </svg></div>
-                            <h3>Not sure yet?</h3>
-                            <p>Tell us what you're trying to solve — we'll figure out the right fit together.</p>
+                    <div class="card reveal" style="border-style:dashed; opacity:.6; cursor:default; display:flex; flex-direction:column; justify-content:center; align-items:flex-start;">
+                        <div class="ico" style="border-style:dashed;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="5" cy="12" r="1.5"/><circle cx="12" cy="12" r="1.5"/><circle cx="19" cy="12" r="1.5"/>
+                            </svg>
                         </div>
-                        <span class="cta-arrow">Let's talk &rarr;</span>
-                    </a>
+                        <h3 style="color:var(--muted);">More to come</h3>
+                        <p>We're always building — new services and AI capabilities dropping soon.</p>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1248,7 +1400,7 @@
             <div class="wrap">
                 <div class="contact-grid">
                     <div class="contact-info reveal">
-                        <h2>Start a project.</h2>
+                        <h2>Contact Us</h2>
                         <p>Tell us what you want to automate or build. We'll come back with a clear plan and a portable
                             solution.</p>
                         <div class="meta">
@@ -1413,6 +1565,125 @@
         }
         send.addEventListener('click', sendMsg);
         input.addEventListener('keydown', e => { if (e.key === 'Enter') sendMsg(); });
+    </script>
+
+    <!-- INDUSTRY SELECTOR MODAL -->
+    <div class="ind-overlay" id="indOverlay" role="dialog" aria-modal="true" aria-label="Choose your industry">
+        <div class="ind-modal" id="indModal">
+            <button class="ind-close" id="indClose" aria-label="Close">&times;</button>
+            <h2>Who are you building for?</h2>
+            <p class="sub">Pick your industry and we'll show you the right Claude skill pack.</p>
+            <div class="ind-grid">
+                <!-- Real Estate -->
+                <button class="ind-card" onclick="selectIndustry('Real Estate')">
+                    <span class="ind-emoji">🏡</span>
+                    <span class="ind-name">Real Estate</span>
+                    <span class="ind-desc">50 Claude skills for agents &amp; brokers</span>
+                </button>
+                <!-- Restaurant (coming soon) -->
+                <button class="ind-card ind-soon" disabled>
+                    <span class="ind-emoji">🍽️</span>
+                    <span class="ind-name">Restaurant &amp; Food</span>
+                    <span class="ind-desc">Reservations, menus, reviews &amp; ops</span>
+                    <span class="ind-soon-pill">Coming soon</span>
+                </button>
+                <!-- HVAC (coming soon) -->
+                <button class="ind-card ind-soon" disabled>
+                    <span class="ind-emoji">🔧</span>
+                    <span class="ind-name">HVAC &amp; Home Services</span>
+                    <span class="ind-desc">Quoting, scheduling &amp; follow-ups</span>
+                    <span class="ind-soon-pill">Coming soon</span>
+                </button>
+                <!-- Retail (coming soon) -->
+                <button class="ind-card ind-soon" disabled>
+                    <span class="ind-emoji">🛍️</span>
+                    <span class="ind-name">Retail &amp; eCommerce</span>
+                    <span class="ind-desc">Product copy, support &amp; campaigns</span>
+                    <span class="ind-soon-pill">Coming soon</span>
+                </button>
+                <!-- Healthcare (coming soon) -->
+                <button class="ind-card ind-soon" disabled>
+                    <span class="ind-emoji">🏥</span>
+                    <span class="ind-name">Healthcare &amp; Wellness</span>
+                    <span class="ind-desc">Patient comms, intake &amp; follow-ups</span>
+                    <span class="ind-soon-pill">Coming soon</span>
+                </button>
+                <!-- Legal (coming soon) -->
+                <button class="ind-card ind-soon" disabled>
+                    <span class="ind-emoji">⚖️</span>
+                    <span class="ind-name">Legal &amp; Professional</span>
+                    <span class="ind-desc">Docs, client comms &amp; research</span>
+                    <span class="ind-soon-pill">Coming soon</span>
+                </button>
+                <!-- Other -->
+                <button class="ind-card ind-other" id="indOtherCard" onclick="toggleOtherForm(event)">
+                    <span class="ind-emoji">✍️</span>
+                    <span class="ind-name">Other</span>
+                    <span class="ind-desc">Tell us your industry — we'll reach out</span>
+                    <div class="ind-other-form" id="indOtherForm">
+                        <input class="ind-other-input" id="indOtherInput" type="text" placeholder="e.g. Finance, Logistics…" maxlength="60" />
+                        <button class="ind-other-go" onclick="submitOther(event)">Get in touch →</button>
+                    </div>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        /* --- Industry Modal --- */
+        const indOverlay = document.getElementById('indOverlay');
+        const indClose   = document.getElementById('indClose');
+
+        function openIndustryModal() {
+            indOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeIndustryModal() {
+            indOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+            // reset other form
+            document.getElementById('indOtherForm').classList.remove('show');
+            document.getElementById('indOtherInput').value = '';
+        }
+
+        indClose.addEventListener('click', closeIndustryModal);
+        indOverlay.addEventListener('click', (e) => { if (e.target === indOverlay) closeIndustryModal(); });
+        document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeIndustryModal(); });
+
+        function selectIndustry(name) {
+            // Only set sessionStorage badge for Real Estate
+            if (name === 'Real Estate') {
+                sessionStorage.setItem('mivso_industry', 'Real Estate');
+            } else {
+                sessionStorage.removeItem('mivso_industry');
+            }
+            closeIndustryModal();
+            window.location.href = '/products#catalog-section';
+        }
+
+        function toggleOtherForm(e) {
+            e.stopPropagation();
+            const form = document.getElementById('indOtherForm');
+            form.classList.toggle('show');
+            if (form.classList.contains('show')) {
+                document.getElementById('indOtherInput').focus();
+            }
+        }
+
+        function submitOther(e) {
+            e.stopPropagation();
+            const val = document.getElementById('indOtherInput').value.trim();
+            if (!val) return;
+            // Store the industry name and redirect to contact section
+            sessionStorage.setItem('mivso_other_industry', val);
+            closeIndustryModal();
+            window.location.href = '/#contact';
+        }
+
+        document.getElementById('indOtherInput').addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') submitOther(e);
+            e.stopPropagation();
+        });
     </script>
 </body>
 
