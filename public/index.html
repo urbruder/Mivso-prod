@@ -408,6 +408,56 @@
             font-size: .96rem
         }
 
+        .card-cta {
+            background: var(--ink);
+            border-color: var(--ink);
+            color: #fff;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            cursor: pointer;
+            text-decoration: none
+        }
+
+        .card-cta h3 {
+            color: #fff
+        }
+
+        .card-cta p {
+            color: rgba(255,255,255,.62)
+        }
+
+        .card-cta .ico {
+            border-color: rgba(255,255,255,.3);
+            color: #fff
+        }
+
+        .card-cta .ico svg {
+            color: #fff
+        }
+
+        .card-cta .cta-arrow {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            margin-top: 22px;
+            font-size: .9rem;
+            font-weight: 600;
+            color: #fff;
+            opacity: .7;
+            transition: opacity .25s, gap .25s
+        }
+
+        .card-cta:hover .cta-arrow {
+            opacity: 1;
+            gap: 10px
+        }
+
+        .card-cta:hover {
+            border-color: var(--ink);
+            box-shadow: 0 24px 50px -20px rgba(0,0,0,.55)
+        }
+
         /* ---------- steps ---------- */
         .steps {
             display: grid;
@@ -464,15 +514,25 @@
             font-size: 1.05rem
         }
 
-        .band .btn {
+        .band .btn:not(.ghost) {
             background: #fff;
             color: var(--ink);
-            border-color: #fff;
-            margin-top: 32px
+            border-color: #fff
         }
 
-        .band .btn:hover {
+        .band .btn:not(.ghost):hover {
             background: #e9e9e9
+        }
+
+        .band .btn.ghost {
+            background: transparent;
+            color: #fff;
+            border-color: rgba(255,255,255,.35)
+        }
+
+        .band .btn.ghost:hover {
+            background: rgba(255,255,255,.12);
+            border-color: rgba(255,255,255,.6)
         }
 
         .band-mark {
@@ -483,6 +543,27 @@
             opacity: .1;
             pointer-events: none;
             filter: invert(1)
+        }
+
+        .band-cta-row {
+            display: flex;
+            align-items: center;
+            gap: 18px;
+            flex-wrap: wrap;
+            margin-top: 36px
+        }
+
+        .band-or {
+            font-size: .8rem;
+            font-weight: 700;
+            letter-spacing: .14em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,.4);
+            padding: 4px 12px;
+            border: 1px solid rgba(255,255,255,.18);
+            border-radius: 100px;
+            flex-shrink: 0;
+            user-select: none
         }
 
         /* ---------- contact ---------- */
@@ -993,7 +1074,7 @@
             <div class="wrap">
                 <div class="sec-head reveal">
                     <div class="kicker">What we build</div>
-                    <h2>Six ways we put AI to work for you.</h2>
+                    <h2>Eleven ways we put AI to work for you.</h2>
                     <p>Each engagement is portable by design — built once, deployable across your stack, your channels,
                         and your customers.</p>
                 </div>
@@ -1050,6 +1131,59 @@
                         <p>Voice agents that make and take calls — booking, qualifying and resolving in natural
                             conversation.</p>
                     </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="11" cy="11" r="7" />
+                                <path d="M21 21l-4-4M11 8v6M8 11h6" />
+                            </svg></div>
+                        <h3>SEO</h3>
+                        <p>AI-powered search engine optimisation — technical audits, content strategy and rank tracking that keep you visible and climbing.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M17 2h4v4M7 22H3v-4" />
+                                <path d="M21 6l-7 7-4-4-7 7" />
+                            </svg></div>
+                        <h3>Social Media Marketing</h3>
+                        <p>Strategy, content and scheduling powered by AI — grow your audience, drive engagement and convert followers into customers.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <rect x="2" y="3" width="20" height="14" rx="2" />
+                                <path d="M8 21h8M12 17v4" />
+                                <path d="M6 8h4M6 11h8" />
+                            </svg></div>
+                        <h3>SEM</h3>
+                        <p>Search Engine Marketing — AI-optimised paid campaigns across Google &amp; Bing that maximise clicks, quality score and ROI.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <circle cx="12" cy="12" r="9" />
+                                <path d="M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20" />
+                            </svg></div>
+                        <h3>GEO</h3>
+                        <p>Generative Engine Optimisation — structure your content so AI search engines like Perplexity and ChatGPT surface your brand first.</p>
+                    </div>
+                    <div class="card reveal">
+                        <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                <path d="M12 2a10 10 0 1 1 0 20A10 10 0 0 1 12 2z" />
+                                <path d="M9 9h.01M15 9h.01M9.5 14s1 1.5 2.5 1.5 2.5-1.5 2.5-1.5" />
+                                <path d="M7 7l2 2M17 7l-2 2" />
+                            </svg></div>
+                        <h3>AEO</h3>
+                        <p>Answer Engine Optimisation — craft authoritative, structured answers so your business wins featured snippets and voice search results.</p>
+                    </div>
+                    <a href="#contact" class="card card-cta reveal" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">
+                        <div>
+                            <div class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6">
+                                    <path d="M21 11.5a8.5 8.5 0 0 1-12.3 7.6L3 21l1.9-5.7A8.5 8.5 0 1 1 21 11.5z" />
+                                    <path d="M8 11h8M8 15h5" />
+                                </svg></div>
+                            <h3>Not sure yet?</h3>
+                            <p>Tell us what you're trying to solve — we'll figure out the right fit together.</p>
+                        </div>
+                        <span class="cta-arrow">Let's talk &rarr;</span>
+                    </a>
                 </div>
             </div>
         </section>
@@ -1095,7 +1229,16 @@
                     <p>MIVSO exists to make intelligent automation truly portable — deployable wherever your customers
                         and operations live. No lock-in, no theatre. Just skills and agents that travel light and
                         deliver.</p>
-                    <a href="#contact" class="btn">Let's build yours →</a>
+                    <div class="band-cta-row">
+                        <a href="mailto:hello@mivso.com" class="btn" style="background:#fff;color:var(--ink);border-color:#fff;">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:16px;height:16px;flex-shrink:0"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg>
+                            Email us for a free consultation
+                        </a>
+                        <span class="band-or">or</span>
+                        <a href="#contact" class="btn ghost" style="border-color:rgba(255,255,255,.35);color:#fff;" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'}); return false;">
+                            Fill out the form →
+                        </a>
+                    </div>
                 </div>
             </div>
         </section>
@@ -1143,6 +1286,11 @@
                                         <option>Lead Management</option>
                                         <option>AI Chatbots</option>
                                         <option>AI Telephony</option>
+                                        <option>SEO</option>
+                                        <option>Social Media Marketing</option>
+                                        <option>SEM – Search Engine Marketing</option>
+                                        <option>GEO – Generative Engine Optimisation</option>
+                                        <option>AEO – Answer Engine Optimisation</option>
                                         <option>Not sure yet</option>
                                     </select>
                                 </div>
